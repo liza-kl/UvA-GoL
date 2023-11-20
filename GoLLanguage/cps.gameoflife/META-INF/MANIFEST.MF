@@ -8,5 +8,23 @@ Bundle-SymbolicName: cps.gameoflife; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.16.0"
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: cps.gameoflife.validation,
+ cps.gameoflife.services,
+ cps.gameoflife.scoping,
+ cps.gameoflife.parser.antlr.internal,
+ cps.gameoflife.lsjatl.util,
+ cps.gameoflife.generator,
+ cps.gameoflife,
+ cps.gameoflife.lsjatl,
+ cps.gameoflife.serializer,
+ cps.gameoflife.lsjatl.impl,
+ cps.gameoflife.parser.antlr
+Import-Package: org.apache.log4j

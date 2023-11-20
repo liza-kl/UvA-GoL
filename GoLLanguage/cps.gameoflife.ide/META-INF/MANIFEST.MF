@@ -8,5 +8,8 @@ Bundle-SymbolicName: cps.gameoflife.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: cps.gameoflife,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: cps.gameoflife.ide.contentassist.antlr.internal,
+ cps.gameoflife.ide.contentassist.antlr
