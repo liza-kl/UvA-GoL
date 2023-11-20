@@ -1,0 +1,9 @@
+grammar cps.gameoflife.Lsjatl with org.eclipse.xtext.common.Terminals
+
+generate lsjatl "http://www.gameoflife.cps/Lsjatl"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
