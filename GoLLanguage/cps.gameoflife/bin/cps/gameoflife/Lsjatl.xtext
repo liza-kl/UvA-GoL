@@ -2,8 +2,29 @@ grammar cps.gameoflife.Lsjatl with org.eclipse.xtext.common.Terminals
 
 generate lsjatl "http://www.gameoflife.cps/Lsjatl"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+Game:  // += indicates a list of element, * is zero or more occurences. 
+	  grid = Grid // A game consists of a 
+	  rules = Rules;
+
+Grid:{Grid} 'Grid' 
+	 size= GridSize // Point optional 
+	 populatedCells += PopulatedCell*; 
+	  
+GridSize:{GridSize} 'GridSize' 
+('height:' height = INT 'width:' width = INT);
+
+PopulatedCell: ('Point' poi=Point);
+
+Point: '(' x=INT',' y=INT')';
+
+Rules: {Rules} 'Rules'
+	   rules += Rule*; // A list of rules, none or whatever size 
+
+Rule: 'Each' state=State 'cell' 'with' op=BoolOp nCount=INT 'neighbors' result=Outcome;
+
+State: 'living' | 'dead';
+	   
+BoolOp: '>' | '<' | '>='| '<=' | '==';
+
+		
+Outcome: 'survives' | 'dies' | 'populates';

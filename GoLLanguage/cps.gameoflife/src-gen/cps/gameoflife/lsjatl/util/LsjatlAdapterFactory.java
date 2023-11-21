@@ -76,14 +76,39 @@ public class LsjatlAdapterFactory extends AdapterFactoryImpl
     new LsjatlSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseGame(Game object)
       {
-        return createModelAdapter();
+        return createGameAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseGrid(Grid object)
       {
-        return createGreetingAdapter();
+        return createGridAdapter();
+      }
+      @Override
+      public Adapter caseGridSize(GridSize object)
+      {
+        return createGridSizeAdapter();
+      }
+      @Override
+      public Adapter casePopulatedCell(PopulatedCell object)
+      {
+        return createPopulatedCellAdapter();
+      }
+      @Override
+      public Adapter casePoint(Point object)
+      {
+        return createPointAdapter();
+      }
+      @Override
+      public Adapter caseRules(Rules object)
+      {
+        return createRulesAdapter();
+      }
+      @Override
+      public Adapter caseRule(Rule object)
+      {
+        return createRuleAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -108,31 +133,106 @@ public class LsjatlAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link cps.gameoflife.lsjatl.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link cps.gameoflife.lsjatl.Game <em>Game</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see cps.gameoflife.lsjatl.Model
+   * @see cps.gameoflife.lsjatl.Game
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createGameAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link cps.gameoflife.lsjatl.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link cps.gameoflife.lsjatl.Grid <em>Grid</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see cps.gameoflife.lsjatl.Greeting
+   * @see cps.gameoflife.lsjatl.Grid
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createGridAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link cps.gameoflife.lsjatl.GridSize <em>Grid Size</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see cps.gameoflife.lsjatl.GridSize
+   * @generated
+   */
+  public Adapter createGridSizeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link cps.gameoflife.lsjatl.PopulatedCell <em>Populated Cell</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see cps.gameoflife.lsjatl.PopulatedCell
+   * @generated
+   */
+  public Adapter createPopulatedCellAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link cps.gameoflife.lsjatl.Point <em>Point</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see cps.gameoflife.lsjatl.Point
+   * @generated
+   */
+  public Adapter createPointAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link cps.gameoflife.lsjatl.Rules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see cps.gameoflife.lsjatl.Rules
+   * @generated
+   */
+  public Adapter createRulesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link cps.gameoflife.lsjatl.Rule <em>Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see cps.gameoflife.lsjatl.Rule
+   * @generated
+   */
+  public Adapter createRuleAdapter()
   {
     return null;
   }

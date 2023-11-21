@@ -58,103 +58,488 @@ public interface LsjatlPackage extends EPackage
   LsjatlPackage eINSTANCE = cps.gameoflife.lsjatl.impl.LsjatlPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.GameImpl <em>Game</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see cps.gameoflife.lsjatl.impl.ModelImpl
-   * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getModel()
+   * @see cps.gameoflife.lsjatl.impl.GameImpl
+   * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getGame()
    * @generated
    */
-  int MODEL = 0;
+  int GAME = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Grid</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int GAME__GRID = 0;
 
   /**
-   * The number of structural features of the '<em>Model</em>' class.
+   * The feature id for the '<em><b>Rules</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 1;
+  int GAME__RULES = 1;
 
   /**
-   * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.GreetingImpl <em>Greeting</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see cps.gameoflife.lsjatl.impl.GreetingImpl
-   * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getGreeting()
-   * @generated
-   */
-  int GREETING = 1;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The number of structural features of the '<em>Game</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING__NAME = 0;
+  int GAME_FEATURE_COUNT = 2;
 
   /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.GridImpl <em>Grid</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cps.gameoflife.lsjatl.impl.GridImpl
+   * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getGrid()
+   * @generated
+   */
+  int GRID = 1;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int GRID__SIZE = 0;
+
+  /**
+   * The feature id for the '<em><b>Populated Cells</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID__POPULATED_CELLS = 1;
+
+  /**
+   * The number of structural features of the '<em>Grid</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.GridSizeImpl <em>Grid Size</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cps.gameoflife.lsjatl.impl.GridSizeImpl
+   * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getGridSize()
+   * @generated
+   */
+  int GRID_SIZE = 2;
+
+  /**
+   * The feature id for the '<em><b>Height</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID_SIZE__HEIGHT = 0;
+
+  /**
+   * The feature id for the '<em><b>Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID_SIZE__WIDTH = 1;
+
+  /**
+   * The number of structural features of the '<em>Grid Size</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID_SIZE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.PopulatedCellImpl <em>Populated Cell</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cps.gameoflife.lsjatl.impl.PopulatedCellImpl
+   * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getPopulatedCell()
+   * @generated
+   */
+  int POPULATED_CELL = 3;
+
+  /**
+   * The feature id for the '<em><b>Poi</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POPULATED_CELL__POI = 0;
+
+  /**
+   * The number of structural features of the '<em>Populated Cell</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POPULATED_CELL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.PointImpl <em>Point</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cps.gameoflife.lsjatl.impl.PointImpl
+   * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getPoint()
+   * @generated
+   */
+  int POINT = 4;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINT__X = 0;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINT__Y = 1;
+
+  /**
+   * The number of structural features of the '<em>Point</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.RulesImpl <em>Rules</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cps.gameoflife.lsjatl.impl.RulesImpl
+   * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getRules()
+   * @generated
+   */
+  int RULES = 5;
+
+  /**
+   * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULES__RULES = 0;
+
+  /**
+   * The number of structural features of the '<em>Rules</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.RuleImpl <em>Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cps.gameoflife.lsjatl.impl.RuleImpl
+   * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getRule()
+   * @generated
+   */
+  int RULE = 6;
+
+  /**
+   * The feature id for the '<em><b>State</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__STATE = 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__OP = 1;
+
+  /**
+   * The feature id for the '<em><b>NCount</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__NCOUNT = 2;
+
+  /**
+   * The feature id for the '<em><b>Result</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__RESULT = 3;
+
+  /**
+   * The number of structural features of the '<em>Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_FEATURE_COUNT = 4;
 
 
   /**
-   * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Game <em>Game</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see cps.gameoflife.lsjatl.Model
+   * @return the meta object for class '<em>Game</em>'.
+   * @see cps.gameoflife.lsjatl.Game
    * @generated
    */
-  EClass getModel();
+  EClass getGame();
 
   /**
-   * Returns the meta object for the containment reference list '{@link cps.gameoflife.lsjatl.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the containment reference '{@link cps.gameoflife.lsjatl.Game#getGrid <em>Grid</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see cps.gameoflife.lsjatl.Model#getGreetings()
-   * @see #getModel()
+   * @return the meta object for the containment reference '<em>Grid</em>'.
+   * @see cps.gameoflife.lsjatl.Game#getGrid()
+   * @see #getGame()
    * @generated
    */
-  EReference getModel_Greetings();
+  EReference getGame_Grid();
 
   /**
-   * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for the containment reference '{@link cps.gameoflife.lsjatl.Game#getRules <em>Rules</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see cps.gameoflife.lsjatl.Greeting
+   * @return the meta object for the containment reference '<em>Rules</em>'.
+   * @see cps.gameoflife.lsjatl.Game#getRules()
+   * @see #getGame()
    * @generated
    */
-  EClass getGreeting();
+  EReference getGame_Rules();
 
   /**
-   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Grid <em>Grid</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see cps.gameoflife.lsjatl.Greeting#getName()
-   * @see #getGreeting()
+   * @return the meta object for class '<em>Grid</em>'.
+   * @see cps.gameoflife.lsjatl.Grid
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EClass getGrid();
+
+  /**
+   * Returns the meta object for the containment reference '{@link cps.gameoflife.lsjatl.Grid#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Size</em>'.
+   * @see cps.gameoflife.lsjatl.Grid#getSize()
+   * @see #getGrid()
+   * @generated
+   */
+  EReference getGrid_Size();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link cps.gameoflife.lsjatl.Grid#getPopulatedCells <em>Populated Cells</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Populated Cells</em>'.
+   * @see cps.gameoflife.lsjatl.Grid#getPopulatedCells()
+   * @see #getGrid()
+   * @generated
+   */
+  EReference getGrid_PopulatedCells();
+
+  /**
+   * Returns the meta object for class '{@link cps.gameoflife.lsjatl.GridSize <em>Grid Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Grid Size</em>'.
+   * @see cps.gameoflife.lsjatl.GridSize
+   * @generated
+   */
+  EClass getGridSize();
+
+  /**
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.GridSize#getHeight <em>Height</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Height</em>'.
+   * @see cps.gameoflife.lsjatl.GridSize#getHeight()
+   * @see #getGridSize()
+   * @generated
+   */
+  EAttribute getGridSize_Height();
+
+  /**
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.GridSize#getWidth <em>Width</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Width</em>'.
+   * @see cps.gameoflife.lsjatl.GridSize#getWidth()
+   * @see #getGridSize()
+   * @generated
+   */
+  EAttribute getGridSize_Width();
+
+  /**
+   * Returns the meta object for class '{@link cps.gameoflife.lsjatl.PopulatedCell <em>Populated Cell</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Populated Cell</em>'.
+   * @see cps.gameoflife.lsjatl.PopulatedCell
+   * @generated
+   */
+  EClass getPopulatedCell();
+
+  /**
+   * Returns the meta object for the containment reference '{@link cps.gameoflife.lsjatl.PopulatedCell#getPoi <em>Poi</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Poi</em>'.
+   * @see cps.gameoflife.lsjatl.PopulatedCell#getPoi()
+   * @see #getPopulatedCell()
+   * @generated
+   */
+  EReference getPopulatedCell_Poi();
+
+  /**
+   * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Point <em>Point</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Point</em>'.
+   * @see cps.gameoflife.lsjatl.Point
+   * @generated
+   */
+  EClass getPoint();
+
+  /**
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Point#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see cps.gameoflife.lsjatl.Point#getX()
+   * @see #getPoint()
+   * @generated
+   */
+  EAttribute getPoint_X();
+
+  /**
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Point#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Y</em>'.
+   * @see cps.gameoflife.lsjatl.Point#getY()
+   * @see #getPoint()
+   * @generated
+   */
+  EAttribute getPoint_Y();
+
+  /**
+   * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Rules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rules</em>'.
+   * @see cps.gameoflife.lsjatl.Rules
+   * @generated
+   */
+  EClass getRules();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link cps.gameoflife.lsjatl.Rules#getRules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Rules</em>'.
+   * @see cps.gameoflife.lsjatl.Rules#getRules()
+   * @see #getRules()
+   * @generated
+   */
+  EReference getRules_Rules();
+
+  /**
+   * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Rule <em>Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rule</em>'.
+   * @see cps.gameoflife.lsjatl.Rule
+   * @generated
+   */
+  EClass getRule();
+
+  /**
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Rule#getState <em>State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>State</em>'.
+   * @see cps.gameoflife.lsjatl.Rule#getState()
+   * @see #getRule()
+   * @generated
+   */
+  EAttribute getRule_State();
+
+  /**
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Rule#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see cps.gameoflife.lsjatl.Rule#getOp()
+   * @see #getRule()
+   * @generated
+   */
+  EAttribute getRule_Op();
+
+  /**
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Rule#getNCount <em>NCount</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>NCount</em>'.
+   * @see cps.gameoflife.lsjatl.Rule#getNCount()
+   * @see #getRule()
+   * @generated
+   */
+  EAttribute getRule_NCount();
+
+  /**
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Rule#getResult <em>Result</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Result</em>'.
+   * @see cps.gameoflife.lsjatl.Rule#getResult()
+   * @see #getRule()
+   * @generated
+   */
+  EAttribute getRule_Result();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -180,40 +565,186 @@ public interface LsjatlPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.GameImpl <em>Game</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see cps.gameoflife.lsjatl.impl.ModelImpl
-     * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getModel()
+     * @see cps.gameoflife.lsjatl.impl.GameImpl
+     * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getGame()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass GAME = eINSTANCE.getGame();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Grid</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EReference GAME__GRID = eINSTANCE.getGame_Grid();
 
     /**
-     * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '<em><b>Rules</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see cps.gameoflife.lsjatl.impl.GreetingImpl
-     * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getGreeting()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EReference GAME__RULES = eINSTANCE.getGame_Rules();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.GridImpl <em>Grid</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see cps.gameoflife.lsjatl.impl.GridImpl
+     * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getGrid()
+     * @generated
+     */
+    EClass GRID = eINSTANCE.getGrid();
+
+    /**
+     * The meta object literal for the '<em><b>Size</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EReference GRID__SIZE = eINSTANCE.getGrid_Size();
+
+    /**
+     * The meta object literal for the '<em><b>Populated Cells</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GRID__POPULATED_CELLS = eINSTANCE.getGrid_PopulatedCells();
+
+    /**
+     * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.GridSizeImpl <em>Grid Size</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see cps.gameoflife.lsjatl.impl.GridSizeImpl
+     * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getGridSize()
+     * @generated
+     */
+    EClass GRID_SIZE = eINSTANCE.getGridSize();
+
+    /**
+     * The meta object literal for the '<em><b>Height</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GRID_SIZE__HEIGHT = eINSTANCE.getGridSize_Height();
+
+    /**
+     * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GRID_SIZE__WIDTH = eINSTANCE.getGridSize_Width();
+
+    /**
+     * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.PopulatedCellImpl <em>Populated Cell</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see cps.gameoflife.lsjatl.impl.PopulatedCellImpl
+     * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getPopulatedCell()
+     * @generated
+     */
+    EClass POPULATED_CELL = eINSTANCE.getPopulatedCell();
+
+    /**
+     * The meta object literal for the '<em><b>Poi</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POPULATED_CELL__POI = eINSTANCE.getPopulatedCell_Poi();
+
+    /**
+     * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.PointImpl <em>Point</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see cps.gameoflife.lsjatl.impl.PointImpl
+     * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getPoint()
+     * @generated
+     */
+    EClass POINT = eINSTANCE.getPoint();
+
+    /**
+     * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POINT__X = eINSTANCE.getPoint_X();
+
+    /**
+     * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POINT__Y = eINSTANCE.getPoint_Y();
+
+    /**
+     * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.RulesImpl <em>Rules</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see cps.gameoflife.lsjatl.impl.RulesImpl
+     * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getRules()
+     * @generated
+     */
+    EClass RULES = eINSTANCE.getRules();
+
+    /**
+     * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULES__RULES = eINSTANCE.getRules_Rules();
+
+    /**
+     * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.RuleImpl <em>Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see cps.gameoflife.lsjatl.impl.RuleImpl
+     * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getRule()
+     * @generated
+     */
+    EClass RULE = eINSTANCE.getRule();
+
+    /**
+     * The meta object literal for the '<em><b>State</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE__STATE = eINSTANCE.getRule_State();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE__OP = eINSTANCE.getRule_Op();
+
+    /**
+     * The meta object literal for the '<em><b>NCount</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE__NCOUNT = eINSTANCE.getRule_NCount();
+
+    /**
+     * The meta object literal for the '<em><b>Result</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE__RESULT = eINSTANCE.getRule_Result();
 
   }
 

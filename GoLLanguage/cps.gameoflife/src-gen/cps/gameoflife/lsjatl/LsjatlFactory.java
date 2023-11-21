@@ -24,22 +24,67 @@ public interface LsjatlFactory extends EFactory
   LsjatlFactory eINSTANCE = cps.gameoflife.lsjatl.impl.LsjatlFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>Game</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>Game</em>'.
    * @generated
    */
-  Model createModel();
+  Game createGame();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Grid</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Grid</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  Grid createGrid();
+
+  /**
+   * Returns a new object of class '<em>Grid Size</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Grid Size</em>'.
+   * @generated
+   */
+  GridSize createGridSize();
+
+  /**
+   * Returns a new object of class '<em>Populated Cell</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Populated Cell</em>'.
+   * @generated
+   */
+  PopulatedCell createPopulatedCell();
+
+  /**
+   * Returns a new object of class '<em>Point</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Point</em>'.
+   * @generated
+   */
+  Point createPoint();
+
+  /**
+   * Returns a new object of class '<em>Rules</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rules</em>'.
+   * @generated
+   */
+  Rules createRules();
+
+  /**
+   * Returns a new object of class '<em>Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule</em>'.
+   * @generated
+   */
+  Rule createRule();
 
   /**
    * Returns the package supported by this factory.

@@ -4,9 +4,14 @@
 package cps.gameoflife.serializer;
 
 import com.google.inject.Inject;
-import cps.gameoflife.lsjatl.Greeting;
+import cps.gameoflife.lsjatl.Game;
+import cps.gameoflife.lsjatl.Grid;
+import cps.gameoflife.lsjatl.GridSize;
 import cps.gameoflife.lsjatl.LsjatlPackage;
-import cps.gameoflife.lsjatl.Model;
+import cps.gameoflife.lsjatl.Point;
+import cps.gameoflife.lsjatl.PopulatedCell;
+import cps.gameoflife.lsjatl.Rule;
+import cps.gameoflife.lsjatl.Rules;
 import cps.gameoflife.services.LsjatlGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -33,11 +38,26 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == LsjatlPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case LsjatlPackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
+			case LsjatlPackage.GAME:
+				sequence_Game(context, (Game) semanticObject); 
 				return; 
-			case LsjatlPackage.MODEL:
-				sequence_Model(context, (Model) semanticObject); 
+			case LsjatlPackage.GRID:
+				sequence_Grid(context, (Grid) semanticObject); 
+				return; 
+			case LsjatlPackage.GRID_SIZE:
+				sequence_GridSize(context, (GridSize) semanticObject); 
+				return; 
+			case LsjatlPackage.POINT:
+				sequence_Point(context, (Point) semanticObject); 
+				return; 
+			case LsjatlPackage.POPULATED_CELL:
+				sequence_PopulatedCell(context, (PopulatedCell) semanticObject); 
+				return; 
+			case LsjatlPackage.RULE:
+				sequence_Rule(context, (Rule) semanticObject); 
+				return; 
+			case LsjatlPackage.RULES:
+				sequence_Rules(context, (Rules) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -47,19 +67,22 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Greeting returns Greeting
+	 *     Game returns Game
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (grid=Grid rules=Rules)
 	 * </pre>
 	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
+	protected void sequence_Game(ISerializationContext context, Game semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.GREETING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.GREETING__NAME));
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.GAME__GRID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.GAME__GRID));
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.GAME__RULES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.GAME__RULES));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getGameAccess().getGridGridParserRuleCall_0_0(), semanticObject.getGrid());
+		feeder.accept(grammarAccess.getGameAccess().getRulesRulesParserRuleCall_1_0(), semanticObject.getRules());
 		feeder.finish();
 	}
 	
@@ -67,13 +90,122 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Model returns Model
+	 *     GridSize returns GridSize
 	 *
 	 * Constraint:
-	 *     greetings+=Greeting+
+	 *     (height=INT width=INT)
 	 * </pre>
 	 */
-	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+	protected void sequence_GridSize(ISerializationContext context, GridSize semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.GRID_SIZE__HEIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.GRID_SIZE__HEIGHT));
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.GRID_SIZE__WIDTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.GRID_SIZE__WIDTH));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGridSizeAccess().getHeightINTTerminalRuleCall_2_1_0(), semanticObject.getHeight());
+		feeder.accept(grammarAccess.getGridSizeAccess().getWidthINTTerminalRuleCall_2_3_0(), semanticObject.getWidth());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Grid returns Grid
+	 *
+	 * Constraint:
+	 *     (size=GridSize populatedCells+=PopulatedCell*)
+	 * </pre>
+	 */
+	protected void sequence_Grid(ISerializationContext context, Grid semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Point returns Point
+	 *
+	 * Constraint:
+	 *     (x=INT y=INT)
+	 * </pre>
+	 */
+	protected void sequence_Point(ISerializationContext context, Point semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.POINT__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.POINT__X));
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.POINT__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.POINT__Y));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPointAccess().getXINTTerminalRuleCall_1_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getPointAccess().getYINTTerminalRuleCall_3_0(), semanticObject.getY());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PopulatedCell returns PopulatedCell
+	 *
+	 * Constraint:
+	 *     poi=Point
+	 * </pre>
+	 */
+	protected void sequence_PopulatedCell(ISerializationContext context, PopulatedCell semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.POPULATED_CELL__POI) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.POPULATED_CELL__POI));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPopulatedCellAccess().getPoiPointParserRuleCall_1_0(), semanticObject.getPoi());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Rule returns Rule
+	 *
+	 * Constraint:
+	 *     (state=State op=BoolOp nCount=INT result=Outcome)
+	 * </pre>
+	 */
+	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.RULE__STATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.RULE__STATE));
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.RULE__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.RULE__OP));
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.RULE__NCOUNT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.RULE__NCOUNT));
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.RULE__RESULT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.RULE__RESULT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRuleAccess().getStateStateParserRuleCall_1_0(), semanticObject.getState());
+		feeder.accept(grammarAccess.getRuleAccess().getOpBoolOpParserRuleCall_4_0(), semanticObject.getOp());
+		feeder.accept(grammarAccess.getRuleAccess().getNCountINTTerminalRuleCall_5_0(), semanticObject.getNCount());
+		feeder.accept(grammarAccess.getRuleAccess().getResultOutcomeParserRuleCall_7_0(), semanticObject.getResult());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Rules returns Rules
+	 *
+	 * Constraint:
+	 *     rules+=Rule*
+	 * </pre>
+	 */
+	protected void sequence_Rules(ISerializationContext context, Rules semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

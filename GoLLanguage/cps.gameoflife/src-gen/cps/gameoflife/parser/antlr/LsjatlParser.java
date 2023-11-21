@@ -27,7 +27,7 @@ public class LsjatlParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "Game";
 	}
 
 	public LsjatlGrammarAccess getGrammarAccess() {

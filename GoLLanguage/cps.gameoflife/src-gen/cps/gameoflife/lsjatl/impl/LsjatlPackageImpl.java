@@ -3,10 +3,15 @@
  */
 package cps.gameoflife.lsjatl.impl;
 
-import cps.gameoflife.lsjatl.Greeting;
+import cps.gameoflife.lsjatl.Game;
+import cps.gameoflife.lsjatl.Grid;
+import cps.gameoflife.lsjatl.GridSize;
 import cps.gameoflife.lsjatl.LsjatlFactory;
 import cps.gameoflife.lsjatl.LsjatlPackage;
-import cps.gameoflife.lsjatl.Model;
+import cps.gameoflife.lsjatl.Point;
+import cps.gameoflife.lsjatl.PopulatedCell;
+import cps.gameoflife.lsjatl.Rule;
+import cps.gameoflife.lsjatl.Rules;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -28,14 +33,49 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass modelEClass = null;
+  private EClass gameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass greetingEClass = null;
+  private EClass gridEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass gridSizeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass populatedCellEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pointEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rulesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ruleEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -105,9 +145,9 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   @Override
-  public EClass getModel()
+  public EClass getGame()
   {
-    return modelEClass;
+    return gameEClass;
   }
 
   /**
@@ -116,9 +156,9 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   @Override
-  public EReference getModel_Greetings()
+  public EReference getGame_Grid()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return (EReference)gameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -127,9 +167,9 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   @Override
-  public EClass getGreeting()
+  public EReference getGame_Rules()
   {
-    return greetingEClass;
+    return (EReference)gameEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -138,9 +178,196 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   @Override
-  public EAttribute getGreeting_Name()
+  public EClass getGrid()
   {
-    return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
+    return gridEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGrid_Size()
+  {
+    return (EReference)gridEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGrid_PopulatedCells()
+  {
+    return (EReference)gridEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGridSize()
+  {
+    return gridSizeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGridSize_Height()
+  {
+    return (EAttribute)gridSizeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGridSize_Width()
+  {
+    return (EAttribute)gridSizeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPopulatedCell()
+  {
+    return populatedCellEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPopulatedCell_Poi()
+  {
+    return (EReference)populatedCellEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPoint()
+  {
+    return pointEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPoint_X()
+  {
+    return (EAttribute)pointEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPoint_Y()
+  {
+    return (EAttribute)pointEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRules()
+  {
+    return rulesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRules_Rules()
+  {
+    return (EReference)rulesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRule()
+  {
+    return ruleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRule_State()
+  {
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRule_Op()
+  {
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRule_NCount()
+  {
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRule_Result()
+  {
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -174,11 +401,33 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     isCreated = true;
 
     // Create classes and their features
-    modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__GREETINGS);
+    gameEClass = createEClass(GAME);
+    createEReference(gameEClass, GAME__GRID);
+    createEReference(gameEClass, GAME__RULES);
 
-    greetingEClass = createEClass(GREETING);
-    createEAttribute(greetingEClass, GREETING__NAME);
+    gridEClass = createEClass(GRID);
+    createEReference(gridEClass, GRID__SIZE);
+    createEReference(gridEClass, GRID__POPULATED_CELLS);
+
+    gridSizeEClass = createEClass(GRID_SIZE);
+    createEAttribute(gridSizeEClass, GRID_SIZE__HEIGHT);
+    createEAttribute(gridSizeEClass, GRID_SIZE__WIDTH);
+
+    populatedCellEClass = createEClass(POPULATED_CELL);
+    createEReference(populatedCellEClass, POPULATED_CELL__POI);
+
+    pointEClass = createEClass(POINT);
+    createEAttribute(pointEClass, POINT__X);
+    createEAttribute(pointEClass, POINT__Y);
+
+    rulesEClass = createEClass(RULES);
+    createEReference(rulesEClass, RULES__RULES);
+
+    ruleEClass = createEClass(RULE);
+    createEAttribute(ruleEClass, RULE__STATE);
+    createEAttribute(ruleEClass, RULE__OP);
+    createEAttribute(ruleEClass, RULE__NCOUNT);
+    createEAttribute(ruleEClass, RULE__RESULT);
   }
 
   /**
@@ -212,11 +461,33 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     // Add supertypes to classes
 
     // Initialize classes and features; add operations and parameters
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(gameEClass, Game.class, "Game", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGame_Grid(), this.getGrid(), null, "grid", null, 0, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGame_Rules(), this.getRules(), null, "rules", null, 0, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(gridEClass, Grid.class, "Grid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGrid_Size(), this.getGridSize(), null, "size", null, 0, 1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGrid_PopulatedCells(), this.getPopulatedCell(), null, "populatedCells", null, 0, -1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(gridSizeEClass, GridSize.class, "GridSize", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGridSize_Height(), ecorePackage.getEInt(), "height", null, 0, 1, GridSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGridSize_Width(), ecorePackage.getEInt(), "width", null, 0, 1, GridSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(populatedCellEClass, PopulatedCell.class, "PopulatedCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPopulatedCell_Poi(), this.getPoint(), null, "poi", null, 0, 1, PopulatedCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pointEClass, Point.class, "Point", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPoint_X(), ecorePackage.getEInt(), "x", null, 0, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPoint_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(rulesEClass, Rules.class, "Rules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRules_Rules(), this.getRule(), null, "rules", null, 0, -1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRule_State(), ecorePackage.getEString(), "state", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRule_Op(), ecorePackage.getEString(), "op", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRule_NCount(), ecorePackage.getEInt(), "nCount", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRule_Result(), ecorePackage.getEString(), "result", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

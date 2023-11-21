@@ -65,8 +65,13 @@ public class LsjatlFactoryImpl extends EFactoryImpl implements LsjatlFactory
   {
     switch (eClass.getClassifierID())
     {
-      case LsjatlPackage.MODEL: return createModel();
-      case LsjatlPackage.GREETING: return createGreeting();
+      case LsjatlPackage.GAME: return createGame();
+      case LsjatlPackage.GRID: return createGrid();
+      case LsjatlPackage.GRID_SIZE: return createGridSize();
+      case LsjatlPackage.POPULATED_CELL: return createPopulatedCell();
+      case LsjatlPackage.POINT: return createPoint();
+      case LsjatlPackage.RULES: return createRules();
+      case LsjatlPackage.RULE: return createRule();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -78,10 +83,10 @@ public class LsjatlFactoryImpl extends EFactoryImpl implements LsjatlFactory
    * @generated
    */
   @Override
-  public Model createModel()
+  public Game createGame()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
+    GameImpl game = new GameImpl();
+    return game;
   }
 
   /**
@@ -90,10 +95,70 @@ public class LsjatlFactoryImpl extends EFactoryImpl implements LsjatlFactory
    * @generated
    */
   @Override
-  public Greeting createGreeting()
+  public Grid createGrid()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    GridImpl grid = new GridImpl();
+    return grid;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GridSize createGridSize()
+  {
+    GridSizeImpl gridSize = new GridSizeImpl();
+    return gridSize;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PopulatedCell createPopulatedCell()
+  {
+    PopulatedCellImpl populatedCell = new PopulatedCellImpl();
+    return populatedCell;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Point createPoint()
+  {
+    PointImpl point = new PointImpl();
+    return point;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Rules createRules()
+  {
+    RulesImpl rules = new RulesImpl();
+    return rules;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Rule createRule()
+  {
+    RuleImpl rule = new RuleImpl();
+    return rule;
   }
 
   /**
