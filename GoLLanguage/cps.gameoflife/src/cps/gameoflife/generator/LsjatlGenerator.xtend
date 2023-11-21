@@ -26,12 +26,13 @@ class LsjatlGenerator extends AbstractGenerator {
 			
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Arrays;
 			
 public class RulesOfLife {
 					public static ArrayList<Point> populatedCells = new ArrayList<Point>(
 						Arrays.asList(
-							«FOR rule: Auxiliary.getRules(root) SEPARATOR ', '»
-								«rule2Text(rule)»
+							«FOR populatedCell: Auxiliary.getStartingPoints(root.grid) SEPARATOR ', '»
+								new Point(«populatedCell.x»,«populatedCell.y»)
 							«ENDFOR»
 						)
 					);

@@ -6,6 +6,7 @@ package cps.gameoflife.generator;
 import com.google.common.base.Objects;
 import cps.gameoflife.lsjatl.Condition;
 import cps.gameoflife.lsjatl.Game;
+import cps.gameoflife.lsjatl.PopulatedCell;
 import cps.gameoflife.lsjatl.Rule;
 import java.util.List;
 import org.eclipse.emf.ecore.EObject;
@@ -36,6 +37,8 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("import java.util.ArrayList;");
     _builder.newLine();
+    _builder.append("import java.util.Arrays;");
+    _builder.newLine();
     _builder.append("\t\t\t");
     _builder.newLine();
     _builder.append("public class RulesOfLife {");
@@ -47,17 +50,22 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.append("Arrays.asList(");
     _builder.newLine();
     {
-      List<Rule> _rules = Auxiliary.getRules(root);
+      List<PopulatedCell> _startingPoints = Auxiliary.getStartingPoints(root.getGrid());
       boolean _hasElements = false;
-      for(final Rule rule : _rules) {
+      for(final PopulatedCell populatedCell : _startingPoints) {
         if (!_hasElements) {
           _hasElements = true;
         } else {
           _builder.appendImmediate(", ", "\t\t\t\t\t\t\t");
         }
         _builder.append("\t\t\t\t\t\t\t");
-        CharSequence _rule2Text = LsjatlGenerator.rule2Text(rule);
-        _builder.append(_rule2Text, "\t\t\t\t\t\t\t");
+        _builder.append("new Point(");
+        int _x = populatedCell.getX();
+        _builder.append(_x, "\t\t\t\t\t\t\t");
+        _builder.append(",");
+        int _y = populatedCell.getY();
+        _builder.append(_y, "\t\t\t\t\t\t\t");
+        _builder.append(")");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -108,10 +116,10 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.newLine();
     StringConcatenation _builder_1 = new StringConcatenation();
     {
-      List<Rule> _rules_1 = Auxiliary.getRules(root);
-      for(final Rule rule_1 : _rules_1) {
-        CharSequence _rule2Text_1 = LsjatlGenerator.rule2Text(rule_1);
-        _builder_1.append(_rule2Text_1);
+      List<Rule> _rules = Auxiliary.getRules(root);
+      for(final Rule rule : _rules) {
+        CharSequence _rule2Text = LsjatlGenerator.rule2Text(rule);
+        _builder_1.append(_rule2Text);
         _builder_1.newLineIfNotEmpty();
       }
     }
