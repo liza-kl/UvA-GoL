@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 			
 public class RulesOfLife {
+					public static int gridWidth = 50;
+					public static int gridHeight = 50;
 					public static ArrayList<Point> populatedCells = new ArrayList<Point>(
 						Arrays.asList(
 							new Point(1,2), 

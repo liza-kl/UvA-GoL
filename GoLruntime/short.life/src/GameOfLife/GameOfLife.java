@@ -167,7 +167,7 @@ public class GameOfLife extends JFrame implements ActionListener {
     }
  
     private class GameBoard extends JPanel implements ComponentListener, MouseListener, MouseMotionListener, Runnable {
-        private Dimension d_gameBoardSize = null;
+        private Dimension d_gameBoardSize = new Dimension(RulesOfLife.gridWidth, RulesOfLife.gridHeight);
         private ArrayList<Point> point = RulesOfLife.populatedCells;
  
         public GameBoard() {
@@ -243,8 +243,8 @@ public class GameOfLife extends JFrame implements ActionListener {
  
         @Override
         public void componentResized(ComponentEvent e) {
-            // Setup the game board size with proper boundries
-            d_gameBoardSize = new Dimension(getWidth()/BLOCK_SIZE-2, getHeight()/BLOCK_SIZE-2);
+            // Setup the game board size with proper boundaries
+            d_gameBoardSize = new Dimension(RulesOfLife.gridWidth, RulesOfLife.gridHeight);
             updateArraySize();
         }
         @Override
