@@ -26,5 +26,6 @@ Export-Package: cps.gameoflife.validation,
  cps.gameoflife.lsjatl,
  cps.gameoflife.serializer,
  cps.gameoflife.lsjatl.impl,
- cps.gameoflife.parser.antlr
+ cps.gameoflife.parser.antlr,
+ cps.gameoflife.formatting2
 Import-Package: org.apache.log4j

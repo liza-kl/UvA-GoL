@@ -34,6 +34,10 @@ Workflow {
 			name = "cps.gameoflife.Lsjatl"
 			fileExtensions = "lsjatl"
 
+			formatter = {
+				generateStub = true
+				generateXtendStub = true
+			}
 			serializer = {
 				generateStub = false
 			}
