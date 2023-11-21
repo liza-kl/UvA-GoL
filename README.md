@@ -16,4 +16,4 @@ and "Launch Runtime Eclipse"
 - Do we need to modify the GameOfLife.java (in order to implement the "die" evolution rule, you should do that,
   but according to the assignment it's not)
 - Neighbors: Do we only consider the "normal" neighborhood
-  
+- Exclude edge cases for Rules in Grammar or in validation? 
