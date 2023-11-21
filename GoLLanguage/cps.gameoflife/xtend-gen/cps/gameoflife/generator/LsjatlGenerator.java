@@ -3,6 +3,7 @@
  */
 package cps.gameoflife.generator;
 
+import com.google.common.base.Objects;
 import cps.gameoflife.lsjatl.Condition;
 import cps.gameoflife.lsjatl.Game;
 import cps.gameoflife.lsjatl.Rule;
@@ -100,8 +101,8 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.append("if ((");
     {
       String _state = rule.getState();
-      boolean _tripleEquals = (_state == "dead");
-      if (_tripleEquals) {
+      boolean _equals = Objects.equal(_state, "dead");
+      if (_equals) {
         _builder.append("!");
       }
     }
@@ -123,9 +124,37 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.append("){");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    _builder.newLine();
+    {
+      String _result = rule.getResult();
+      boolean _equals_1 = Objects.equal(_result, "survives");
+      if (_equals_1) {
+        _builder.append("survivingCells.add(new Point(i-1,j-1));");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    {
+      String _result_1 = rule.getResult();
+      boolean _equals_2 = Objects.equal(_result_1, "populates");
+      if (_equals_2) {
+        _builder.append("survivingCells.add(new Point(i-1,j-1));");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    {
+      String _result_2 = rule.getResult();
+      boolean _equals_3 = Objects.equal(_result_2, "dies");
+      if (_equals_3) {
+        _builder.append("Point pointToRemove = new Point(i, j);");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("                \t\t");
+        _builder.append("survivingCells.removeIf(point -> point.equals(pointToRemove));");
+      }
+    }
+    _builder.newLineIfNotEmpty();
     _builder.append("}");
-    _builder.newLine();
     _builder.newLine();
     return _builder;
   }

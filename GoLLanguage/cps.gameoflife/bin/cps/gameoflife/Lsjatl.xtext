@@ -20,8 +20,12 @@ Rules: {Rules} 'Rules'
 	   
 Condition: boolOp=BoolOp NCount=INT;
 
-Rule: 'Each' state=State 'cell' 'with' conditions += Condition+ 'neighbors' result=Outcome;
-
+Rule: 'Each' state=State 'cell' 'with' conditions += Condition+ 'neighbors' result=Outcome;// missing or and distinction
+/* We cant hage a rule in which a cell is in state living and it populates
+ * , populates can only be done for dead cells. I think best way to handle it is to exclude:
+ * dead cell surviving and
+ * living cell populating in the validation
+ * */
 
 
 State: 'living' | 'dead';

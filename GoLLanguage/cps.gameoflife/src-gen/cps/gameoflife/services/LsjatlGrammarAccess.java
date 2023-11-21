@@ -308,6 +308,12 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Keyword cLivingKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cDeadKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
+		//// missing or and distinction
+		///* We cant hage a rule in which a cell is in state living and it populates
+		// * , populates can only be done for dead cells. I think best way to handle it is to exclude:
+		// * dead cell surviving and
+		// * living cell populating in the validation
+		// * */
 		//State: 'living' | 'dead';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -512,6 +518,12 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getRuleAccess().getRule();
 	}
 	
+	//// missing or and distinction
+	///* We cant hage a rule in which a cell is in state living and it populates
+	// * , populates can only be done for dead cells. I think best way to handle it is to exclude:
+	// * dead cell surviving and
+	// * living cell populating in the validation
+	// * */
 	//State: 'living' | 'dead';
 	public StateElements getStateAccess() {
 		return pState;
