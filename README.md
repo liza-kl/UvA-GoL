@@ -10,3 +10,10 @@ and "Launch Runtime Eclipse"
 - name directory specs 
 - Create new file. File name needs to have extenstion *.lsjatl (e.g. "test1.lsjatl") 
 - Project should be converted to xtext project 
+
+
+## Questions
+- Do we need to modify the GameOfLife.java (in order to implement the "die" evolution rule, you should do that,
+  but according to the assignment it's not)
+- Neighbors: Do we only consider the "normal" neighborhood
+  
