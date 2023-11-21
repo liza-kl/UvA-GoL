@@ -1,44 +1,47 @@
-	package GameOfLife;
-
-	import java.awt.Point;
-	import java.util.ArrayList;
-
-	public class RulesOfLife {
-		public static void computeSurvivors(boolean[][] gameBoard, ArrayList<Point> survivingCells) {
-        	// Iterate through the array, follow game of life rules
-       	 for (int i=1; i<gameBoard.length-1; i++) {
-            for (int j=1; j<gameBoard[0].length-1; j++) {
-                int surrounding = 0;
-                if (gameBoard[i-1][j-1]) { surrounding++; }
-                if (gameBoard[i-1][j])   { surrounding++; }
-                if (gameBoard[i-1][j+1]) { surrounding++; }
-                if (gameBoard[i][j-1])   { surrounding++; }
-                if (gameBoard[i][j+1])   { surrounding++; }
-                if (gameBoard[i+1][j-1]) { surrounding++; }
-                if (gameBoard[i+1][j])   { surrounding++; }
-                if (gameBoard[i+1][j+1]) { surrounding++; }
-                /* only code for surving cells, so no rule if result is dead cell */
-                 /* rule B3 */
-                if ((!gameBoard[i][j]) && (surrounding == 3)){
-                	survivingCells.add(new Point(i-1,j-1));
-                	} 
-                  /* rule B6 */
-                if ((!gameBoard[i][j]) && (surrounding == 6)){
-                	survivingCells.add(new Point(i-1,j-1));
-                	} 
-                  /* rule S2 */
-                if ((gameBoard[i][j]) && (surrounding == 2)){
-                	survivingCells.add(new Point(i-1,j-1));
-                	} 
-                /** Rule added by us to test some things and needs to be added
-                 * to the generator to make cells die */ 
-                if ((gameBoard[i][j]) && (surrounding == 4)){
-                	Point pointToRemove = new Point(i, j);
-                	survivingCells.removeIf(point -> point.equals(pointToRemove));
-                } 
-             
-            }
-        }
-	}
-
+package GameOfLife;
+			
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.Arrays;
+			
+public class RulesOfLife {
+					public static ArrayList<Point> populatedCells = new ArrayList<Point>(
+						Arrays.asList(
+							new Point(1,2), 
+							new Point(3,4)
+						)
+					);
+					public static void computeSurvivors(boolean[][] gameBoard, ArrayList<Point> survivingCells) {
+			        	// Iterate through the array, follow game of life rules
+			       	 for (int i=1; i<gameBoard.length-1; i++) {
+			            for (int j=1; j<gameBoard[0].length-1; j++) {
+			                int surrounding = 0;
+			                if (gameBoard[i-1][j-1]) { surrounding++; }
+			                if (gameBoard[i-1][j])   { surrounding++; }
+			                if (gameBoard[i-1][j+1]) { surrounding++; }
+			                if (gameBoard[i][j-1])   { surrounding++; }
+			                if (gameBoard[i][j+1])   { surrounding++; }
+			                if (gameBoard[i+1][j-1]) { surrounding++; }
+			                if (gameBoard[i+1][j])   { surrounding++; }
+			                if (gameBoard[i+1][j+1]) { surrounding++; }
+if ((gameBoard[i][j]) && 
+(surrounding == 2) ||
+(surrounding == 6) 
+){
+	survivingCells.add(new Point(i-1,j-1));
 }
+if ((!gameBoard[i][j]) && 
+(surrounding == 3) 
+){
+	survivingCells.add(new Point(i-1,j-1));
+}
+if ((gameBoard[i][j]) && 
+(surrounding == 4) 
+){
+	Point pointToRemove = new Point(i, j);
+	                		survivingCells.removeIf(point -> point.equals(pointToRemove));
+}
+			}
+					}
+					}
+				}

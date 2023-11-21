@@ -168,7 +168,7 @@ public class GameOfLife extends JFrame implements ActionListener {
  
     private class GameBoard extends JPanel implements ComponentListener, MouseListener, MouseMotionListener, Runnable {
         private Dimension d_gameBoardSize = null;
-        private ArrayList<Point> point = new ArrayList<Point>(0);
+        private ArrayList<Point> point = RulesOfLife.populatedCells;
  
         public GameBoard() {
             // Add resizing listener
