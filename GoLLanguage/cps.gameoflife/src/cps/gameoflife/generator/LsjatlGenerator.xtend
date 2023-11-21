@@ -16,10 +16,19 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class LsjatlGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+
+		fsa.generateFile('RulesOfLife.java',
+			'''package GameOfLife
+			
+			import java.awt.Point;
+			import java.util.ArrayList;  
+			import java.awt.Dimension; 
+			
+			public class RulesOfLife {
+				
+			}
+			
+			'''
+		);
 	}
 }
