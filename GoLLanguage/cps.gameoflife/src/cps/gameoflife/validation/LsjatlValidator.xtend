@@ -9,50 +9,91 @@ import cps.gameoflife.lsjatl.PopulatedCell
 import cps.gameoflife.lsjatl.Game
 import cps.gameoflife.lsjatl.Rule
 import cps.gameoflife.lsjatl.Rules
+import cps.gameoflife.lsjatl.Condition
 
 import java.util.Arrays;
 import java.util.List;
 
-
 /**
  * This class contains custom validation rules. 
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class LsjatlValidator extends AbstractLsjatlValidator {
+
+	protected static val ISSUE_CODE_PREFIX = "cps.gameoflife.lsjatl.";
+	public static val INVALID_RULE_OUTCOME = ISSUE_CODE_PREFIX + "InvalidRuleOutcome";
+	public static val INVALID_SIGN = ISSUE_CODE_PREFIX + "InvalidSign";
+	
+
+	@Check
+	def checkIfValidNumberOfNeighbors(Condition condition) {
+		if (condition.NCount > 8) {
+			warning("The number of neighbors should not be greater than 8", null);
+		}
+		if (condition.NCount < 0) {
+			error("The number of neighbors cannot be negative", null)
+
+		}
+	}
+
+	@Check
+	def checkForNegativeStartingCells(Game game)
+	{
+		for(var i = 0; i < game.grid.populatedCells.size(); i++)
+		{
+			if(game.grid.populatedCells.get(i).x < 0 || game.grid.populatedCells.get(i).y < 0 ) 
+				{
+					error("Cells must have positive coordinates", null, i);
+					
+				}
+			 
+		}
+	}
 	
 	@Check
 	def checkIfInitialCellsAreInGrid(Grid grid) {
-		
-		for (PopulatedCell cell : grid.populatedCells)
-		{
-			if (cell.x > grid.size.width || cell.y > grid.size.height
-				|| cell.x > grid.size.height || cell.y > grid.size.height
-			) {
-				error("Cell cannot be outside the grid", 
-					null)
+
+		for (PopulatedCell cell : grid.populatedCells) {
+			if (cell.x > grid.size.width || cell.y > grid.size.height || cell.x > grid.size.height ||
+				cell.y > grid.size.height) {
+				error("Cell cannot be outside the grid", null)
 			}
 		}
 	}
-	
-	
+
 	@Check
-	def hasValidNeighborsToDie(Rules rules) {
-		
-		for (Rule rule : rules.rules)
-		{
-			val list = Arrays.asList('survives', 'dies' , 'populates');
+	def hasValidCellStates(Rules rules) {
+
+		for (Rule rule : rules.rules) {
+			val list = Arrays.asList('survives', 'dies', 'populates');
 			if (!list.contains(rule.result)) {
-				error("Cell needs to have a valid outcome", 
-					null)
+				error("Cell needs to have a valid outcome", null)
 			}
 		}
 	}
-	
+
+	@Check
+	def hasValidOutcomeRules(Rules rules) {
+
+		for (Rule rule : rules.rules) {
+			val list = Arrays.asList('living', 'dead');
+			if (!list.contains(rule.state)) {
+				error("Cell needs to have a valid state e.g. living or dead", null)
+			}
+		}
+	}
+
 	@Check def doRulesExist(Rules rules) {
 		if (rules.rules.size() == 0) {
-			{warning("Game has no rules, so everyone and everything will die", null)}
+			{
+				warning("Game has no rules, so everyone and everything will die", null)
+			}
 		}
 	}
-		
+	
+	
+
+// Other ideas
+// Check for Duplicated rules and give a warning. 
 }

@@ -4,21 +4,29 @@
 package cps.gameoflife.ui.quickfix
 
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
+import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
+import cps.gameoflife.validation.LsjatlValidator
+import org.eclipse.xtext.validation.Issue
+import org.eclipse.xtext.ui.editor.quickfix.Fix
+import static extension org.eclipse.xtext.EcoreUtil2.*
+import org.eclipse.xtext.diagnostics.Diagnostic
+import cps.gameoflife.lsjatl.Grid
 
 /**
  * Custom quickfixes.
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#quick-fixes
  */
 class LsjatlQuickfixProvider extends DefaultQuickfixProvider {
 
-//	@Fix(LsjatlValidator.INVALID_NAME)
-//	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
-//		acceptor.accept(issue, 'Capitalize name', 'Capitalize the name.', 'upcase.png') [
-//			context |
-//			val xtextDocument = context.xtextDocument
-//			val firstLetter = xtextDocument.get(issue.offset, 1)
-//			xtextDocument.replace(issue.offset, 1, firstLetter.toUpperCase)
-//		]
-//	}
+	@Fix(LsjatlValidator.INVALID_SIGN)
+	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue, 'Use a valid outcome', 'Use a valid outcome', 'upcase.png') [ context |
+			val xtextDocument = context.xtextDocument
+			val firstLetter = xtextDocument.get(issue.offset, 1)
+			xtextDocument.replace(issue.offset, 1, firstLetter.toUpperCase)
+		]
+	}
+
+
 }

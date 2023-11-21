@@ -3,6 +3,8 @@
  */
 package cps.gameoflife.validation;
 
+import cps.gameoflife.lsjatl.Condition;
+import cps.gameoflife.lsjatl.Game;
 import cps.gameoflife.lsjatl.Grid;
 import cps.gameoflife.lsjatl.PopulatedCell;
 import cps.gameoflife.lsjatl.Rule;
@@ -19,19 +21,48 @@ import org.eclipse.xtext.validation.Check;
  */
 @SuppressWarnings("all")
 public class LsjatlValidator extends AbstractLsjatlValidator {
+  protected static final String ISSUE_CODE_PREFIX = "cps.gameoflife.lsjatl.";
+
+  public static final String INVALID_RULE_OUTCOME = (LsjatlValidator.ISSUE_CODE_PREFIX + "InvalidRuleOutcome");
+
+  public static final String INVALID_SIGN = (LsjatlValidator.ISSUE_CODE_PREFIX + "InvalidSign");
+
   @Check
-  public void checkIfInitialCellsAreInGrid(final Grid grid) {
-    EList<PopulatedCell> _populatedCells = grid.getPopulatedCells();
-    for (final PopulatedCell cell : _populatedCells) {
-      if (((((cell.getX() > grid.getSize().getWidth()) || (cell.getY() > grid.getSize().getHeight())) || (cell.getX() > grid.getSize().getHeight())) || (cell.getY() > grid.getSize().getHeight()))) {
-        this.error("Cell cannot be outside the grid", 
-          null);
+  public void checkIfValidNumberOfNeighbors(final Condition condition) {
+    int _nCount = condition.getNCount();
+    boolean _greaterThan = (_nCount > 8);
+    if (_greaterThan) {
+      this.warning("The number of neighbors should not be greater than 8", null);
+    }
+    int _nCount_1 = condition.getNCount();
+    boolean _lessThan = (_nCount_1 < 0);
+    if (_lessThan) {
+      this.error("The number of neighbors cannot be negative", null);
+    }
+  }
+
+  @Check
+  public void checkForNegativeStartingCells(final Game game) {
+    for (int i = 0; (i < game.getGrid().getPopulatedCells().size()); i++) {
+      if (((game.getGrid().getPopulatedCells().get(i).getX() < 0) || (game.getGrid().getPopulatedCells().get(i).getY() < 0))) {
+        this.error("Cells must have positive coordinates", null, i);
       }
     }
   }
 
   @Check
-  public void hasValidNeighborsToDie(final Rules rules) {
+  public void checkIfInitialCellsAreInGrid(final Grid grid) {
+    EList<PopulatedCell> _populatedCells = grid.getPopulatedCells();
+    for (final PopulatedCell cell : _populatedCells) {
+      if (((((cell.getX() > grid.getSize().getWidth()) || (cell.getY() > grid.getSize().getHeight())) || (cell.getX() > grid.getSize().getHeight())) || 
+        (cell.getY() > grid.getSize().getHeight()))) {
+        this.error("Cell cannot be outside the grid", null);
+      }
+    }
+  }
+
+  @Check
+  public void hasValidCellStates(final Rules rules) {
     EList<Rule> _rules = rules.getRules();
     for (final Rule rule : _rules) {
       {
@@ -39,8 +70,22 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
         boolean _contains = list.contains(rule.getResult());
         boolean _not = (!_contains);
         if (_not) {
-          this.error("Cell needs to have a valid outcome", 
-            null);
+          this.error("Cell needs to have a valid outcome", null);
+        }
+      }
+    }
+  }
+
+  @Check
+  public void hasValidOutcomeRules(final Rules rules) {
+    EList<Rule> _rules = rules.getRules();
+    for (final Rule rule : _rules) {
+      {
+        final List<String> list = Arrays.<String>asList("living", "dead");
+        boolean _contains = list.contains(rule.getState());
+        boolean _not = (!_contains);
+        if (_not) {
+          this.error("Cell needs to have a valid state e.g. living or dead", null);
         }
       }
     }
