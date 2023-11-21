@@ -4,9 +4,11 @@
 package cps.gameoflife.generator
 
 import org.eclipse.emf.ecore.resource.Resource
+
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import cps.gameoflife.lsjatl.Game
 
 /**
  * Generates code from your model files on save.
@@ -16,7 +18,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class LsjatlGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-
+		val root = resource.allContents.head as Game;
 		fsa.generateFile('RulesOfLife.java',
 			'''package GameOfLife
 			

@@ -2,12 +2,10 @@ grammar cps.gameoflife.Lsjatl with org.eclipse.xtext.common.Terminals
 
 generate lsjatl "http://www.gameoflife.cps/Lsjatl"
 
-Game:  // += indicates a list of element, * is zero or more occurences. 
-	  grid = Grid // A game consists of a 
+Game: grid = Grid // A game consists of a 
 	  rules = Rules;
 
-Grid:{Grid} 'Grid' 
-	 size= GridSize // Point optional 
+Grid:{Grid} 'Grid' size= GridSize // Point optional 
 	 populatedCells += PopulatedCell*; 
 	  
 GridSize:{GridSize} 'GridSize' 

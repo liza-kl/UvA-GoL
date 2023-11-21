@@ -31,18 +31,15 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Assignment cRulesAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cRulesRulesParserRuleCall_1_0 = (RuleCall)cRulesAssignment_1.eContents().get(0);
 		
-		//Game:  // += indicates a list of element, * is zero or more occurences.
-		//      grid = Grid // A game consists of a
+		//Game: grid = Grid // A game consists of a
 		//      rules = Rules;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//// += indicates a list of element, * is zero or more occurences.
-		//    grid = Grid // A game consists of a
-		//    rules = Rules
+		//grid = Grid // A game consists of a
+		//     rules = Rules
 		public Group getGroup() { return cGroup; }
 		
-		//// += indicates a list of element, * is zero or more occurences.
-		//    grid = Grid
+		//grid = Grid
 		public Assignment getGridAssignment_0() { return cGridAssignment_0; }
 		
 		//Grid
@@ -65,13 +62,11 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Assignment cPopulatedCellsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cPopulatedCellsPopulatedCellParserRuleCall_3_0 = (RuleCall)cPopulatedCellsAssignment_3.eContents().get(0);
 		
-		//Grid:{Grid} 'Grid'
-		//     size= GridSize // Point optional
+		//Grid:{Grid} 'Grid' size= GridSize // Point optional
 		//     populatedCells += PopulatedCell*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Grid} 'Grid'
-		//     size= GridSize // Point optional
+		//{Grid} 'Grid' size= GridSize // Point optional
 		//     populatedCells += PopulatedCell*
 		public Group getGroup() { return cGroup; }
 		
@@ -420,8 +415,7 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 
 	
-	//Game:  // += indicates a list of element, * is zero or more occurences.
-	//      grid = Grid // A game consists of a
+	//Game: grid = Grid // A game consists of a
 	//      rules = Rules;
 	public GameElements getGameAccess() {
 		return pGame;
@@ -431,8 +425,7 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getGameAccess().getRule();
 	}
 	
-	//Grid:{Grid} 'Grid'
-	//     size= GridSize // Point optional
+	//Grid:{Grid} 'Grid' size= GridSize // Point optional
 	//     populatedCells += PopulatedCell*;
 	public GridElements getGridAccess() {
 		return pGrid;
