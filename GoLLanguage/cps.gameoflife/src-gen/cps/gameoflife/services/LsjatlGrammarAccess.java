@@ -98,48 +98,60 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGridSizeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cGridSizeKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cHeightKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cHeightAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cHeightINTTerminalRuleCall_2_1_0 = (RuleCall)cHeightAssignment_2_1.eContents().get(0);
-		private final Keyword cWidthKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
-		private final Assignment cWidthAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
-		private final RuleCall cWidthINTTerminalRuleCall_2_3_0 = (RuleCall)cWidthAssignment_2_3.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cHeightKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cHeightAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cHeightINTTerminalRuleCall_3_1_0 = (RuleCall)cHeightAssignment_3_1.eContents().get(0);
+		private final Keyword cCommaKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Keyword cWidthKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Assignment cWidthAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
+		private final RuleCall cWidthINTTerminalRuleCall_3_4_0 = (RuleCall)cWidthAssignment_3_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//GridSize:{GridSize} 'GridSize'
-		//('height:' height = INT 'width:' width = INT);
+		//GridSize:{GridSize} 'GridSize:'
+		//'('('height:' height = INT ',''width:' width = INT)')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{GridSize} 'GridSize'
-		//('height:' height = INT 'width:' width = INT)
+		//{GridSize} 'GridSize:'
+		//'('('height:' height = INT ',''width:' width = INT)')'
 		public Group getGroup() { return cGroup; }
 		
 		//{GridSize}
 		public Action getGridSizeAction_0() { return cGridSizeAction_0; }
 		
-		//'GridSize'
+		//'GridSize:'
 		public Keyword getGridSizeKeyword_1() { return cGridSizeKeyword_1; }
 		
-		//('height:' height = INT 'width:' width = INT)
-		public Group getGroup_2() { return cGroup_2; }
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//('height:' height = INT ',''width:' width = INT)
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'height:'
-		public Keyword getHeightKeyword_2_0() { return cHeightKeyword_2_0; }
+		public Keyword getHeightKeyword_3_0() { return cHeightKeyword_3_0; }
 		
 		//height = INT
-		public Assignment getHeightAssignment_2_1() { return cHeightAssignment_2_1; }
+		public Assignment getHeightAssignment_3_1() { return cHeightAssignment_3_1; }
 		
 		//INT
-		public RuleCall getHeightINTTerminalRuleCall_2_1_0() { return cHeightINTTerminalRuleCall_2_1_0; }
+		public RuleCall getHeightINTTerminalRuleCall_3_1_0() { return cHeightINTTerminalRuleCall_3_1_0; }
+		
+		//','
+		public Keyword getCommaKeyword_3_2() { return cCommaKeyword_3_2; }
 		
 		//'width:'
-		public Keyword getWidthKeyword_2_2() { return cWidthKeyword_2_2; }
+		public Keyword getWidthKeyword_3_3() { return cWidthKeyword_3_3; }
 		
 		//width = INT
-		public Assignment getWidthAssignment_2_3() { return cWidthAssignment_2_3; }
+		public Assignment getWidthAssignment_3_4() { return cWidthAssignment_3_4; }
 		
 		//INT
-		public RuleCall getWidthINTTerminalRuleCall_2_3_0() { return cWidthINTTerminalRuleCall_2_3_0; }
+		public RuleCall getWidthINTTerminalRuleCall_3_4_0() { return cWidthINTTerminalRuleCall_3_4_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
 	public class PopulatedCellElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cps.gameoflife.Lsjatl.PopulatedCell");
@@ -468,8 +480,8 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getGridAccess().getRule();
 	}
 	
-	//GridSize:{GridSize} 'GridSize'
-	//('height:' height = INT 'width:' width = INT);
+	//GridSize:{GridSize} 'GridSize:'
+	//'('('height:' height = INT ',''width:' width = INT)')';
 	public GridSizeElements getGridSizeAccess() {
 		return pGridSize;
 	}

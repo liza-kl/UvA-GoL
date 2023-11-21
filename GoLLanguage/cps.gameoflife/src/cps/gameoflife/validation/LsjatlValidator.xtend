@@ -3,6 +3,10 @@
  */
 package cps.gameoflife.validation
 
+import org.eclipse.xtext.validation.Check
+import cps.gameoflife.lsjatl.Grid
+import cps.gameoflife.lsjatl.PopulatedCell
+
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +15,20 @@ package cps.gameoflife.validation
  */
 class LsjatlValidator extends AbstractLsjatlValidator {
 	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					LsjatlPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	public static val INVALID_NAME = 'invalidName'
+
+	@Check
+	def checkIfInitialCellsAreInGrid(Grid grid) {
+		
+		for (PopulatedCell cell : grid.populatedCells)
+		{
+			if (cell.x > grid.size.width || cell.y > grid.size.height
+				|| cell.x > grid.size.height || cell.y > grid.size.height
+			) {
+				error("Cell cannot be outside the grid", 
+					null)
+			}
+		}
+	}
 	
 }

@@ -38,7 +38,7 @@ public class LsjatlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGameAccess().getGroup(), "rule__Game__Group__0");
 			builder.put(grammarAccess.getGridAccess().getGroup(), "rule__Grid__Group__0");
 			builder.put(grammarAccess.getGridSizeAccess().getGroup(), "rule__GridSize__Group__0");
-			builder.put(grammarAccess.getGridSizeAccess().getGroup_2(), "rule__GridSize__Group_2__0");
+			builder.put(grammarAccess.getGridSizeAccess().getGroup_3(), "rule__GridSize__Group_3__0");
 			builder.put(grammarAccess.getPopulatedCellAccess().getGroup(), "rule__PopulatedCell__Group__0");
 			builder.put(grammarAccess.getRulesAccess().getGroup(), "rule__Rules__Group__0");
 			builder.put(grammarAccess.getConditionAccess().getGroup(), "rule__Condition__Group__0");
@@ -47,8 +47,8 @@ public class LsjatlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGameAccess().getRulesAssignment_1(), "rule__Game__RulesAssignment_1");
 			builder.put(grammarAccess.getGridAccess().getSizeAssignment_2(), "rule__Grid__SizeAssignment_2");
 			builder.put(grammarAccess.getGridAccess().getPopulatedCellsAssignment_4(), "rule__Grid__PopulatedCellsAssignment_4");
-			builder.put(grammarAccess.getGridSizeAccess().getHeightAssignment_2_1(), "rule__GridSize__HeightAssignment_2_1");
-			builder.put(grammarAccess.getGridSizeAccess().getWidthAssignment_2_3(), "rule__GridSize__WidthAssignment_2_3");
+			builder.put(grammarAccess.getGridSizeAccess().getHeightAssignment_3_1(), "rule__GridSize__HeightAssignment_3_1");
+			builder.put(grammarAccess.getGridSizeAccess().getWidthAssignment_3_4(), "rule__GridSize__WidthAssignment_3_4");
 			builder.put(grammarAccess.getPopulatedCellAccess().getXAssignment_1(), "rule__PopulatedCell__XAssignment_1");
 			builder.put(grammarAccess.getPopulatedCellAccess().getYAssignment_3(), "rule__PopulatedCell__YAssignment_3");
 			builder.put(grammarAccess.getRulesAccess().getRulesAssignment_2(), "rule__Rules__RulesAssignment_2");

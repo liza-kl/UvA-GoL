@@ -212,20 +212,24 @@ ruleGridSize returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='GridSize'
+		otherlv_1='GridSize:'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getGridSizeAccess().getGridSizeKeyword_1());
 		}
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getGridSizeAccess().getLeftParenthesisKeyword_2());
+		}
 		(
-			otherlv_2='height:'
+			otherlv_3='height:'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getGridSizeAccess().getHeightKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getGridSizeAccess().getHeightKeyword_3_0());
 			}
 			(
 				(
-					lv_height_3_0=RULE_INT
+					lv_height_4_0=RULE_INT
 					{
-						newLeafNode(lv_height_3_0, grammarAccess.getGridSizeAccess().getHeightINTTerminalRuleCall_2_1_0());
+						newLeafNode(lv_height_4_0, grammarAccess.getGridSizeAccess().getHeightINTTerminalRuleCall_3_1_0());
 					}
 					{
 						if ($current==null) {
@@ -234,20 +238,24 @@ ruleGridSize returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"height",
-							lv_height_3_0,
+							lv_height_4_0,
 							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
 			)
-			otherlv_4='width:'
+			otherlv_5=','
 			{
-				newLeafNode(otherlv_4, grammarAccess.getGridSizeAccess().getWidthKeyword_2_2());
+				newLeafNode(otherlv_5, grammarAccess.getGridSizeAccess().getCommaKeyword_3_2());
+			}
+			otherlv_6='width:'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getGridSizeAccess().getWidthKeyword_3_3());
 			}
 			(
 				(
-					lv_width_5_0=RULE_INT
+					lv_width_7_0=RULE_INT
 					{
-						newLeafNode(lv_width_5_0, grammarAccess.getGridSizeAccess().getWidthINTTerminalRuleCall_2_3_0());
+						newLeafNode(lv_width_7_0, grammarAccess.getGridSizeAccess().getWidthINTTerminalRuleCall_3_4_0());
 					}
 					{
 						if ($current==null) {
@@ -256,12 +264,16 @@ ruleGridSize returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"width",
-							lv_width_5_0,
+							lv_width_7_0,
 							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
 			)
 		)
+		otherlv_8=')'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getGridSizeAccess().getRightParenthesisKeyword_4());
+		}
 	)
 ;
 

@@ -8,8 +8,8 @@ Game: grid = Grid // A game consists of a
 Grid:{Grid} 'Grid' size= GridSize // Point optional 
 	 'PopulatedCells:' populatedCells += PopulatedCell*; 
 	  
-GridSize:{GridSize} 'GridSize' 
-('height:' height = INT 'width:' width = INT);
+GridSize:{GridSize} 'GridSize:' 
+'('('height:' height = INT ',''width:' width = INT)')';
 
 
 PopulatedCell: '(' x=INT',' y=INT')';

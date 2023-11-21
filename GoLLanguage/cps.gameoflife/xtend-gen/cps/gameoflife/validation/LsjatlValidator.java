@@ -3,6 +3,11 @@
  */
 package cps.gameoflife.validation;
 
+import cps.gameoflife.lsjatl.Grid;
+import cps.gameoflife.lsjatl.PopulatedCell;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.validation.Check;
+
 /**
  * This class contains custom validation rules.
  * 
@@ -10,4 +15,16 @@ package cps.gameoflife.validation;
  */
 @SuppressWarnings("all")
 public class LsjatlValidator extends AbstractLsjatlValidator {
+  public static final String INVALID_NAME = "invalidName";
+
+  @Check
+  public void checkIfInitialCellsAreInGrid(final Grid grid) {
+    EList<PopulatedCell> _populatedCells = grid.getPopulatedCells();
+    for (final PopulatedCell cell : _populatedCells) {
+      if (((((cell.getX() > grid.getSize().getWidth()) || (cell.getY() > grid.getSize().getHeight())) || (cell.getX() > grid.getSize().getHeight())) || (cell.getY() > grid.getSize().getHeight()))) {
+        this.error("Cell cannot be outside the grid", 
+          null);
+      }
+    }
+  }
 }

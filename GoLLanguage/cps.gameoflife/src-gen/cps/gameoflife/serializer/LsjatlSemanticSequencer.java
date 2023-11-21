@@ -118,8 +118,8 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.GRID_SIZE__WIDTH));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGridSizeAccess().getHeightINTTerminalRuleCall_2_1_0(), semanticObject.getHeight());
-		feeder.accept(grammarAccess.getGridSizeAccess().getWidthINTTerminalRuleCall_2_3_0(), semanticObject.getWidth());
+		feeder.accept(grammarAccess.getGridSizeAccess().getHeightINTTerminalRuleCall_3_1_0(), semanticObject.getHeight());
+		feeder.accept(grammarAccess.getGridSizeAccess().getWidthINTTerminalRuleCall_3_4_0(), semanticObject.getWidth());
 		feeder.finish();
 	}
 	
