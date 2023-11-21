@@ -9,7 +9,6 @@ import cps.gameoflife.lsjatl.Grid;
 import cps.gameoflife.lsjatl.GridSize;
 import cps.gameoflife.lsjatl.LsjatlFactory;
 import cps.gameoflife.lsjatl.LsjatlPackage;
-import cps.gameoflife.lsjatl.Point;
 import cps.gameoflife.lsjatl.PopulatedCell;
 import cps.gameoflife.lsjatl.Rule;
 import cps.gameoflife.lsjatl.Rules;
@@ -56,13 +55,6 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   private EClass populatedCellEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass pointEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -263,9 +255,9 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   @Override
-  public EReference getPopulatedCell_Poi()
+  public EAttribute getPopulatedCell_X()
   {
-    return (EReference)populatedCellEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)populatedCellEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -274,31 +266,9 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   @Override
-  public EClass getPoint()
+  public EAttribute getPopulatedCell_Y()
   {
-    return pointEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getPoint_X()
-  {
-    return (EAttribute)pointEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getPoint_Y()
-  {
-    return (EAttribute)pointEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)populatedCellEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -354,6 +324,17 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
   public EAttribute getCondition_NCount()
   {
     return (EAttribute)conditionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCondition_Separator()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -444,11 +425,8 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     createEAttribute(gridSizeEClass, GRID_SIZE__WIDTH);
 
     populatedCellEClass = createEClass(POPULATED_CELL);
-    createEReference(populatedCellEClass, POPULATED_CELL__POI);
-
-    pointEClass = createEClass(POINT);
-    createEAttribute(pointEClass, POINT__X);
-    createEAttribute(pointEClass, POINT__Y);
+    createEAttribute(populatedCellEClass, POPULATED_CELL__X);
+    createEAttribute(populatedCellEClass, POPULATED_CELL__Y);
 
     rulesEClass = createEClass(RULES);
     createEReference(rulesEClass, RULES__RULES);
@@ -456,6 +434,7 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     conditionEClass = createEClass(CONDITION);
     createEAttribute(conditionEClass, CONDITION__BOOL_OP);
     createEAttribute(conditionEClass, CONDITION__NCOUNT);
+    createEAttribute(conditionEClass, CONDITION__SEPARATOR);
 
     ruleEClass = createEClass(RULE);
     createEAttribute(ruleEClass, RULE__STATE);
@@ -507,11 +486,8 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     initEAttribute(getGridSize_Width(), ecorePackage.getEInt(), "width", null, 0, 1, GridSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(populatedCellEClass, PopulatedCell.class, "PopulatedCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPopulatedCell_Poi(), this.getPoint(), null, "poi", null, 0, 1, PopulatedCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(pointEClass, Point.class, "Point", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPoint_X(), ecorePackage.getEInt(), "x", null, 0, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPoint_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPopulatedCell_X(), ecorePackage.getEInt(), "x", null, 0, 1, PopulatedCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPopulatedCell_Y(), ecorePackage.getEInt(), "y", null, 0, 1, PopulatedCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rulesEClass, Rules.class, "Rules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRules_Rules(), this.getRule(), null, "rules", null, 0, -1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -519,6 +495,7 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCondition_BoolOp(), ecorePackage.getEString(), "boolOp", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCondition_NCount(), ecorePackage.getEInt(), "NCount", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_Separator(), ecorePackage.getEString(), "separator", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRule_State(), ecorePackage.getEString(), "state", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

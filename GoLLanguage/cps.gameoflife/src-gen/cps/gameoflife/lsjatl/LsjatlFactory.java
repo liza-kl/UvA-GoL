@@ -60,15 +60,6 @@ public interface LsjatlFactory extends EFactory
   PopulatedCell createPopulatedCell();
 
   /**
-   * Returns a new object of class '<em>Point</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Point</em>'.
-   * @generated
-   */
-  Point createPoint();
-
-  /**
    * Returns a new object of class '<em>Rules</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -9,7 +9,6 @@ import cps.gameoflife.lsjatl.Game;
 import cps.gameoflife.lsjatl.Grid;
 import cps.gameoflife.lsjatl.GridSize;
 import cps.gameoflife.lsjatl.LsjatlPackage;
-import cps.gameoflife.lsjatl.Point;
 import cps.gameoflife.lsjatl.PopulatedCell;
 import cps.gameoflife.lsjatl.Rule;
 import cps.gameoflife.lsjatl.Rules;
@@ -51,9 +50,6 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case LsjatlPackage.GRID_SIZE:
 				sequence_GridSize(context, (GridSize) semanticObject); 
 				return; 
-			case LsjatlPackage.POINT:
-				sequence_Point(context, (Point) semanticObject); 
-				return; 
 			case LsjatlPackage.POPULATED_CELL:
 				sequence_PopulatedCell(context, (PopulatedCell) semanticObject); 
 				return; 
@@ -74,20 +70,11 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Condition returns Condition
 	 *
 	 * Constraint:
-	 *     (boolOp=BoolOp NCount=INT)
+	 *     (boolOp=BoolOp NCount=INT separator=Separator?)
 	 * </pre>
 	 */
 	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.CONDITION__BOOL_OP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.CONDITION__BOOL_OP));
-			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.CONDITION__NCOUNT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.CONDITION__NCOUNT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConditionAccess().getBoolOpBoolOpParserRuleCall_0_0(), semanticObject.getBoolOp());
-		feeder.accept(grammarAccess.getConditionAccess().getNCountINTTerminalRuleCall_1_0(), semanticObject.getNCount());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -154,42 +141,22 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Point returns Point
+	 *     PopulatedCell returns PopulatedCell
 	 *
 	 * Constraint:
 	 *     (x=INT y=INT)
 	 * </pre>
 	 */
-	protected void sequence_Point(ISerializationContext context, Point semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.POINT__X) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.POINT__X));
-			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.POINT__Y) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.POINT__Y));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPointAccess().getXINTTerminalRuleCall_1_0(), semanticObject.getX());
-		feeder.accept(grammarAccess.getPointAccess().getYINTTerminalRuleCall_3_0(), semanticObject.getY());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PopulatedCell returns PopulatedCell
-	 *
-	 * Constraint:
-	 *     poi=Point
-	 * </pre>
-	 */
 	protected void sequence_PopulatedCell(ISerializationContext context, PopulatedCell semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.POPULATED_CELL__POI) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.POPULATED_CELL__POI));
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.POPULATED_CELL__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.POPULATED_CELL__X));
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.POPULATED_CELL__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.POPULATED_CELL__Y));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPopulatedCellAccess().getPoiPointParserRuleCall_1_0(), semanticObject.getPoi());
+		feeder.accept(grammarAccess.getPopulatedCellAccess().getXINTTerminalRuleCall_1_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getPopulatedCellAccess().getYINTTerminalRuleCall_3_0(), semanticObject.getY());
 		feeder.finish();
 	}
 	

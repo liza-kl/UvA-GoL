@@ -69,7 +69,6 @@ public class LsjatlFactoryImpl extends EFactoryImpl implements LsjatlFactory
       case LsjatlPackage.GRID: return createGrid();
       case LsjatlPackage.GRID_SIZE: return createGridSize();
       case LsjatlPackage.POPULATED_CELL: return createPopulatedCell();
-      case LsjatlPackage.POINT: return createPoint();
       case LsjatlPackage.RULES: return createRules();
       case LsjatlPackage.CONDITION: return createCondition();
       case LsjatlPackage.RULE: return createRule();
@@ -124,18 +123,6 @@ public class LsjatlFactoryImpl extends EFactoryImpl implements LsjatlFactory
   {
     PopulatedCellImpl populatedCell = new PopulatedCellImpl();
     return populatedCell;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Point createPoint()
-  {
-    PointImpl point = new PointImpl();
-    return point;
   }
 
   /**

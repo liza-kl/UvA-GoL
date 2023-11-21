@@ -59,15 +59,16 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Keyword cGridKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cSizeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cSizeGridSizeParserRuleCall_2_0 = (RuleCall)cSizeAssignment_2.eContents().get(0);
-		private final Assignment cPopulatedCellsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cPopulatedCellsPopulatedCellParserRuleCall_3_0 = (RuleCall)cPopulatedCellsAssignment_3.eContents().get(0);
+		private final Keyword cPopulatedCellsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cPopulatedCellsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPopulatedCellsPopulatedCellParserRuleCall_4_0 = (RuleCall)cPopulatedCellsAssignment_4.eContents().get(0);
 		
 		//Grid:{Grid} 'Grid' size= GridSize // Point optional
-		//     populatedCells += PopulatedCell*;
+		//     'PopulatedCells:' populatedCells += PopulatedCell*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Grid} 'Grid' size= GridSize // Point optional
-		//     populatedCells += PopulatedCell*
+		//     'PopulatedCells:' populatedCells += PopulatedCell*
 		public Group getGroup() { return cGroup; }
 		
 		//{Grid}
@@ -83,11 +84,14 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		public RuleCall getSizeGridSizeParserRuleCall_2_0() { return cSizeGridSizeParserRuleCall_2_0; }
 		
 		//// Point optional
-		//    populatedCells += PopulatedCell*
-		public Assignment getPopulatedCellsAssignment_3() { return cPopulatedCellsAssignment_3; }
+		//    'PopulatedCells:'
+		public Keyword getPopulatedCellsKeyword_3() { return cPopulatedCellsKeyword_3; }
+		
+		//populatedCells += PopulatedCell*
+		public Assignment getPopulatedCellsAssignment_4() { return cPopulatedCellsAssignment_4; }
 		
 		//PopulatedCell
-		public RuleCall getPopulatedCellsPopulatedCellParserRuleCall_3_0() { return cPopulatedCellsPopulatedCellParserRuleCall_3_0; }
+		public RuleCall getPopulatedCellsPopulatedCellParserRuleCall_4_0() { return cPopulatedCellsPopulatedCellParserRuleCall_4_0; }
 	}
 	public class GridSizeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cps.gameoflife.Lsjatl.GridSize");
@@ -140,28 +144,6 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	public class PopulatedCellElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cps.gameoflife.Lsjatl.PopulatedCell");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPointKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cPoiAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPoiPointParserRuleCall_1_0 = (RuleCall)cPoiAssignment_1.eContents().get(0);
-		
-		//PopulatedCell: ('Point' poi=Point);
-		@Override public ParserRule getRule() { return rule; }
-		
-		//('Point' poi=Point)
-		public Group getGroup() { return cGroup; }
-		
-		//'Point'
-		public Keyword getPointKeyword_0() { return cPointKeyword_0; }
-		
-		//poi=Point
-		public Assignment getPoiAssignment_1() { return cPoiAssignment_1; }
-		
-		//Point
-		public RuleCall getPoiPointParserRuleCall_1_0() { return cPoiPointParserRuleCall_1_0; }
-	}
-	public class PointElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cps.gameoflife.Lsjatl.Point");
-		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cXAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cXINTTerminalRuleCall_1_0 = (RuleCall)cXAssignment_1.eContents().get(0);
@@ -170,7 +152,7 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cYINTTerminalRuleCall_3_0 = (RuleCall)cYAssignment_3.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//Point: '(' x=INT',' y=INT')';
+		//PopulatedCell: '(' x=INT',' y=INT')';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'(' x=INT',' y=INT')'
@@ -232,12 +214,14 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cBoolOpBoolOpParserRuleCall_0_0 = (RuleCall)cBoolOpAssignment_0.eContents().get(0);
 		private final Assignment cNCountAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNCountINTTerminalRuleCall_1_0 = (RuleCall)cNCountAssignment_1.eContents().get(0);
+		private final Assignment cSeparatorAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSeparatorSeparatorParserRuleCall_2_0 = (RuleCall)cSeparatorAssignment_2.eContents().get(0);
 		
 		// // A list of rules, none or whatever size
-		//Condition: boolOp=BoolOp NCount=INT;
+		//Condition: boolOp=BoolOp NCount=INT separator=Separator?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//boolOp=BoolOp NCount=INT
+		//boolOp=BoolOp NCount=INT separator=Separator?
 		public Group getGroup() { return cGroup; }
 		
 		//boolOp=BoolOp
@@ -251,6 +235,12 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		
 		//INT
 		public RuleCall getNCountINTTerminalRuleCall_1_0() { return cNCountINTTerminalRuleCall_1_0; }
+		
+		//separator=Separator?
+		public Assignment getSeparatorAssignment_2() { return cSeparatorAssignment_2; }
+		
+		//Separator
+		public RuleCall getSeparatorSeparatorParserRuleCall_2_0() { return cSeparatorSeparatorParserRuleCall_2_0; }
 	}
 	public class RuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cps.gameoflife.Lsjatl.Rule");
@@ -302,18 +292,35 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//Outcome
 		public RuleCall getResultOutcomeParserRuleCall_6_0() { return cResultOutcomeParserRuleCall_6_0; }
 	}
+	public class SeparatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cps.gameoflife.Lsjatl.Separator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cAmpersandAmpersandKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cVerticalLineVerticalLineKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		///* We cant hage a rule in which a cell is in state living and it populates
+		// * , populates can only be done for dead cells. I think best way to handle it is to exclude:
+		// * dead cell surviving and
+		// * living cell populating in the validation
+		// * */
+		//Separator: '&&' | '||';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'&&' | '||'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'&&'
+		public Keyword getAmpersandAmpersandKeyword_0() { return cAmpersandAmpersandKeyword_0; }
+		
+		//'||'
+		public Keyword getVerticalLineVerticalLineKeyword_1() { return cVerticalLineVerticalLineKeyword_1; }
+	}
 	public class StateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cps.gameoflife.Lsjatl.State");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cLivingKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cDeadKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//// missing or and distinction
-		///* We cant hage a rule in which a cell is in state living and it populates
-		// * , populates can only be done for dead cells. I think best way to handle it is to exclude:
-		// * dead cell surviving and
-		// * living cell populating in the validation
-		// * */
 		//State: 'living' | 'dead';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -384,10 +391,10 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	private final GridElements pGrid;
 	private final GridSizeElements pGridSize;
 	private final PopulatedCellElements pPopulatedCell;
-	private final PointElements pPoint;
 	private final RulesElements pRules;
 	private final ConditionElements pCondition;
 	private final RuleElements pRule;
+	private final SeparatorElements pSeparator;
 	private final StateElements pState;
 	private final BoolOpElements pBoolOp;
 	private final OutcomeElements pOutcome;
@@ -405,10 +412,10 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.pGrid = new GridElements();
 		this.pGridSize = new GridSizeElements();
 		this.pPopulatedCell = new PopulatedCellElements();
-		this.pPoint = new PointElements();
 		this.pRules = new RulesElements();
 		this.pCondition = new ConditionElements();
 		this.pRule = new RuleElements();
+		this.pSeparator = new SeparatorElements();
 		this.pState = new StateElements();
 		this.pBoolOp = new BoolOpElements();
 		this.pOutcome = new OutcomeElements();
@@ -452,7 +459,7 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//Grid:{Grid} 'Grid' size= GridSize // Point optional
-	//     populatedCells += PopulatedCell*;
+	//     'PopulatedCells:' populatedCells += PopulatedCell*;
 	public GridElements getGridAccess() {
 		return pGrid;
 	}
@@ -471,22 +478,13 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getGridSizeAccess().getRule();
 	}
 	
-	//PopulatedCell: ('Point' poi=Point);
+	//PopulatedCell: '(' x=INT',' y=INT')';
 	public PopulatedCellElements getPopulatedCellAccess() {
 		return pPopulatedCell;
 	}
 	
 	public ParserRule getPopulatedCellRule() {
 		return getPopulatedCellAccess().getRule();
-	}
-	
-	//Point: '(' x=INT',' y=INT')';
-	public PointElements getPointAccess() {
-		return pPoint;
-	}
-	
-	public ParserRule getPointRule() {
-		return getPointAccess().getRule();
 	}
 	
 	//Rules: {Rules} 'Rules'
@@ -500,7 +498,7 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	// // A list of rules, none or whatever size
-	//Condition: boolOp=BoolOp NCount=INT;
+	//Condition: boolOp=BoolOp NCount=INT separator=Separator?;
 	public ConditionElements getConditionAccess() {
 		return pCondition;
 	}
@@ -518,12 +516,20 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getRuleAccess().getRule();
 	}
 	
-	//// missing or and distinction
 	///* We cant hage a rule in which a cell is in state living and it populates
 	// * , populates can only be done for dead cells. I think best way to handle it is to exclude:
 	// * dead cell surviving and
 	// * living cell populating in the validation
 	// * */
+	//Separator: '&&' | '||';
+	public SeparatorElements getSeparatorAccess() {
+		return pSeparator;
+	}
+	
+	public ParserRule getSeparatorRule() {
+		return getSeparatorAccess().getRule();
+	}
+	
 	//State: 'living' | 'dead';
 	public StateElements getStateAccess() {
 		return pState;

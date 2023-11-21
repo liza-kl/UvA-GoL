@@ -179,41 +179,13 @@ public interface LsjatlPackage extends EPackage
   int POPULATED_CELL = 3;
 
   /**
-   * The feature id for the '<em><b>Poi</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POPULATED_CELL__POI = 0;
-
-  /**
-   * The number of structural features of the '<em>Populated Cell</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POPULATED_CELL_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.PointImpl <em>Point</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see cps.gameoflife.lsjatl.impl.PointImpl
-   * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getPoint()
-   * @generated
-   */
-  int POINT = 4;
-
-  /**
    * The feature id for the '<em><b>X</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POINT__X = 0;
+  int POPULATED_CELL__X = 0;
 
   /**
    * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -222,16 +194,16 @@ public interface LsjatlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POINT__Y = 1;
+  int POPULATED_CELL__Y = 1;
 
   /**
-   * The number of structural features of the '<em>Point</em>' class.
+   * The number of structural features of the '<em>Populated Cell</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POINT_FEATURE_COUNT = 2;
+  int POPULATED_CELL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.RulesImpl <em>Rules</em>}' class.
@@ -241,7 +213,7 @@ public interface LsjatlPackage extends EPackage
    * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getRules()
    * @generated
    */
-  int RULES = 5;
+  int RULES = 4;
 
   /**
    * The feature id for the '<em><b>Rules</b></em>' containment reference list.
@@ -269,7 +241,7 @@ public interface LsjatlPackage extends EPackage
    * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 6;
+  int CONDITION = 5;
 
   /**
    * The feature id for the '<em><b>Bool Op</b></em>' attribute.
@@ -290,13 +262,22 @@ public interface LsjatlPackage extends EPackage
   int CONDITION__NCOUNT = 1;
 
   /**
+   * The feature id for the '<em><b>Separator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION__SEPARATOR = 2;
+
+  /**
    * The number of structural features of the '<em>Condition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONDITION_FEATURE_COUNT = 2;
+  int CONDITION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.RuleImpl <em>Rule</em>}' class.
@@ -306,7 +287,7 @@ public interface LsjatlPackage extends EPackage
    * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getRule()
    * @generated
    */
-  int RULE = 7;
+  int RULE = 6;
 
   /**
    * The feature id for the '<em><b>State</b></em>' attribute.
@@ -452,47 +433,26 @@ public interface LsjatlPackage extends EPackage
   EClass getPopulatedCell();
 
   /**
-   * Returns the meta object for the containment reference '{@link cps.gameoflife.lsjatl.PopulatedCell#getPoi <em>Poi</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Poi</em>'.
-   * @see cps.gameoflife.lsjatl.PopulatedCell#getPoi()
-   * @see #getPopulatedCell()
-   * @generated
-   */
-  EReference getPopulatedCell_Poi();
-
-  /**
-   * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Point <em>Point</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Point</em>'.
-   * @see cps.gameoflife.lsjatl.Point
-   * @generated
-   */
-  EClass getPoint();
-
-  /**
-   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Point#getX <em>X</em>}'.
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.PopulatedCell#getX <em>X</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>X</em>'.
-   * @see cps.gameoflife.lsjatl.Point#getX()
-   * @see #getPoint()
+   * @see cps.gameoflife.lsjatl.PopulatedCell#getX()
+   * @see #getPopulatedCell()
    * @generated
    */
-  EAttribute getPoint_X();
+  EAttribute getPopulatedCell_X();
 
   /**
-   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Point#getY <em>Y</em>}'.
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.PopulatedCell#getY <em>Y</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Y</em>'.
-   * @see cps.gameoflife.lsjatl.Point#getY()
-   * @see #getPoint()
+   * @see cps.gameoflife.lsjatl.PopulatedCell#getY()
+   * @see #getPopulatedCell()
    * @generated
    */
-  EAttribute getPoint_Y();
+  EAttribute getPopulatedCell_Y();
 
   /**
    * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Rules <em>Rules</em>}'.
@@ -546,6 +506,17 @@ public interface LsjatlPackage extends EPackage
    * @generated
    */
   EAttribute getCondition_NCount();
+
+  /**
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Condition#getSeparator <em>Separator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Separator</em>'.
+   * @see cps.gameoflife.lsjatl.Condition#getSeparator()
+   * @see #getCondition()
+   * @generated
+   */
+  EAttribute getCondition_Separator();
 
   /**
    * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Rule <em>Rule</em>}'.
@@ -702,30 +673,12 @@ public interface LsjatlPackage extends EPackage
     EClass POPULATED_CELL = eINSTANCE.getPopulatedCell();
 
     /**
-     * The meta object literal for the '<em><b>Poi</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POPULATED_CELL__POI = eINSTANCE.getPopulatedCell_Poi();
-
-    /**
-     * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.PointImpl <em>Point</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see cps.gameoflife.lsjatl.impl.PointImpl
-     * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getPoint()
-     * @generated
-     */
-    EClass POINT = eINSTANCE.getPoint();
-
-    /**
      * The meta object literal for the '<em><b>X</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute POINT__X = eINSTANCE.getPoint_X();
+    EAttribute POPULATED_CELL__X = eINSTANCE.getPopulatedCell_X();
 
     /**
      * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
@@ -733,7 +686,7 @@ public interface LsjatlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute POINT__Y = eINSTANCE.getPoint_Y();
+    EAttribute POPULATED_CELL__Y = eINSTANCE.getPopulatedCell_Y();
 
     /**
      * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.RulesImpl <em>Rules</em>}' class.
@@ -778,6 +731,14 @@ public interface LsjatlPackage extends EPackage
      * @generated
      */
     EAttribute CONDITION__NCOUNT = eINSTANCE.getCondition_NCount();
+
+    /**
+     * The meta object literal for the '<em><b>Separator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONDITION__SEPARATOR = eINSTANCE.getCondition_Separator();
 
     /**
      * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.RuleImpl <em>Rule</em>}' class.

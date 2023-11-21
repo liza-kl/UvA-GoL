@@ -2,6 +2,8 @@ package cps.gameoflife.generator;
 
 import cps.gameoflife.lsjatl.Condition;
 import cps.gameoflife.lsjatl.Game;
+import cps.gameoflife.lsjatl.Grid;
+import cps.gameoflife.lsjatl.PopulatedCell;
 import cps.gameoflife.lsjatl.Rule;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,5 +27,14 @@ public class Auxiliary {
       conditionList.add(c);
     }
     return conditionList;
+  }
+
+  public static List<PopulatedCell> getStartingPoints(final Grid grid) {
+    List<PopulatedCell> pointList = new ArrayList<PopulatedCell>();
+    EList<PopulatedCell> _populatedCells = grid.getPopulatedCells();
+    for (final PopulatedCell p : _populatedCells) {
+      pointList.add(p);
+    }
+    return pointList;
   }
 }

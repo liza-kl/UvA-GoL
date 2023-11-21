@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link cps.gameoflife.lsjatl.impl.ConditionImpl#getBoolOp <em>Bool Op</em>}</li>
  *   <li>{@link cps.gameoflife.lsjatl.impl.ConditionImpl#getNCount <em>NCount</em>}</li>
+ *   <li>{@link cps.gameoflife.lsjatl.impl.ConditionImpl#getSeparator <em>Separator</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +69,26 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @ordered
    */
   protected int nCount = NCOUNT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getSeparator() <em>Separator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSeparator()
+   * @generated
+   * @ordered
+   */
+  protected static final String SEPARATOR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSeparator() <em>Separator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSeparator()
+   * @generated
+   * @ordered
+   */
+  protected String separator = SEPARATOR_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,6 +167,31 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    */
   @Override
+  public String getSeparator()
+  {
+    return separator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSeparator(String newSeparator)
+  {
+    String oldSeparator = separator;
+    separator = newSeparator;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LsjatlPackage.CONDITION__SEPARATOR, oldSeparator, separator));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -154,6 +200,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
         return getBoolOp();
       case LsjatlPackage.CONDITION__NCOUNT:
         return getNCount();
+      case LsjatlPackage.CONDITION__SEPARATOR:
+        return getSeparator();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -173,6 +221,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
         return;
       case LsjatlPackage.CONDITION__NCOUNT:
         setNCount((Integer)newValue);
+        return;
+      case LsjatlPackage.CONDITION__SEPARATOR:
+        setSeparator((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -194,6 +245,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
       case LsjatlPackage.CONDITION__NCOUNT:
         setNCount(NCOUNT_EDEFAULT);
         return;
+      case LsjatlPackage.CONDITION__SEPARATOR:
+        setSeparator(SEPARATOR_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -212,6 +266,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
         return BOOL_OP_EDEFAULT == null ? boolOp != null : !BOOL_OP_EDEFAULT.equals(boolOp);
       case LsjatlPackage.CONDITION__NCOUNT:
         return nCount != NCOUNT_EDEFAULT;
+      case LsjatlPackage.CONDITION__SEPARATOR:
+        return SEPARATOR_EDEFAULT == null ? separator != null : !SEPARATOR_EDEFAULT.equals(separator);
     }
     return super.eIsSet(featureID);
   }
@@ -231,6 +287,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
     result.append(boolOp);
     result.append(", NCount: ");
     result.append(nCount);
+    result.append(", separator: ");
+    result.append(separator);
     result.append(')');
     return result.toString();
   }

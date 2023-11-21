@@ -4,14 +4,11 @@
 package cps.gameoflife.lsjatl.impl;
 
 import cps.gameoflife.lsjatl.LsjatlPackage;
-import cps.gameoflife.lsjatl.Point;
 import cps.gameoflife.lsjatl.PopulatedCell;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -24,7 +21,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cps.gameoflife.lsjatl.impl.PopulatedCellImpl#getPoi <em>Poi</em>}</li>
+ *   <li>{@link cps.gameoflife.lsjatl.impl.PopulatedCellImpl#getX <em>X</em>}</li>
+ *   <li>{@link cps.gameoflife.lsjatl.impl.PopulatedCellImpl#getY <em>Y</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +30,44 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class PopulatedCellImpl extends MinimalEObjectImpl.Container implements PopulatedCell
 {
   /**
-   * The cached value of the '{@link #getPoi() <em>Poi</em>}' containment reference.
+   * The default value of the '{@link #getX() <em>X</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPoi()
+   * @see #getX()
    * @generated
    * @ordered
    */
-  protected Point poi;
+  protected static final int X_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getX() <em>X</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getX()
+   * @generated
+   * @ordered
+   */
+  protected int x = X_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getY() <em>Y</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getY()
+   * @generated
+   * @ordered
+   */
+  protected static final int Y_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getY()
+   * @generated
+   * @ordered
+   */
+  protected int y = Y_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,9 +96,9 @@ public class PopulatedCellImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public Point getPoi()
+  public int getX()
   {
-    return poi;
+    return x;
   }
 
   /**
@@ -78,16 +106,13 @@ public class PopulatedCellImpl extends MinimalEObjectImpl.Container implements P
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPoi(Point newPoi, NotificationChain msgs)
+  @Override
+  public void setX(int newX)
   {
-    Point oldPoi = poi;
-    poi = newPoi;
+    int oldX = x;
+    x = newX;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LsjatlPackage.POPULATED_CELL__POI, oldPoi, newPoi);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, LsjatlPackage.POPULATED_CELL__X, oldX, x));
   }
 
   /**
@@ -96,20 +121,9 @@ public class PopulatedCellImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public void setPoi(Point newPoi)
+  public int getY()
   {
-    if (newPoi != poi)
-    {
-      NotificationChain msgs = null;
-      if (poi != null)
-        msgs = ((InternalEObject)poi).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LsjatlPackage.POPULATED_CELL__POI, null, msgs);
-      if (newPoi != null)
-        msgs = ((InternalEObject)newPoi).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LsjatlPackage.POPULATED_CELL__POI, null, msgs);
-      msgs = basicSetPoi(newPoi, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LsjatlPackage.POPULATED_CELL__POI, newPoi, newPoi));
+    return y;
   }
 
   /**
@@ -118,14 +132,12 @@ public class PopulatedCellImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setY(int newY)
   {
-    switch (featureID)
-    {
-      case LsjatlPackage.POPULATED_CELL__POI:
-        return basicSetPoi(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    int oldY = y;
+    y = newY;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LsjatlPackage.POPULATED_CELL__Y, oldY, y));
   }
 
   /**
@@ -138,8 +150,10 @@ public class PopulatedCellImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case LsjatlPackage.POPULATED_CELL__POI:
-        return getPoi();
+      case LsjatlPackage.POPULATED_CELL__X:
+        return getX();
+      case LsjatlPackage.POPULATED_CELL__Y:
+        return getY();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +168,11 @@ public class PopulatedCellImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case LsjatlPackage.POPULATED_CELL__POI:
-        setPoi((Point)newValue);
+      case LsjatlPackage.POPULATED_CELL__X:
+        setX((Integer)newValue);
+        return;
+      case LsjatlPackage.POPULATED_CELL__Y:
+        setY((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +188,11 @@ public class PopulatedCellImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case LsjatlPackage.POPULATED_CELL__POI:
-        setPoi((Point)null);
+      case LsjatlPackage.POPULATED_CELL__X:
+        setX(X_EDEFAULT);
+        return;
+      case LsjatlPackage.POPULATED_CELL__Y:
+        setY(Y_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -188,10 +208,31 @@ public class PopulatedCellImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case LsjatlPackage.POPULATED_CELL__POI:
-        return poi != null;
+      case LsjatlPackage.POPULATED_CELL__X:
+        return x != X_EDEFAULT;
+      case LsjatlPackage.POPULATED_CELL__Y:
+        return y != Y_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (x: ");
+    result.append(x);
+    result.append(", y: ");
+    result.append(y);
+    result.append(')');
+    return result.toString();
   }
 
 } //PopulatedCellImpl

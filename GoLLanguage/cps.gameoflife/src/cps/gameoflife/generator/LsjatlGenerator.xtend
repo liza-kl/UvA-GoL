@@ -22,12 +22,19 @@ class LsjatlGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		val root = resource.allContents.head as Game;
 		fsa.generateFile('RulesOfLife.java',
-			'''	package GameOfLife;
+			'''package GameOfLife;
 			
-				import java.awt.Point;
-				import java.util.ArrayList;
+import java.awt.Point;
+import java.util.ArrayList;
 			
-				public class RulesOfLife {
+public class RulesOfLife {
+					public static ArrayList<Point> populatedCells = new ArrayList<Point>(
+						Arrays.asList(
+							«FOR rule: Auxiliary.getRules(root) SEPARATOR ', '»
+								«rule2Text(rule)»
+							«ENDFOR»
+						)
+					);
 					public static void computeSurvivors(boolean[][] gameBoard, ArrayList<Point> survivingCells) {
 			        	// Iterate through the array, follow game of life rules
 			       	 for (int i=1; i<gameBoard.length-1; i++) {
@@ -46,15 +53,20 @@ class LsjatlGenerator extends AbstractGenerator {
 							«FOR rule: Auxiliary.getRules(root)»
 								«rule2Text(rule)»
 							«ENDFOR»
+			''' +
+			'''			}
+					}
+					}
+				}
 			'''
 		);
 	}
 	//Ncount is sus
 	def static dispatch rule2Text(Rule rule)
 	'''
-		if ((«IF rule.state == "dead"»!«ENDIF»gameBoard[i][j])
+		if ((«IF rule.state == "dead"»!«ENDIF»gameBoard[i][j]) && 
 		«FOR condition: Auxiliary.getConditions(rule)»
-		&& (surrounding «condition.boolOp» «condition.NCount»)
+		(surrounding «condition.boolOp» «condition.NCount») «IF condition.separator == "||"»||«ENDIF»«IF condition.separator == "&&"»&&«ENDIF»
 		«ENDFOR»){
 			«IF rule.result == "survives"»survivingCells.add(new Point(i-1,j-1));«ENDIF»
 			«IF rule.result == "populates"»survivingCells.add(new Point(i-1,j-1));«ENDIF»

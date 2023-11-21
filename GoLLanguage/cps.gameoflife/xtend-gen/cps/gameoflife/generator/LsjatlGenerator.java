@@ -28,21 +28,44 @@ public class LsjatlGenerator extends AbstractGenerator {
     EObject _head = IteratorExtensions.<EObject>head(resource.getAllContents());
     final Game root = ((Game) _head);
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t");
     _builder.append("package GameOfLife;");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.newLine();
-    _builder.append("\t\t\t\t");
     _builder.append("import java.awt.Point;");
     _builder.newLine();
-    _builder.append("\t\t\t\t");
     _builder.append("import java.util.ArrayList;");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.newLine();
-    _builder.append("\t\t\t\t");
     _builder.append("public class RulesOfLife {");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("public static ArrayList<Point> populatedCells = new ArrayList<Point>(");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t");
+    _builder.append("Arrays.asList(");
+    _builder.newLine();
+    {
+      List<Rule> _rules = Auxiliary.getRules(root);
+      boolean _hasElements = false;
+      for(final Rule rule : _rules) {
+        if (!_hasElements) {
+          _hasElements = true;
+        } else {
+          _builder.appendImmediate(", ", "\t\t\t\t\t\t\t");
+        }
+        _builder.append("\t\t\t\t\t\t\t");
+        CharSequence _rule2Text = LsjatlGenerator.rule2Text(rule);
+        _builder.append(_rule2Text, "\t\t\t\t\t\t\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t\t\t\t\t\t");
+    _builder.append(")");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append(");");
     _builder.newLine();
     _builder.append("\t\t\t\t\t");
     _builder.append("public static void computeSurvivors(boolean[][] gameBoard, ArrayList<Point> survivingCells) {");
@@ -85,15 +108,29 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.newLine();
     StringConcatenation _builder_1 = new StringConcatenation();
     {
-      List<Rule> _rules = Auxiliary.getRules(root);
-      for(final Rule rule : _rules) {
-        CharSequence _rule2Text = LsjatlGenerator.rule2Text(rule);
-        _builder_1.append(_rule2Text);
+      List<Rule> _rules_1 = Auxiliary.getRules(root);
+      for(final Rule rule_1 : _rules_1) {
+        CharSequence _rule2Text_1 = LsjatlGenerator.rule2Text(rule_1);
+        _builder_1.append(_rule2Text_1);
         _builder_1.newLineIfNotEmpty();
       }
     }
     String _plus = (_builder.toString() + _builder_1);
-    fsa.generateFile("RulesOfLife.java", _plus);
+    StringConcatenation _builder_2 = new StringConcatenation();
+    _builder_2.append("\t\t\t");
+    _builder_2.append("}");
+    _builder_2.newLine();
+    _builder_2.append("\t\t\t\t\t");
+    _builder_2.append("}");
+    _builder_2.newLine();
+    _builder_2.append("\t\t\t\t\t");
+    _builder_2.append("}");
+    _builder_2.newLine();
+    _builder_2.append("\t\t\t\t");
+    _builder_2.append("}");
+    _builder_2.newLine();
+    String _plus_1 = (_plus + _builder_2);
+    fsa.generateFile("RulesOfLife.java", _plus_1);
   }
 
   protected static CharSequence _rule2Text(final Rule rule) {
@@ -106,18 +143,32 @@ public class LsjatlGenerator extends AbstractGenerator {
         _builder.append("!");
       }
     }
-    _builder.append("gameBoard[i][j])");
+    _builder.append("gameBoard[i][j]) && ");
     _builder.newLineIfNotEmpty();
     {
       List<Condition> _conditions = Auxiliary.getConditions(rule);
       for(final Condition condition : _conditions) {
-        _builder.append("&& (surrounding ");
+        _builder.append("(surrounding ");
         String _boolOp = condition.getBoolOp();
         _builder.append(_boolOp);
         _builder.append(" ");
         int _nCount = condition.getNCount();
         _builder.append(_nCount);
-        _builder.append(")");
+        _builder.append(") ");
+        {
+          String _separator = condition.getSeparator();
+          boolean _equals_1 = Objects.equal(_separator, "||");
+          if (_equals_1) {
+            _builder.append("||");
+          }
+        }
+        {
+          String _separator_1 = condition.getSeparator();
+          boolean _equals_2 = Objects.equal(_separator_1, "&&");
+          if (_equals_2) {
+            _builder.append("&&");
+          }
+        }
         _builder.newLineIfNotEmpty();
       }
     }
@@ -126,8 +177,8 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.append("\t");
     {
       String _result = rule.getResult();
-      boolean _equals_1 = Objects.equal(_result, "survives");
-      if (_equals_1) {
+      boolean _equals_3 = Objects.equal(_result, "survives");
+      if (_equals_3) {
         _builder.append("survivingCells.add(new Point(i-1,j-1));");
       }
     }
@@ -135,8 +186,8 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.append("\t");
     {
       String _result_1 = rule.getResult();
-      boolean _equals_2 = Objects.equal(_result_1, "populates");
-      if (_equals_2) {
+      boolean _equals_4 = Objects.equal(_result_1, "populates");
+      if (_equals_4) {
         _builder.append("survivingCells.add(new Point(i-1,j-1));");
       }
     }
@@ -144,8 +195,8 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.append("\t");
     {
       String _result_2 = rule.getResult();
-      boolean _equals_3 = Objects.equal(_result_2, "dies");
-      if (_equals_3) {
+      boolean _equals_5 = Objects.equal(_result_2, "dies");
+      if (_equals_5) {
         _builder.append("Point pointToRemove = new Point(i, j);");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");

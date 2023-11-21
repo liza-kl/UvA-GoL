@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link cps.gameoflife.lsjatl.Condition#getBoolOp <em>Bool Op</em>}</li>
  *   <li>{@link cps.gameoflife.lsjatl.Condition#getNCount <em>NCount</em>}</li>
+ *   <li>{@link cps.gameoflife.lsjatl.Condition#getSeparator <em>Separator</em>}</li>
  * </ul>
  *
  * @see cps.gameoflife.lsjatl.LsjatlPackage#getCondition()
@@ -67,5 +68,27 @@ public interface Condition extends EObject
    * @generated
    */
   void setNCount(int value);
+
+  /**
+   * Returns the value of the '<em><b>Separator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Separator</em>' attribute.
+   * @see #setSeparator(String)
+   * @see cps.gameoflife.lsjatl.LsjatlPackage#getCondition_Separator()
+   * @model
+   * @generated
+   */
+  String getSeparator();
+
+  /**
+   * Sets the value of the '{@link cps.gameoflife.lsjatl.Condition#getSeparator <em>Separator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Separator</em>' attribute.
+   * @see #getSeparator()
+   * @generated
+   */
+  void setSeparator(String value);
 
 } // Condition

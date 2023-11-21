@@ -96,11 +96,6 @@ public class LsjatlAdapterFactory extends AdapterFactoryImpl
         return createPopulatedCellAdapter();
       }
       @Override
-      public Adapter casePoint(Point object)
-      {
-        return createPointAdapter();
-      }
-      @Override
       public Adapter caseRules(Rules object)
       {
         return createRulesAdapter();
@@ -193,21 +188,6 @@ public class LsjatlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPopulatedCellAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link cps.gameoflife.lsjatl.Point <em>Point</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see cps.gameoflife.lsjatl.Point
-   * @generated
-   */
-  public Adapter createPointAdapter()
   {
     return null;
   }
