@@ -8,3 +8,4 @@
 .antlr-generator-*-patch.jar
 # Below is only needed when Git repo is inside the Eclipse workspace
 .metadata/
+*.xtendbin
