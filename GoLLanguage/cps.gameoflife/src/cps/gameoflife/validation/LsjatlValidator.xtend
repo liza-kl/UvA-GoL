@@ -6,6 +6,12 @@ package cps.gameoflife.validation
 import org.eclipse.xtext.validation.Check
 import cps.gameoflife.lsjatl.Grid
 import cps.gameoflife.lsjatl.PopulatedCell
+import cps.gameoflife.lsjatl.Game
+import cps.gameoflife.lsjatl.Rule
+import cps.gameoflife.lsjatl.Rules
+
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -15,8 +21,6 @@ import cps.gameoflife.lsjatl.PopulatedCell
  */
 class LsjatlValidator extends AbstractLsjatlValidator {
 	
-	public static val INVALID_NAME = 'invalidName'
-
 	@Check
 	def checkIfInitialCellsAreInGrid(Grid grid) {
 		
@@ -31,4 +35,24 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 		}
 	}
 	
+	
+	@Check
+	def hasValidNeighborsToDie(Rules rules) {
+		
+		for (Rule rule : rules.rules)
+		{
+			val list = Arrays.asList('survives', 'dies' , 'populates');
+			if (!list.contains(rule.result)) {
+				error("Cell needs to have a valid outcome", 
+					null)
+			}
+		}
+	}
+	
+	@Check def doRulesExist(Rules rules) {
+		if (rules.rules.size() == 0) {
+			{warning("Game has no rules, so everyone and everything will die", null)}
+		}
+	}
+		
 }
