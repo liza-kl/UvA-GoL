@@ -30,6 +30,13 @@
                 if ((gameBoard[i][j]) && (surrounding == 2)){
                 	survivingCells.add(new Point(i-1,j-1));
                 	} 
+                /** Rule added by us to test some things and needs to be added
+                 * to the generator to make cells die */ 
+                if ((gameBoard[i][j]) && (surrounding == 4)){
+                	Point pointToRemove = new Point(i, j);
+                	survivingCells.removeIf(point -> point.equals(pointToRemove));
+                } 
+             
             }
         }
 	}
