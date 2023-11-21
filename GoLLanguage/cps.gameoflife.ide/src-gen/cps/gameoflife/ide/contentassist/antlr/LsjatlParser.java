@@ -41,6 +41,7 @@ public class LsjatlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPopulatedCellAccess().getGroup(), "rule__PopulatedCell__Group__0");
 			builder.put(grammarAccess.getPointAccess().getGroup(), "rule__Point__Group__0");
 			builder.put(grammarAccess.getRulesAccess().getGroup(), "rule__Rules__Group__0");
+			builder.put(grammarAccess.getConditionAccess().getGroup(), "rule__Condition__Group__0");
 			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 			builder.put(grammarAccess.getGameAccess().getGridAssignment_0(), "rule__Game__GridAssignment_0");
 			builder.put(grammarAccess.getGameAccess().getRulesAssignment_1(), "rule__Game__RulesAssignment_1");
@@ -52,10 +53,10 @@ public class LsjatlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPointAccess().getXAssignment_1(), "rule__Point__XAssignment_1");
 			builder.put(grammarAccess.getPointAccess().getYAssignment_3(), "rule__Point__YAssignment_3");
 			builder.put(grammarAccess.getRulesAccess().getRulesAssignment_2(), "rule__Rules__RulesAssignment_2");
+			builder.put(grammarAccess.getConditionAccess().getNCountAssignment_1(), "rule__Condition__NCountAssignment_1");
 			builder.put(grammarAccess.getRuleAccess().getStateAssignment_1(), "rule__Rule__StateAssignment_1");
-			builder.put(grammarAccess.getRuleAccess().getOpAssignment_4(), "rule__Rule__OpAssignment_4");
-			builder.put(grammarAccess.getRuleAccess().getNCountAssignment_5(), "rule__Rule__NCountAssignment_5");
-			builder.put(grammarAccess.getRuleAccess().getResultAssignment_7(), "rule__Rule__ResultAssignment_7");
+			builder.put(grammarAccess.getRuleAccess().getConditionsAssignment_4(), "rule__Rule__ConditionsAssignment_4");
+			builder.put(grammarAccess.getRuleAccess().getResultAssignment_6(), "rule__Rule__ResultAssignment_6");
 		}
 	}
 	

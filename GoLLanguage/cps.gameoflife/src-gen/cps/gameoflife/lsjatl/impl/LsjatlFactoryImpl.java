@@ -71,6 +71,7 @@ public class LsjatlFactoryImpl extends EFactoryImpl implements LsjatlFactory
       case LsjatlPackage.POPULATED_CELL: return createPopulatedCell();
       case LsjatlPackage.POINT: return createPoint();
       case LsjatlPackage.RULES: return createRules();
+      case LsjatlPackage.CONDITION: return createCondition();
       case LsjatlPackage.RULE: return createRule();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -147,6 +148,18 @@ public class LsjatlFactoryImpl extends EFactoryImpl implements LsjatlFactory
   {
     RulesImpl rules = new RulesImpl();
     return rules;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Condition createCondition()
+  {
+    ConditionImpl condition = new ConditionImpl();
+    return condition;
   }
 
   /**

@@ -540,10 +540,10 @@ public class InternalLsjatlLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLsjatl.g:1436:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalLsjatl.g:1436:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalLsjatl.g:1495:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalLsjatl.g:1495:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalLsjatl.g:1436:11: ( '^' )?
+            // InternalLsjatl.g:1495:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -552,7 +552,7 @@ public class InternalLsjatlLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalLsjatl.g:1436:11: '^'
+                    // InternalLsjatl.g:1495:11: '^'
                     {
                     match('^'); 
 
@@ -570,7 +570,7 @@ public class InternalLsjatlLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalLsjatl.g:1436:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalLsjatl.g:1495:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -619,10 +619,10 @@ public class InternalLsjatlLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLsjatl.g:1438:10: ( ( '0' .. '9' )+ )
-            // InternalLsjatl.g:1438:12: ( '0' .. '9' )+
+            // InternalLsjatl.g:1497:10: ( ( '0' .. '9' )+ )
+            // InternalLsjatl.g:1497:12: ( '0' .. '9' )+
             {
-            // InternalLsjatl.g:1438:12: ( '0' .. '9' )+
+            // InternalLsjatl.g:1497:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -636,7 +636,7 @@ public class InternalLsjatlLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalLsjatl.g:1438:13: '0' .. '9'
+            	    // InternalLsjatl.g:1497:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -668,10 +668,10 @@ public class InternalLsjatlLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLsjatl.g:1440:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalLsjatl.g:1440:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLsjatl.g:1499:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalLsjatl.g:1499:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalLsjatl.g:1440:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLsjatl.g:1499:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -689,10 +689,10 @@ public class InternalLsjatlLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalLsjatl.g:1440:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalLsjatl.g:1499:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalLsjatl.g:1440:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalLsjatl.g:1499:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -708,7 +708,7 @@ public class InternalLsjatlLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalLsjatl.g:1440:21: '\\\\' .
+                    	    // InternalLsjatl.g:1499:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -716,7 +716,7 @@ public class InternalLsjatlLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLsjatl.g:1440:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalLsjatl.g:1499:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -741,10 +741,10 @@ public class InternalLsjatlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalLsjatl.g:1440:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalLsjatl.g:1499:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalLsjatl.g:1440:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalLsjatl.g:1499:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -760,7 +760,7 @@ public class InternalLsjatlLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalLsjatl.g:1440:54: '\\\\' .
+                    	    // InternalLsjatl.g:1499:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -768,7 +768,7 @@ public class InternalLsjatlLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLsjatl.g:1440:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalLsjatl.g:1499:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -811,12 +811,12 @@ public class InternalLsjatlLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLsjatl.g:1442:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalLsjatl.g:1442:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalLsjatl.g:1501:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalLsjatl.g:1501:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalLsjatl.g:1442:24: ( options {greedy=false; } : . )*
+            // InternalLsjatl.g:1501:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -841,7 +841,7 @@ public class InternalLsjatlLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalLsjatl.g:1442:52: .
+            	    // InternalLsjatl.g:1501:52: .
             	    {
             	    matchAny(); 
 
@@ -871,12 +871,12 @@ public class InternalLsjatlLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLsjatl.g:1444:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalLsjatl.g:1444:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalLsjatl.g:1503:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalLsjatl.g:1503:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalLsjatl.g:1444:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalLsjatl.g:1503:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -889,7 +889,7 @@ public class InternalLsjatlLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalLsjatl.g:1444:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalLsjatl.g:1503:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -909,7 +909,7 @@ public class InternalLsjatlLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalLsjatl.g:1444:40: ( ( '\\r' )? '\\n' )?
+            // InternalLsjatl.g:1503:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -918,9 +918,9 @@ public class InternalLsjatlLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalLsjatl.g:1444:41: ( '\\r' )? '\\n'
+                    // InternalLsjatl.g:1503:41: ( '\\r' )? '\\n'
                     {
-                    // InternalLsjatl.g:1444:41: ( '\\r' )?
+                    // InternalLsjatl.g:1503:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -929,7 +929,7 @@ public class InternalLsjatlLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalLsjatl.g:1444:41: '\\r'
+                            // InternalLsjatl.g:1503:41: '\\r'
                             {
                             match('\r'); 
 
@@ -961,10 +961,10 @@ public class InternalLsjatlLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLsjatl.g:1446:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalLsjatl.g:1446:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLsjatl.g:1505:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalLsjatl.g:1505:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalLsjatl.g:1446:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLsjatl.g:1505:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1018,8 +1018,8 @@ public class InternalLsjatlLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLsjatl.g:1448:16: ( . )
-            // InternalLsjatl.g:1448:18: .
+            // InternalLsjatl.g:1507:16: ( . )
+            // InternalLsjatl.g:1507:18: .
             {
             matchAny(); 
 

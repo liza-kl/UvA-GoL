@@ -17,8 +17,12 @@ Point: '(' x=INT',' y=INT')';
 
 Rules: {Rules} 'Rules'
 	   rules += Rule*; // A list of rules, none or whatever size 
+	   
+Condition: BoolOp nCount=INT;
 
-Rule: 'Each' state=State 'cell' 'with' op=BoolOp nCount=INT 'neighbors' result=Outcome;
+Rule: 'Each' state=State 'cell' 'with' conditions += Condition+ 'neighbors' result=Outcome;
+
+
 
 State: 'living' | 'dead';
 	   

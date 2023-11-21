@@ -3,6 +3,8 @@
  */
 package cps.gameoflife.lsjatl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,8 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link cps.gameoflife.lsjatl.Rule#getState <em>State</em>}</li>
- *   <li>{@link cps.gameoflife.lsjatl.Rule#getOp <em>Op</em>}</li>
- *   <li>{@link cps.gameoflife.lsjatl.Rule#getNCount <em>NCount</em>}</li>
+ *   <li>{@link cps.gameoflife.lsjatl.Rule#getConditions <em>Conditions</em>}</li>
  *   <li>{@link cps.gameoflife.lsjatl.Rule#getResult <em>Result</em>}</li>
  * </ul>
  *
@@ -49,48 +50,16 @@ public interface Rule extends EObject
   void setState(String value);
 
   /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute.
+   * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
+   * The list contents are of type {@link cps.gameoflife.lsjatl.Condition}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute.
-   * @see #setOp(String)
-   * @see cps.gameoflife.lsjatl.LsjatlPackage#getRule_Op()
-   * @model
+   * @return the value of the '<em>Conditions</em>' containment reference list.
+   * @see cps.gameoflife.lsjatl.LsjatlPackage#getRule_Conditions()
+   * @model containment="true"
    * @generated
    */
-  String getOp();
-
-  /**
-   * Sets the value of the '{@link cps.gameoflife.lsjatl.Rule#getOp <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Op</em>' attribute.
-   * @see #getOp()
-   * @generated
-   */
-  void setOp(String value);
-
-  /**
-   * Returns the value of the '<em><b>NCount</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>NCount</em>' attribute.
-   * @see #setNCount(int)
-   * @see cps.gameoflife.lsjatl.LsjatlPackage#getRule_NCount()
-   * @model
-   * @generated
-   */
-  int getNCount();
-
-  /**
-   * Sets the value of the '{@link cps.gameoflife.lsjatl.Rule#getNCount <em>NCount</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>NCount</em>' attribute.
-   * @see #getNCount()
-   * @generated
-   */
-  void setNCount(int value);
+  EList<Condition> getConditions();
 
   /**
    * Returns the value of the '<em><b>Result</b></em>' attribute.

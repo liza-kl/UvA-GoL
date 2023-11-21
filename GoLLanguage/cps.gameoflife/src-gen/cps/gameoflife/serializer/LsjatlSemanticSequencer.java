@@ -4,6 +4,7 @@
 package cps.gameoflife.serializer;
 
 import com.google.inject.Inject;
+import cps.gameoflife.lsjatl.Condition;
 import cps.gameoflife.lsjatl.Game;
 import cps.gameoflife.lsjatl.Grid;
 import cps.gameoflife.lsjatl.GridSize;
@@ -38,6 +39,9 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == LsjatlPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case LsjatlPackage.CONDITION:
+				sequence_Condition(context, (Condition) semanticObject); 
+				return; 
 			case LsjatlPackage.GAME:
 				sequence_Game(context, (Game) semanticObject); 
 				return; 
@@ -63,6 +67,26 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Condition returns Condition
+	 *
+	 * Constraint:
+	 *     nCount=INT
+	 * </pre>
+	 */
+	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.CONDITION__NCOUNT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.CONDITION__NCOUNT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConditionAccess().getNCountINTTerminalRuleCall_1_0(), semanticObject.getNCount());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * <pre>
@@ -173,26 +197,11 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (state=State op=BoolOp nCount=INT result=Outcome)
+	 *     (state=State conditions+=Condition+ result=Outcome)
 	 * </pre>
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.RULE__STATE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.RULE__STATE));
-			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.RULE__OP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.RULE__OP));
-			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.RULE__NCOUNT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.RULE__NCOUNT));
-			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.RULE__RESULT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.RULE__RESULT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRuleAccess().getStateStateParserRuleCall_1_0(), semanticObject.getState());
-		feeder.accept(grammarAccess.getRuleAccess().getOpBoolOpParserRuleCall_4_0(), semanticObject.getOp());
-		feeder.accept(grammarAccess.getRuleAccess().getNCountINTTerminalRuleCall_5_0(), semanticObject.getNCount());
-		feeder.accept(grammarAccess.getRuleAccess().getResultOutcomeParserRuleCall_7_0(), semanticObject.getResult());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

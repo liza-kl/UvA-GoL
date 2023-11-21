@@ -3,6 +3,7 @@
  */
 package cps.gameoflife.lsjatl.impl;
 
+import cps.gameoflife.lsjatl.Condition;
 import cps.gameoflife.lsjatl.Game;
 import cps.gameoflife.lsjatl.Grid;
 import cps.gameoflife.lsjatl.GridSize;
@@ -69,6 +70,13 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   private EClass rulesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass conditionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -321,6 +329,28 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   @Override
+  public EClass getCondition()
+  {
+    return conditionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCondition_NCount()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getRule()
   {
     return ruleEClass;
@@ -343,20 +373,9 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   @Override
-  public EAttribute getRule_Op()
+  public EReference getRule_Conditions()
   {
-    return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getRule_NCount()
-  {
-    return (EAttribute)ruleEClass.getEStructuralFeatures().get(2);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -367,7 +386,7 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
   @Override
   public EAttribute getRule_Result()
   {
-    return (EAttribute)ruleEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -423,10 +442,12 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     rulesEClass = createEClass(RULES);
     createEReference(rulesEClass, RULES__RULES);
 
+    conditionEClass = createEClass(CONDITION);
+    createEAttribute(conditionEClass, CONDITION__NCOUNT);
+
     ruleEClass = createEClass(RULE);
     createEAttribute(ruleEClass, RULE__STATE);
-    createEAttribute(ruleEClass, RULE__OP);
-    createEAttribute(ruleEClass, RULE__NCOUNT);
+    createEReference(ruleEClass, RULE__CONDITIONS);
     createEAttribute(ruleEClass, RULE__RESULT);
   }
 
@@ -483,10 +504,12 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     initEClass(rulesEClass, Rules.class, "Rules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRules_Rules(), this.getRule(), null, "rules", null, 0, -1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCondition_NCount(), ecorePackage.getEInt(), "nCount", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRule_State(), ecorePackage.getEString(), "state", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRule_Op(), ecorePackage.getEString(), "op", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRule_NCount(), ecorePackage.getEInt(), "nCount", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRule_Result(), ecorePackage.getEString(), "result", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource

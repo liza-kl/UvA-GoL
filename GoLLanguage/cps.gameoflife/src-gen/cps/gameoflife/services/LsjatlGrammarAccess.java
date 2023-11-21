@@ -225,6 +225,29 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//Rule
 		public RuleCall getRulesRuleParserRuleCall_2_0() { return cRulesRuleParserRuleCall_2_0; }
 	}
+	public class ConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cps.gameoflife.Lsjatl.Condition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cBoolOpParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cNCountAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNCountINTTerminalRuleCall_1_0 = (RuleCall)cNCountAssignment_1.eContents().get(0);
+		
+		// // A list of rules, none or whatever size
+		//Condition: BoolOp nCount=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//BoolOp nCount=INT
+		public Group getGroup() { return cGroup; }
+		
+		//BoolOp
+		public RuleCall getBoolOpParserRuleCall_0() { return cBoolOpParserRuleCall_0; }
+		
+		//nCount=INT
+		public Assignment getNCountAssignment_1() { return cNCountAssignment_1; }
+		
+		//INT
+		public RuleCall getNCountINTTerminalRuleCall_1_0() { return cNCountINTTerminalRuleCall_1_0; }
+	}
 	public class RuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cps.gameoflife.Lsjatl.Rule");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -233,19 +256,16 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cStateStateParserRuleCall_1_0 = (RuleCall)cStateAssignment_1.eContents().get(0);
 		private final Keyword cCellKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cWithKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cOpAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cOpBoolOpParserRuleCall_4_0 = (RuleCall)cOpAssignment_4.eContents().get(0);
-		private final Assignment cNCountAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cNCountINTTerminalRuleCall_5_0 = (RuleCall)cNCountAssignment_5.eContents().get(0);
-		private final Keyword cNeighborsKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cResultAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cResultOutcomeParserRuleCall_7_0 = (RuleCall)cResultAssignment_7.eContents().get(0);
+		private final Assignment cConditionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cConditionsConditionParserRuleCall_4_0 = (RuleCall)cConditionsAssignment_4.eContents().get(0);
+		private final Keyword cNeighborsKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cResultAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cResultOutcomeParserRuleCall_6_0 = (RuleCall)cResultAssignment_6.eContents().get(0);
 		
-		// // A list of rules, none or whatever size
-		//Rule: 'Each' state=State 'cell' 'with' op=BoolOp nCount=INT 'neighbors' result=Outcome;
+		//Rule: 'Each' state=State 'cell' 'with' conditions += Condition+ 'neighbors' result=Outcome;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Each' state=State 'cell' 'with' op=BoolOp nCount=INT 'neighbors' result=Outcome
+		//'Each' state=State 'cell' 'with' conditions += Condition+ 'neighbors' result=Outcome
 		public Group getGroup() { return cGroup; }
 		
 		//'Each'
@@ -263,26 +283,20 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'with'
 		public Keyword getWithKeyword_3() { return cWithKeyword_3; }
 		
-		//op=BoolOp
-		public Assignment getOpAssignment_4() { return cOpAssignment_4; }
+		//conditions += Condition+
+		public Assignment getConditionsAssignment_4() { return cConditionsAssignment_4; }
 		
-		//BoolOp
-		public RuleCall getOpBoolOpParserRuleCall_4_0() { return cOpBoolOpParserRuleCall_4_0; }
-		
-		//nCount=INT
-		public Assignment getNCountAssignment_5() { return cNCountAssignment_5; }
-		
-		//INT
-		public RuleCall getNCountINTTerminalRuleCall_5_0() { return cNCountINTTerminalRuleCall_5_0; }
+		//Condition
+		public RuleCall getConditionsConditionParserRuleCall_4_0() { return cConditionsConditionParserRuleCall_4_0; }
 		
 		//'neighbors'
-		public Keyword getNeighborsKeyword_6() { return cNeighborsKeyword_6; }
+		public Keyword getNeighborsKeyword_5() { return cNeighborsKeyword_5; }
 		
 		//result=Outcome
-		public Assignment getResultAssignment_7() { return cResultAssignment_7; }
+		public Assignment getResultAssignment_6() { return cResultAssignment_6; }
 		
 		//Outcome
-		public RuleCall getResultOutcomeParserRuleCall_7_0() { return cResultOutcomeParserRuleCall_7_0; }
+		public RuleCall getResultOutcomeParserRuleCall_6_0() { return cResultOutcomeParserRuleCall_6_0; }
 	}
 	public class StateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cps.gameoflife.Lsjatl.State");
@@ -362,6 +376,7 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	private final PopulatedCellElements pPopulatedCell;
 	private final PointElements pPoint;
 	private final RulesElements pRules;
+	private final ConditionElements pCondition;
 	private final RuleElements pRule;
 	private final StateElements pState;
 	private final BoolOpElements pBoolOp;
@@ -382,6 +397,7 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.pPopulatedCell = new PopulatedCellElements();
 		this.pPoint = new PointElements();
 		this.pRules = new RulesElements();
+		this.pCondition = new ConditionElements();
 		this.pRule = new RuleElements();
 		this.pState = new StateElements();
 		this.pBoolOp = new BoolOpElements();
@@ -474,7 +490,16 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	// // A list of rules, none or whatever size
-	//Rule: 'Each' state=State 'cell' 'with' op=BoolOp nCount=INT 'neighbors' result=Outcome;
+	//Condition: BoolOp nCount=INT;
+	public ConditionElements getConditionAccess() {
+		return pCondition;
+	}
+	
+	public ParserRule getConditionRule() {
+		return getConditionAccess().getRule();
+	}
+	
+	//Rule: 'Each' state=State 'cell' 'with' conditions += Condition+ 'neighbors' result=Outcome;
 	public RuleElements getRuleAccess() {
 		return pRule;
 	}

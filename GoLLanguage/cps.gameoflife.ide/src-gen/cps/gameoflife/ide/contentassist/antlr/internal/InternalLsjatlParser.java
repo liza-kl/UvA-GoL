@@ -553,12 +553,89 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleRules"
 
 
+    // $ANTLR start "entryRuleCondition"
+    // InternalLsjatl.g:203:1: entryRuleCondition : ruleCondition EOF ;
+    public final void entryRuleCondition() throws RecognitionException {
+        try {
+            // InternalLsjatl.g:204:1: ( ruleCondition EOF )
+            // InternalLsjatl.g:205:1: ruleCondition EOF
+            {
+             before(grammarAccess.getConditionRule()); 
+            pushFollow(FOLLOW_1);
+            ruleCondition();
+
+            state._fsp--;
+
+             after(grammarAccess.getConditionRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleCondition"
+
+
+    // $ANTLR start "ruleCondition"
+    // InternalLsjatl.g:212:1: ruleCondition : ( ( rule__Condition__Group__0 ) ) ;
+    public final void ruleCondition() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLsjatl.g:216:2: ( ( ( rule__Condition__Group__0 ) ) )
+            // InternalLsjatl.g:217:2: ( ( rule__Condition__Group__0 ) )
+            {
+            // InternalLsjatl.g:217:2: ( ( rule__Condition__Group__0 ) )
+            // InternalLsjatl.g:218:3: ( rule__Condition__Group__0 )
+            {
+             before(grammarAccess.getConditionAccess().getGroup()); 
+            // InternalLsjatl.g:219:3: ( rule__Condition__Group__0 )
+            // InternalLsjatl.g:219:4: rule__Condition__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Condition__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getConditionAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleCondition"
+
+
     // $ANTLR start "entryRuleRule"
-    // InternalLsjatl.g:203:1: entryRuleRule : ruleRule EOF ;
+    // InternalLsjatl.g:228:1: entryRuleRule : ruleRule EOF ;
     public final void entryRuleRule() throws RecognitionException {
         try {
-            // InternalLsjatl.g:204:1: ( ruleRule EOF )
-            // InternalLsjatl.g:205:1: ruleRule EOF
+            // InternalLsjatl.g:229:1: ( ruleRule EOF )
+            // InternalLsjatl.g:230:1: ruleRule EOF
             {
              before(grammarAccess.getRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -584,21 +661,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleRule"
-    // InternalLsjatl.g:212:1: ruleRule : ( ( rule__Rule__Group__0 ) ) ;
+    // InternalLsjatl.g:237:1: ruleRule : ( ( rule__Rule__Group__0 ) ) ;
     public final void ruleRule() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:216:2: ( ( ( rule__Rule__Group__0 ) ) )
-            // InternalLsjatl.g:217:2: ( ( rule__Rule__Group__0 ) )
+            // InternalLsjatl.g:241:2: ( ( ( rule__Rule__Group__0 ) ) )
+            // InternalLsjatl.g:242:2: ( ( rule__Rule__Group__0 ) )
             {
-            // InternalLsjatl.g:217:2: ( ( rule__Rule__Group__0 ) )
-            // InternalLsjatl.g:218:3: ( rule__Rule__Group__0 )
+            // InternalLsjatl.g:242:2: ( ( rule__Rule__Group__0 ) )
+            // InternalLsjatl.g:243:3: ( rule__Rule__Group__0 )
             {
              before(grammarAccess.getRuleAccess().getGroup()); 
-            // InternalLsjatl.g:219:3: ( rule__Rule__Group__0 )
-            // InternalLsjatl.g:219:4: rule__Rule__Group__0
+            // InternalLsjatl.g:244:3: ( rule__Rule__Group__0 )
+            // InternalLsjatl.g:244:4: rule__Rule__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Rule__Group__0();
@@ -631,11 +708,11 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleState"
-    // InternalLsjatl.g:228:1: entryRuleState : ruleState EOF ;
+    // InternalLsjatl.g:253:1: entryRuleState : ruleState EOF ;
     public final void entryRuleState() throws RecognitionException {
         try {
-            // InternalLsjatl.g:229:1: ( ruleState EOF )
-            // InternalLsjatl.g:230:1: ruleState EOF
+            // InternalLsjatl.g:254:1: ( ruleState EOF )
+            // InternalLsjatl.g:255:1: ruleState EOF
             {
              before(grammarAccess.getStateRule()); 
             pushFollow(FOLLOW_1);
@@ -661,21 +738,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleState"
-    // InternalLsjatl.g:237:1: ruleState : ( ( rule__State__Alternatives ) ) ;
+    // InternalLsjatl.g:262:1: ruleState : ( ( rule__State__Alternatives ) ) ;
     public final void ruleState() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:241:2: ( ( ( rule__State__Alternatives ) ) )
-            // InternalLsjatl.g:242:2: ( ( rule__State__Alternatives ) )
+            // InternalLsjatl.g:266:2: ( ( ( rule__State__Alternatives ) ) )
+            // InternalLsjatl.g:267:2: ( ( rule__State__Alternatives ) )
             {
-            // InternalLsjatl.g:242:2: ( ( rule__State__Alternatives ) )
-            // InternalLsjatl.g:243:3: ( rule__State__Alternatives )
+            // InternalLsjatl.g:267:2: ( ( rule__State__Alternatives ) )
+            // InternalLsjatl.g:268:3: ( rule__State__Alternatives )
             {
              before(grammarAccess.getStateAccess().getAlternatives()); 
-            // InternalLsjatl.g:244:3: ( rule__State__Alternatives )
-            // InternalLsjatl.g:244:4: rule__State__Alternatives
+            // InternalLsjatl.g:269:3: ( rule__State__Alternatives )
+            // InternalLsjatl.g:269:4: rule__State__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__State__Alternatives();
@@ -708,11 +785,11 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleBoolOp"
-    // InternalLsjatl.g:253:1: entryRuleBoolOp : ruleBoolOp EOF ;
+    // InternalLsjatl.g:278:1: entryRuleBoolOp : ruleBoolOp EOF ;
     public final void entryRuleBoolOp() throws RecognitionException {
         try {
-            // InternalLsjatl.g:254:1: ( ruleBoolOp EOF )
-            // InternalLsjatl.g:255:1: ruleBoolOp EOF
+            // InternalLsjatl.g:279:1: ( ruleBoolOp EOF )
+            // InternalLsjatl.g:280:1: ruleBoolOp EOF
             {
              before(grammarAccess.getBoolOpRule()); 
             pushFollow(FOLLOW_1);
@@ -738,21 +815,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleBoolOp"
-    // InternalLsjatl.g:262:1: ruleBoolOp : ( ( rule__BoolOp__Alternatives ) ) ;
+    // InternalLsjatl.g:287:1: ruleBoolOp : ( ( rule__BoolOp__Alternatives ) ) ;
     public final void ruleBoolOp() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:266:2: ( ( ( rule__BoolOp__Alternatives ) ) )
-            // InternalLsjatl.g:267:2: ( ( rule__BoolOp__Alternatives ) )
+            // InternalLsjatl.g:291:2: ( ( ( rule__BoolOp__Alternatives ) ) )
+            // InternalLsjatl.g:292:2: ( ( rule__BoolOp__Alternatives ) )
             {
-            // InternalLsjatl.g:267:2: ( ( rule__BoolOp__Alternatives ) )
-            // InternalLsjatl.g:268:3: ( rule__BoolOp__Alternatives )
+            // InternalLsjatl.g:292:2: ( ( rule__BoolOp__Alternatives ) )
+            // InternalLsjatl.g:293:3: ( rule__BoolOp__Alternatives )
             {
              before(grammarAccess.getBoolOpAccess().getAlternatives()); 
-            // InternalLsjatl.g:269:3: ( rule__BoolOp__Alternatives )
-            // InternalLsjatl.g:269:4: rule__BoolOp__Alternatives
+            // InternalLsjatl.g:294:3: ( rule__BoolOp__Alternatives )
+            // InternalLsjatl.g:294:4: rule__BoolOp__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__BoolOp__Alternatives();
@@ -785,11 +862,11 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleOutcome"
-    // InternalLsjatl.g:278:1: entryRuleOutcome : ruleOutcome EOF ;
+    // InternalLsjatl.g:303:1: entryRuleOutcome : ruleOutcome EOF ;
     public final void entryRuleOutcome() throws RecognitionException {
         try {
-            // InternalLsjatl.g:279:1: ( ruleOutcome EOF )
-            // InternalLsjatl.g:280:1: ruleOutcome EOF
+            // InternalLsjatl.g:304:1: ( ruleOutcome EOF )
+            // InternalLsjatl.g:305:1: ruleOutcome EOF
             {
              before(grammarAccess.getOutcomeRule()); 
             pushFollow(FOLLOW_1);
@@ -815,21 +892,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleOutcome"
-    // InternalLsjatl.g:287:1: ruleOutcome : ( ( rule__Outcome__Alternatives ) ) ;
+    // InternalLsjatl.g:312:1: ruleOutcome : ( ( rule__Outcome__Alternatives ) ) ;
     public final void ruleOutcome() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:291:2: ( ( ( rule__Outcome__Alternatives ) ) )
-            // InternalLsjatl.g:292:2: ( ( rule__Outcome__Alternatives ) )
+            // InternalLsjatl.g:316:2: ( ( ( rule__Outcome__Alternatives ) ) )
+            // InternalLsjatl.g:317:2: ( ( rule__Outcome__Alternatives ) )
             {
-            // InternalLsjatl.g:292:2: ( ( rule__Outcome__Alternatives ) )
-            // InternalLsjatl.g:293:3: ( rule__Outcome__Alternatives )
+            // InternalLsjatl.g:317:2: ( ( rule__Outcome__Alternatives ) )
+            // InternalLsjatl.g:318:3: ( rule__Outcome__Alternatives )
             {
              before(grammarAccess.getOutcomeAccess().getAlternatives()); 
-            // InternalLsjatl.g:294:3: ( rule__Outcome__Alternatives )
-            // InternalLsjatl.g:294:4: rule__Outcome__Alternatives
+            // InternalLsjatl.g:319:3: ( rule__Outcome__Alternatives )
+            // InternalLsjatl.g:319:4: rule__Outcome__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__Outcome__Alternatives();
@@ -862,13 +939,13 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Alternatives"
-    // InternalLsjatl.g:302:1: rule__State__Alternatives : ( ( 'living' ) | ( 'dead' ) );
+    // InternalLsjatl.g:327:1: rule__State__Alternatives : ( ( 'living' ) | ( 'dead' ) );
     public final void rule__State__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:306:1: ( ( 'living' ) | ( 'dead' ) )
+            // InternalLsjatl.g:331:1: ( ( 'living' ) | ( 'dead' ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -886,10 +963,10 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalLsjatl.g:307:2: ( 'living' )
+                    // InternalLsjatl.g:332:2: ( 'living' )
                     {
-                    // InternalLsjatl.g:307:2: ( 'living' )
-                    // InternalLsjatl.g:308:3: 'living'
+                    // InternalLsjatl.g:332:2: ( 'living' )
+                    // InternalLsjatl.g:333:3: 'living'
                     {
                      before(grammarAccess.getStateAccess().getLivingKeyword_0()); 
                     match(input,11,FOLLOW_2); 
@@ -901,10 +978,10 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalLsjatl.g:313:2: ( 'dead' )
+                    // InternalLsjatl.g:338:2: ( 'dead' )
                     {
-                    // InternalLsjatl.g:313:2: ( 'dead' )
-                    // InternalLsjatl.g:314:3: 'dead'
+                    // InternalLsjatl.g:338:2: ( 'dead' )
+                    // InternalLsjatl.g:339:3: 'dead'
                     {
                      before(grammarAccess.getStateAccess().getDeadKeyword_1()); 
                     match(input,12,FOLLOW_2); 
@@ -933,13 +1010,13 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoolOp__Alternatives"
-    // InternalLsjatl.g:323:1: rule__BoolOp__Alternatives : ( ( '>' ) | ( '<' ) | ( '>=' ) | ( '<=' ) | ( '==' ) );
+    // InternalLsjatl.g:348:1: rule__BoolOp__Alternatives : ( ( '>' ) | ( '<' ) | ( '>=' ) | ( '<=' ) | ( '==' ) );
     public final void rule__BoolOp__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:327:1: ( ( '>' ) | ( '<' ) | ( '>=' ) | ( '<=' ) | ( '==' ) )
+            // InternalLsjatl.g:352:1: ( ( '>' ) | ( '<' ) | ( '>=' ) | ( '<=' ) | ( '==' ) )
             int alt2=5;
             switch ( input.LA(1) ) {
             case 13:
@@ -976,10 +1053,10 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
             switch (alt2) {
                 case 1 :
-                    // InternalLsjatl.g:328:2: ( '>' )
+                    // InternalLsjatl.g:353:2: ( '>' )
                     {
-                    // InternalLsjatl.g:328:2: ( '>' )
-                    // InternalLsjatl.g:329:3: '>'
+                    // InternalLsjatl.g:353:2: ( '>' )
+                    // InternalLsjatl.g:354:3: '>'
                     {
                      before(grammarAccess.getBoolOpAccess().getGreaterThanSignKeyword_0()); 
                     match(input,13,FOLLOW_2); 
@@ -991,10 +1068,10 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalLsjatl.g:334:2: ( '<' )
+                    // InternalLsjatl.g:359:2: ( '<' )
                     {
-                    // InternalLsjatl.g:334:2: ( '<' )
-                    // InternalLsjatl.g:335:3: '<'
+                    // InternalLsjatl.g:359:2: ( '<' )
+                    // InternalLsjatl.g:360:3: '<'
                     {
                      before(grammarAccess.getBoolOpAccess().getLessThanSignKeyword_1()); 
                     match(input,14,FOLLOW_2); 
@@ -1006,10 +1083,10 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalLsjatl.g:340:2: ( '>=' )
+                    // InternalLsjatl.g:365:2: ( '>=' )
                     {
-                    // InternalLsjatl.g:340:2: ( '>=' )
-                    // InternalLsjatl.g:341:3: '>='
+                    // InternalLsjatl.g:365:2: ( '>=' )
+                    // InternalLsjatl.g:366:3: '>='
                     {
                      before(grammarAccess.getBoolOpAccess().getGreaterThanSignEqualsSignKeyword_2()); 
                     match(input,15,FOLLOW_2); 
@@ -1021,10 +1098,10 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalLsjatl.g:346:2: ( '<=' )
+                    // InternalLsjatl.g:371:2: ( '<=' )
                     {
-                    // InternalLsjatl.g:346:2: ( '<=' )
-                    // InternalLsjatl.g:347:3: '<='
+                    // InternalLsjatl.g:371:2: ( '<=' )
+                    // InternalLsjatl.g:372:3: '<='
                     {
                      before(grammarAccess.getBoolOpAccess().getLessThanSignEqualsSignKeyword_3()); 
                     match(input,16,FOLLOW_2); 
@@ -1036,10 +1113,10 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalLsjatl.g:352:2: ( '==' )
+                    // InternalLsjatl.g:377:2: ( '==' )
                     {
-                    // InternalLsjatl.g:352:2: ( '==' )
-                    // InternalLsjatl.g:353:3: '=='
+                    // InternalLsjatl.g:377:2: ( '==' )
+                    // InternalLsjatl.g:378:3: '=='
                     {
                      before(grammarAccess.getBoolOpAccess().getEqualsSignEqualsSignKeyword_4()); 
                     match(input,17,FOLLOW_2); 
@@ -1068,13 +1145,13 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Outcome__Alternatives"
-    // InternalLsjatl.g:362:1: rule__Outcome__Alternatives : ( ( 'survives' ) | ( 'dies' ) | ( 'populates' ) );
+    // InternalLsjatl.g:387:1: rule__Outcome__Alternatives : ( ( 'survives' ) | ( 'dies' ) | ( 'populates' ) );
     public final void rule__Outcome__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:366:1: ( ( 'survives' ) | ( 'dies' ) | ( 'populates' ) )
+            // InternalLsjatl.g:391:1: ( ( 'survives' ) | ( 'dies' ) | ( 'populates' ) )
             int alt3=3;
             switch ( input.LA(1) ) {
             case 18:
@@ -1101,10 +1178,10 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
             switch (alt3) {
                 case 1 :
-                    // InternalLsjatl.g:367:2: ( 'survives' )
+                    // InternalLsjatl.g:392:2: ( 'survives' )
                     {
-                    // InternalLsjatl.g:367:2: ( 'survives' )
-                    // InternalLsjatl.g:368:3: 'survives'
+                    // InternalLsjatl.g:392:2: ( 'survives' )
+                    // InternalLsjatl.g:393:3: 'survives'
                     {
                      before(grammarAccess.getOutcomeAccess().getSurvivesKeyword_0()); 
                     match(input,18,FOLLOW_2); 
@@ -1116,10 +1193,10 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalLsjatl.g:373:2: ( 'dies' )
+                    // InternalLsjatl.g:398:2: ( 'dies' )
                     {
-                    // InternalLsjatl.g:373:2: ( 'dies' )
-                    // InternalLsjatl.g:374:3: 'dies'
+                    // InternalLsjatl.g:398:2: ( 'dies' )
+                    // InternalLsjatl.g:399:3: 'dies'
                     {
                      before(grammarAccess.getOutcomeAccess().getDiesKeyword_1()); 
                     match(input,19,FOLLOW_2); 
@@ -1131,10 +1208,10 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalLsjatl.g:379:2: ( 'populates' )
+                    // InternalLsjatl.g:404:2: ( 'populates' )
                     {
-                    // InternalLsjatl.g:379:2: ( 'populates' )
-                    // InternalLsjatl.g:380:3: 'populates'
+                    // InternalLsjatl.g:404:2: ( 'populates' )
+                    // InternalLsjatl.g:405:3: 'populates'
                     {
                      before(grammarAccess.getOutcomeAccess().getPopulatesKeyword_2()); 
                     match(input,20,FOLLOW_2); 
@@ -1163,14 +1240,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Game__Group__0"
-    // InternalLsjatl.g:389:1: rule__Game__Group__0 : rule__Game__Group__0__Impl rule__Game__Group__1 ;
+    // InternalLsjatl.g:414:1: rule__Game__Group__0 : rule__Game__Group__0__Impl rule__Game__Group__1 ;
     public final void rule__Game__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:393:1: ( rule__Game__Group__0__Impl rule__Game__Group__1 )
-            // InternalLsjatl.g:394:2: rule__Game__Group__0__Impl rule__Game__Group__1
+            // InternalLsjatl.g:418:1: ( rule__Game__Group__0__Impl rule__Game__Group__1 )
+            // InternalLsjatl.g:419:2: rule__Game__Group__0__Impl rule__Game__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Game__Group__0__Impl();
@@ -1201,21 +1278,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Game__Group__0__Impl"
-    // InternalLsjatl.g:401:1: rule__Game__Group__0__Impl : ( ( rule__Game__GridAssignment_0 ) ) ;
+    // InternalLsjatl.g:426:1: rule__Game__Group__0__Impl : ( ( rule__Game__GridAssignment_0 ) ) ;
     public final void rule__Game__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:405:1: ( ( ( rule__Game__GridAssignment_0 ) ) )
-            // InternalLsjatl.g:406:1: ( ( rule__Game__GridAssignment_0 ) )
+            // InternalLsjatl.g:430:1: ( ( ( rule__Game__GridAssignment_0 ) ) )
+            // InternalLsjatl.g:431:1: ( ( rule__Game__GridAssignment_0 ) )
             {
-            // InternalLsjatl.g:406:1: ( ( rule__Game__GridAssignment_0 ) )
-            // InternalLsjatl.g:407:2: ( rule__Game__GridAssignment_0 )
+            // InternalLsjatl.g:431:1: ( ( rule__Game__GridAssignment_0 ) )
+            // InternalLsjatl.g:432:2: ( rule__Game__GridAssignment_0 )
             {
              before(grammarAccess.getGameAccess().getGridAssignment_0()); 
-            // InternalLsjatl.g:408:2: ( rule__Game__GridAssignment_0 )
-            // InternalLsjatl.g:408:3: rule__Game__GridAssignment_0
+            // InternalLsjatl.g:433:2: ( rule__Game__GridAssignment_0 )
+            // InternalLsjatl.g:433:3: rule__Game__GridAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Game__GridAssignment_0();
@@ -1248,14 +1325,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Game__Group__1"
-    // InternalLsjatl.g:416:1: rule__Game__Group__1 : rule__Game__Group__1__Impl ;
+    // InternalLsjatl.g:441:1: rule__Game__Group__1 : rule__Game__Group__1__Impl ;
     public final void rule__Game__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:420:1: ( rule__Game__Group__1__Impl )
-            // InternalLsjatl.g:421:2: rule__Game__Group__1__Impl
+            // InternalLsjatl.g:445:1: ( rule__Game__Group__1__Impl )
+            // InternalLsjatl.g:446:2: rule__Game__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Game__Group__1__Impl();
@@ -1281,21 +1358,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Game__Group__1__Impl"
-    // InternalLsjatl.g:427:1: rule__Game__Group__1__Impl : ( ( rule__Game__RulesAssignment_1 ) ) ;
+    // InternalLsjatl.g:452:1: rule__Game__Group__1__Impl : ( ( rule__Game__RulesAssignment_1 ) ) ;
     public final void rule__Game__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:431:1: ( ( ( rule__Game__RulesAssignment_1 ) ) )
-            // InternalLsjatl.g:432:1: ( ( rule__Game__RulesAssignment_1 ) )
+            // InternalLsjatl.g:456:1: ( ( ( rule__Game__RulesAssignment_1 ) ) )
+            // InternalLsjatl.g:457:1: ( ( rule__Game__RulesAssignment_1 ) )
             {
-            // InternalLsjatl.g:432:1: ( ( rule__Game__RulesAssignment_1 ) )
-            // InternalLsjatl.g:433:2: ( rule__Game__RulesAssignment_1 )
+            // InternalLsjatl.g:457:1: ( ( rule__Game__RulesAssignment_1 ) )
+            // InternalLsjatl.g:458:2: ( rule__Game__RulesAssignment_1 )
             {
              before(grammarAccess.getGameAccess().getRulesAssignment_1()); 
-            // InternalLsjatl.g:434:2: ( rule__Game__RulesAssignment_1 )
-            // InternalLsjatl.g:434:3: rule__Game__RulesAssignment_1
+            // InternalLsjatl.g:459:2: ( rule__Game__RulesAssignment_1 )
+            // InternalLsjatl.g:459:3: rule__Game__RulesAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Game__RulesAssignment_1();
@@ -1328,14 +1405,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grid__Group__0"
-    // InternalLsjatl.g:443:1: rule__Grid__Group__0 : rule__Grid__Group__0__Impl rule__Grid__Group__1 ;
+    // InternalLsjatl.g:468:1: rule__Grid__Group__0 : rule__Grid__Group__0__Impl rule__Grid__Group__1 ;
     public final void rule__Grid__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:447:1: ( rule__Grid__Group__0__Impl rule__Grid__Group__1 )
-            // InternalLsjatl.g:448:2: rule__Grid__Group__0__Impl rule__Grid__Group__1
+            // InternalLsjatl.g:472:1: ( rule__Grid__Group__0__Impl rule__Grid__Group__1 )
+            // InternalLsjatl.g:473:2: rule__Grid__Group__0__Impl rule__Grid__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Grid__Group__0__Impl();
@@ -1366,21 +1443,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grid__Group__0__Impl"
-    // InternalLsjatl.g:455:1: rule__Grid__Group__0__Impl : ( () ) ;
+    // InternalLsjatl.g:480:1: rule__Grid__Group__0__Impl : ( () ) ;
     public final void rule__Grid__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:459:1: ( ( () ) )
-            // InternalLsjatl.g:460:1: ( () )
+            // InternalLsjatl.g:484:1: ( ( () ) )
+            // InternalLsjatl.g:485:1: ( () )
             {
-            // InternalLsjatl.g:460:1: ( () )
-            // InternalLsjatl.g:461:2: ()
+            // InternalLsjatl.g:485:1: ( () )
+            // InternalLsjatl.g:486:2: ()
             {
              before(grammarAccess.getGridAccess().getGridAction_0()); 
-            // InternalLsjatl.g:462:2: ()
-            // InternalLsjatl.g:462:3: 
+            // InternalLsjatl.g:487:2: ()
+            // InternalLsjatl.g:487:3: 
             {
             }
 
@@ -1403,14 +1480,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grid__Group__1"
-    // InternalLsjatl.g:470:1: rule__Grid__Group__1 : rule__Grid__Group__1__Impl rule__Grid__Group__2 ;
+    // InternalLsjatl.g:495:1: rule__Grid__Group__1 : rule__Grid__Group__1__Impl rule__Grid__Group__2 ;
     public final void rule__Grid__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:474:1: ( rule__Grid__Group__1__Impl rule__Grid__Group__2 )
-            // InternalLsjatl.g:475:2: rule__Grid__Group__1__Impl rule__Grid__Group__2
+            // InternalLsjatl.g:499:1: ( rule__Grid__Group__1__Impl rule__Grid__Group__2 )
+            // InternalLsjatl.g:500:2: rule__Grid__Group__1__Impl rule__Grid__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Grid__Group__1__Impl();
@@ -1441,17 +1518,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grid__Group__1__Impl"
-    // InternalLsjatl.g:482:1: rule__Grid__Group__1__Impl : ( 'Grid' ) ;
+    // InternalLsjatl.g:507:1: rule__Grid__Group__1__Impl : ( 'Grid' ) ;
     public final void rule__Grid__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:486:1: ( ( 'Grid' ) )
-            // InternalLsjatl.g:487:1: ( 'Grid' )
+            // InternalLsjatl.g:511:1: ( ( 'Grid' ) )
+            // InternalLsjatl.g:512:1: ( 'Grid' )
             {
-            // InternalLsjatl.g:487:1: ( 'Grid' )
-            // InternalLsjatl.g:488:2: 'Grid'
+            // InternalLsjatl.g:512:1: ( 'Grid' )
+            // InternalLsjatl.g:513:2: 'Grid'
             {
              before(grammarAccess.getGridAccess().getGridKeyword_1()); 
             match(input,21,FOLLOW_2); 
@@ -1478,14 +1555,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grid__Group__2"
-    // InternalLsjatl.g:497:1: rule__Grid__Group__2 : rule__Grid__Group__2__Impl rule__Grid__Group__3 ;
+    // InternalLsjatl.g:522:1: rule__Grid__Group__2 : rule__Grid__Group__2__Impl rule__Grid__Group__3 ;
     public final void rule__Grid__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:501:1: ( rule__Grid__Group__2__Impl rule__Grid__Group__3 )
-            // InternalLsjatl.g:502:2: rule__Grid__Group__2__Impl rule__Grid__Group__3
+            // InternalLsjatl.g:526:1: ( rule__Grid__Group__2__Impl rule__Grid__Group__3 )
+            // InternalLsjatl.g:527:2: rule__Grid__Group__2__Impl rule__Grid__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__Grid__Group__2__Impl();
@@ -1516,21 +1593,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grid__Group__2__Impl"
-    // InternalLsjatl.g:509:1: rule__Grid__Group__2__Impl : ( ( rule__Grid__SizeAssignment_2 ) ) ;
+    // InternalLsjatl.g:534:1: rule__Grid__Group__2__Impl : ( ( rule__Grid__SizeAssignment_2 ) ) ;
     public final void rule__Grid__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:513:1: ( ( ( rule__Grid__SizeAssignment_2 ) ) )
-            // InternalLsjatl.g:514:1: ( ( rule__Grid__SizeAssignment_2 ) )
+            // InternalLsjatl.g:538:1: ( ( ( rule__Grid__SizeAssignment_2 ) ) )
+            // InternalLsjatl.g:539:1: ( ( rule__Grid__SizeAssignment_2 ) )
             {
-            // InternalLsjatl.g:514:1: ( ( rule__Grid__SizeAssignment_2 ) )
-            // InternalLsjatl.g:515:2: ( rule__Grid__SizeAssignment_2 )
+            // InternalLsjatl.g:539:1: ( ( rule__Grid__SizeAssignment_2 ) )
+            // InternalLsjatl.g:540:2: ( rule__Grid__SizeAssignment_2 )
             {
              before(grammarAccess.getGridAccess().getSizeAssignment_2()); 
-            // InternalLsjatl.g:516:2: ( rule__Grid__SizeAssignment_2 )
-            // InternalLsjatl.g:516:3: rule__Grid__SizeAssignment_2
+            // InternalLsjatl.g:541:2: ( rule__Grid__SizeAssignment_2 )
+            // InternalLsjatl.g:541:3: rule__Grid__SizeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Grid__SizeAssignment_2();
@@ -1563,14 +1640,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grid__Group__3"
-    // InternalLsjatl.g:524:1: rule__Grid__Group__3 : rule__Grid__Group__3__Impl ;
+    // InternalLsjatl.g:549:1: rule__Grid__Group__3 : rule__Grid__Group__3__Impl ;
     public final void rule__Grid__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:528:1: ( rule__Grid__Group__3__Impl )
-            // InternalLsjatl.g:529:2: rule__Grid__Group__3__Impl
+            // InternalLsjatl.g:553:1: ( rule__Grid__Group__3__Impl )
+            // InternalLsjatl.g:554:2: rule__Grid__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Grid__Group__3__Impl();
@@ -1596,20 +1673,20 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grid__Group__3__Impl"
-    // InternalLsjatl.g:535:1: rule__Grid__Group__3__Impl : ( ( rule__Grid__PopulatedCellsAssignment_3 )* ) ;
+    // InternalLsjatl.g:560:1: rule__Grid__Group__3__Impl : ( ( rule__Grid__PopulatedCellsAssignment_3 )* ) ;
     public final void rule__Grid__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:539:1: ( ( ( rule__Grid__PopulatedCellsAssignment_3 )* ) )
-            // InternalLsjatl.g:540:1: ( ( rule__Grid__PopulatedCellsAssignment_3 )* )
+            // InternalLsjatl.g:564:1: ( ( ( rule__Grid__PopulatedCellsAssignment_3 )* ) )
+            // InternalLsjatl.g:565:1: ( ( rule__Grid__PopulatedCellsAssignment_3 )* )
             {
-            // InternalLsjatl.g:540:1: ( ( rule__Grid__PopulatedCellsAssignment_3 )* )
-            // InternalLsjatl.g:541:2: ( rule__Grid__PopulatedCellsAssignment_3 )*
+            // InternalLsjatl.g:565:1: ( ( rule__Grid__PopulatedCellsAssignment_3 )* )
+            // InternalLsjatl.g:566:2: ( rule__Grid__PopulatedCellsAssignment_3 )*
             {
              before(grammarAccess.getGridAccess().getPopulatedCellsAssignment_3()); 
-            // InternalLsjatl.g:542:2: ( rule__Grid__PopulatedCellsAssignment_3 )*
+            // InternalLsjatl.g:567:2: ( rule__Grid__PopulatedCellsAssignment_3 )*
             loop4:
             do {
                 int alt4=2;
@@ -1622,7 +1699,7 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalLsjatl.g:542:3: rule__Grid__PopulatedCellsAssignment_3
+            	    // InternalLsjatl.g:567:3: rule__Grid__PopulatedCellsAssignment_3
             	    {
             	    pushFollow(FOLLOW_7);
             	    rule__Grid__PopulatedCellsAssignment_3();
@@ -1661,14 +1738,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group__0"
-    // InternalLsjatl.g:551:1: rule__GridSize__Group__0 : rule__GridSize__Group__0__Impl rule__GridSize__Group__1 ;
+    // InternalLsjatl.g:576:1: rule__GridSize__Group__0 : rule__GridSize__Group__0__Impl rule__GridSize__Group__1 ;
     public final void rule__GridSize__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:555:1: ( rule__GridSize__Group__0__Impl rule__GridSize__Group__1 )
-            // InternalLsjatl.g:556:2: rule__GridSize__Group__0__Impl rule__GridSize__Group__1
+            // InternalLsjatl.g:580:1: ( rule__GridSize__Group__0__Impl rule__GridSize__Group__1 )
+            // InternalLsjatl.g:581:2: rule__GridSize__Group__0__Impl rule__GridSize__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__GridSize__Group__0__Impl();
@@ -1699,21 +1776,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group__0__Impl"
-    // InternalLsjatl.g:563:1: rule__GridSize__Group__0__Impl : ( () ) ;
+    // InternalLsjatl.g:588:1: rule__GridSize__Group__0__Impl : ( () ) ;
     public final void rule__GridSize__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:567:1: ( ( () ) )
-            // InternalLsjatl.g:568:1: ( () )
+            // InternalLsjatl.g:592:1: ( ( () ) )
+            // InternalLsjatl.g:593:1: ( () )
             {
-            // InternalLsjatl.g:568:1: ( () )
-            // InternalLsjatl.g:569:2: ()
+            // InternalLsjatl.g:593:1: ( () )
+            // InternalLsjatl.g:594:2: ()
             {
              before(grammarAccess.getGridSizeAccess().getGridSizeAction_0()); 
-            // InternalLsjatl.g:570:2: ()
-            // InternalLsjatl.g:570:3: 
+            // InternalLsjatl.g:595:2: ()
+            // InternalLsjatl.g:595:3: 
             {
             }
 
@@ -1736,14 +1813,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group__1"
-    // InternalLsjatl.g:578:1: rule__GridSize__Group__1 : rule__GridSize__Group__1__Impl rule__GridSize__Group__2 ;
+    // InternalLsjatl.g:603:1: rule__GridSize__Group__1 : rule__GridSize__Group__1__Impl rule__GridSize__Group__2 ;
     public final void rule__GridSize__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:582:1: ( rule__GridSize__Group__1__Impl rule__GridSize__Group__2 )
-            // InternalLsjatl.g:583:2: rule__GridSize__Group__1__Impl rule__GridSize__Group__2
+            // InternalLsjatl.g:607:1: ( rule__GridSize__Group__1__Impl rule__GridSize__Group__2 )
+            // InternalLsjatl.g:608:2: rule__GridSize__Group__1__Impl rule__GridSize__Group__2
             {
             pushFollow(FOLLOW_8);
             rule__GridSize__Group__1__Impl();
@@ -1774,17 +1851,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group__1__Impl"
-    // InternalLsjatl.g:590:1: rule__GridSize__Group__1__Impl : ( 'GridSize' ) ;
+    // InternalLsjatl.g:615:1: rule__GridSize__Group__1__Impl : ( 'GridSize' ) ;
     public final void rule__GridSize__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:594:1: ( ( 'GridSize' ) )
-            // InternalLsjatl.g:595:1: ( 'GridSize' )
+            // InternalLsjatl.g:619:1: ( ( 'GridSize' ) )
+            // InternalLsjatl.g:620:1: ( 'GridSize' )
             {
-            // InternalLsjatl.g:595:1: ( 'GridSize' )
-            // InternalLsjatl.g:596:2: 'GridSize'
+            // InternalLsjatl.g:620:1: ( 'GridSize' )
+            // InternalLsjatl.g:621:2: 'GridSize'
             {
              before(grammarAccess.getGridSizeAccess().getGridSizeKeyword_1()); 
             match(input,22,FOLLOW_2); 
@@ -1811,14 +1888,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group__2"
-    // InternalLsjatl.g:605:1: rule__GridSize__Group__2 : rule__GridSize__Group__2__Impl ;
+    // InternalLsjatl.g:630:1: rule__GridSize__Group__2 : rule__GridSize__Group__2__Impl ;
     public final void rule__GridSize__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:609:1: ( rule__GridSize__Group__2__Impl )
-            // InternalLsjatl.g:610:2: rule__GridSize__Group__2__Impl
+            // InternalLsjatl.g:634:1: ( rule__GridSize__Group__2__Impl )
+            // InternalLsjatl.g:635:2: rule__GridSize__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GridSize__Group__2__Impl();
@@ -1844,21 +1921,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group__2__Impl"
-    // InternalLsjatl.g:616:1: rule__GridSize__Group__2__Impl : ( ( rule__GridSize__Group_2__0 ) ) ;
+    // InternalLsjatl.g:641:1: rule__GridSize__Group__2__Impl : ( ( rule__GridSize__Group_2__0 ) ) ;
     public final void rule__GridSize__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:620:1: ( ( ( rule__GridSize__Group_2__0 ) ) )
-            // InternalLsjatl.g:621:1: ( ( rule__GridSize__Group_2__0 ) )
+            // InternalLsjatl.g:645:1: ( ( ( rule__GridSize__Group_2__0 ) ) )
+            // InternalLsjatl.g:646:1: ( ( rule__GridSize__Group_2__0 ) )
             {
-            // InternalLsjatl.g:621:1: ( ( rule__GridSize__Group_2__0 ) )
-            // InternalLsjatl.g:622:2: ( rule__GridSize__Group_2__0 )
+            // InternalLsjatl.g:646:1: ( ( rule__GridSize__Group_2__0 ) )
+            // InternalLsjatl.g:647:2: ( rule__GridSize__Group_2__0 )
             {
              before(grammarAccess.getGridSizeAccess().getGroup_2()); 
-            // InternalLsjatl.g:623:2: ( rule__GridSize__Group_2__0 )
-            // InternalLsjatl.g:623:3: rule__GridSize__Group_2__0
+            // InternalLsjatl.g:648:2: ( rule__GridSize__Group_2__0 )
+            // InternalLsjatl.g:648:3: rule__GridSize__Group_2__0
             {
             pushFollow(FOLLOW_2);
             rule__GridSize__Group_2__0();
@@ -1891,14 +1968,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group_2__0"
-    // InternalLsjatl.g:632:1: rule__GridSize__Group_2__0 : rule__GridSize__Group_2__0__Impl rule__GridSize__Group_2__1 ;
+    // InternalLsjatl.g:657:1: rule__GridSize__Group_2__0 : rule__GridSize__Group_2__0__Impl rule__GridSize__Group_2__1 ;
     public final void rule__GridSize__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:636:1: ( rule__GridSize__Group_2__0__Impl rule__GridSize__Group_2__1 )
-            // InternalLsjatl.g:637:2: rule__GridSize__Group_2__0__Impl rule__GridSize__Group_2__1
+            // InternalLsjatl.g:661:1: ( rule__GridSize__Group_2__0__Impl rule__GridSize__Group_2__1 )
+            // InternalLsjatl.g:662:2: rule__GridSize__Group_2__0__Impl rule__GridSize__Group_2__1
             {
             pushFollow(FOLLOW_9);
             rule__GridSize__Group_2__0__Impl();
@@ -1929,17 +2006,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group_2__0__Impl"
-    // InternalLsjatl.g:644:1: rule__GridSize__Group_2__0__Impl : ( 'height:' ) ;
+    // InternalLsjatl.g:669:1: rule__GridSize__Group_2__0__Impl : ( 'height:' ) ;
     public final void rule__GridSize__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:648:1: ( ( 'height:' ) )
-            // InternalLsjatl.g:649:1: ( 'height:' )
+            // InternalLsjatl.g:673:1: ( ( 'height:' ) )
+            // InternalLsjatl.g:674:1: ( 'height:' )
             {
-            // InternalLsjatl.g:649:1: ( 'height:' )
-            // InternalLsjatl.g:650:2: 'height:'
+            // InternalLsjatl.g:674:1: ( 'height:' )
+            // InternalLsjatl.g:675:2: 'height:'
             {
              before(grammarAccess.getGridSizeAccess().getHeightKeyword_2_0()); 
             match(input,23,FOLLOW_2); 
@@ -1966,14 +2043,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group_2__1"
-    // InternalLsjatl.g:659:1: rule__GridSize__Group_2__1 : rule__GridSize__Group_2__1__Impl rule__GridSize__Group_2__2 ;
+    // InternalLsjatl.g:684:1: rule__GridSize__Group_2__1 : rule__GridSize__Group_2__1__Impl rule__GridSize__Group_2__2 ;
     public final void rule__GridSize__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:663:1: ( rule__GridSize__Group_2__1__Impl rule__GridSize__Group_2__2 )
-            // InternalLsjatl.g:664:2: rule__GridSize__Group_2__1__Impl rule__GridSize__Group_2__2
+            // InternalLsjatl.g:688:1: ( rule__GridSize__Group_2__1__Impl rule__GridSize__Group_2__2 )
+            // InternalLsjatl.g:689:2: rule__GridSize__Group_2__1__Impl rule__GridSize__Group_2__2
             {
             pushFollow(FOLLOW_10);
             rule__GridSize__Group_2__1__Impl();
@@ -2004,21 +2081,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group_2__1__Impl"
-    // InternalLsjatl.g:671:1: rule__GridSize__Group_2__1__Impl : ( ( rule__GridSize__HeightAssignment_2_1 ) ) ;
+    // InternalLsjatl.g:696:1: rule__GridSize__Group_2__1__Impl : ( ( rule__GridSize__HeightAssignment_2_1 ) ) ;
     public final void rule__GridSize__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:675:1: ( ( ( rule__GridSize__HeightAssignment_2_1 ) ) )
-            // InternalLsjatl.g:676:1: ( ( rule__GridSize__HeightAssignment_2_1 ) )
+            // InternalLsjatl.g:700:1: ( ( ( rule__GridSize__HeightAssignment_2_1 ) ) )
+            // InternalLsjatl.g:701:1: ( ( rule__GridSize__HeightAssignment_2_1 ) )
             {
-            // InternalLsjatl.g:676:1: ( ( rule__GridSize__HeightAssignment_2_1 ) )
-            // InternalLsjatl.g:677:2: ( rule__GridSize__HeightAssignment_2_1 )
+            // InternalLsjatl.g:701:1: ( ( rule__GridSize__HeightAssignment_2_1 ) )
+            // InternalLsjatl.g:702:2: ( rule__GridSize__HeightAssignment_2_1 )
             {
              before(grammarAccess.getGridSizeAccess().getHeightAssignment_2_1()); 
-            // InternalLsjatl.g:678:2: ( rule__GridSize__HeightAssignment_2_1 )
-            // InternalLsjatl.g:678:3: rule__GridSize__HeightAssignment_2_1
+            // InternalLsjatl.g:703:2: ( rule__GridSize__HeightAssignment_2_1 )
+            // InternalLsjatl.g:703:3: rule__GridSize__HeightAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__GridSize__HeightAssignment_2_1();
@@ -2051,14 +2128,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group_2__2"
-    // InternalLsjatl.g:686:1: rule__GridSize__Group_2__2 : rule__GridSize__Group_2__2__Impl rule__GridSize__Group_2__3 ;
+    // InternalLsjatl.g:711:1: rule__GridSize__Group_2__2 : rule__GridSize__Group_2__2__Impl rule__GridSize__Group_2__3 ;
     public final void rule__GridSize__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:690:1: ( rule__GridSize__Group_2__2__Impl rule__GridSize__Group_2__3 )
-            // InternalLsjatl.g:691:2: rule__GridSize__Group_2__2__Impl rule__GridSize__Group_2__3
+            // InternalLsjatl.g:715:1: ( rule__GridSize__Group_2__2__Impl rule__GridSize__Group_2__3 )
+            // InternalLsjatl.g:716:2: rule__GridSize__Group_2__2__Impl rule__GridSize__Group_2__3
             {
             pushFollow(FOLLOW_9);
             rule__GridSize__Group_2__2__Impl();
@@ -2089,17 +2166,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group_2__2__Impl"
-    // InternalLsjatl.g:698:1: rule__GridSize__Group_2__2__Impl : ( 'width:' ) ;
+    // InternalLsjatl.g:723:1: rule__GridSize__Group_2__2__Impl : ( 'width:' ) ;
     public final void rule__GridSize__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:702:1: ( ( 'width:' ) )
-            // InternalLsjatl.g:703:1: ( 'width:' )
+            // InternalLsjatl.g:727:1: ( ( 'width:' ) )
+            // InternalLsjatl.g:728:1: ( 'width:' )
             {
-            // InternalLsjatl.g:703:1: ( 'width:' )
-            // InternalLsjatl.g:704:2: 'width:'
+            // InternalLsjatl.g:728:1: ( 'width:' )
+            // InternalLsjatl.g:729:2: 'width:'
             {
              before(grammarAccess.getGridSizeAccess().getWidthKeyword_2_2()); 
             match(input,24,FOLLOW_2); 
@@ -2126,14 +2203,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group_2__3"
-    // InternalLsjatl.g:713:1: rule__GridSize__Group_2__3 : rule__GridSize__Group_2__3__Impl ;
+    // InternalLsjatl.g:738:1: rule__GridSize__Group_2__3 : rule__GridSize__Group_2__3__Impl ;
     public final void rule__GridSize__Group_2__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:717:1: ( rule__GridSize__Group_2__3__Impl )
-            // InternalLsjatl.g:718:2: rule__GridSize__Group_2__3__Impl
+            // InternalLsjatl.g:742:1: ( rule__GridSize__Group_2__3__Impl )
+            // InternalLsjatl.g:743:2: rule__GridSize__Group_2__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GridSize__Group_2__3__Impl();
@@ -2159,21 +2236,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__Group_2__3__Impl"
-    // InternalLsjatl.g:724:1: rule__GridSize__Group_2__3__Impl : ( ( rule__GridSize__WidthAssignment_2_3 ) ) ;
+    // InternalLsjatl.g:749:1: rule__GridSize__Group_2__3__Impl : ( ( rule__GridSize__WidthAssignment_2_3 ) ) ;
     public final void rule__GridSize__Group_2__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:728:1: ( ( ( rule__GridSize__WidthAssignment_2_3 ) ) )
-            // InternalLsjatl.g:729:1: ( ( rule__GridSize__WidthAssignment_2_3 ) )
+            // InternalLsjatl.g:753:1: ( ( ( rule__GridSize__WidthAssignment_2_3 ) ) )
+            // InternalLsjatl.g:754:1: ( ( rule__GridSize__WidthAssignment_2_3 ) )
             {
-            // InternalLsjatl.g:729:1: ( ( rule__GridSize__WidthAssignment_2_3 ) )
-            // InternalLsjatl.g:730:2: ( rule__GridSize__WidthAssignment_2_3 )
+            // InternalLsjatl.g:754:1: ( ( rule__GridSize__WidthAssignment_2_3 ) )
+            // InternalLsjatl.g:755:2: ( rule__GridSize__WidthAssignment_2_3 )
             {
              before(grammarAccess.getGridSizeAccess().getWidthAssignment_2_3()); 
-            // InternalLsjatl.g:731:2: ( rule__GridSize__WidthAssignment_2_3 )
-            // InternalLsjatl.g:731:3: rule__GridSize__WidthAssignment_2_3
+            // InternalLsjatl.g:756:2: ( rule__GridSize__WidthAssignment_2_3 )
+            // InternalLsjatl.g:756:3: rule__GridSize__WidthAssignment_2_3
             {
             pushFollow(FOLLOW_2);
             rule__GridSize__WidthAssignment_2_3();
@@ -2206,14 +2283,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PopulatedCell__Group__0"
-    // InternalLsjatl.g:740:1: rule__PopulatedCell__Group__0 : rule__PopulatedCell__Group__0__Impl rule__PopulatedCell__Group__1 ;
+    // InternalLsjatl.g:765:1: rule__PopulatedCell__Group__0 : rule__PopulatedCell__Group__0__Impl rule__PopulatedCell__Group__1 ;
     public final void rule__PopulatedCell__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:744:1: ( rule__PopulatedCell__Group__0__Impl rule__PopulatedCell__Group__1 )
-            // InternalLsjatl.g:745:2: rule__PopulatedCell__Group__0__Impl rule__PopulatedCell__Group__1
+            // InternalLsjatl.g:769:1: ( rule__PopulatedCell__Group__0__Impl rule__PopulatedCell__Group__1 )
+            // InternalLsjatl.g:770:2: rule__PopulatedCell__Group__0__Impl rule__PopulatedCell__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__PopulatedCell__Group__0__Impl();
@@ -2244,17 +2321,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PopulatedCell__Group__0__Impl"
-    // InternalLsjatl.g:752:1: rule__PopulatedCell__Group__0__Impl : ( 'Point' ) ;
+    // InternalLsjatl.g:777:1: rule__PopulatedCell__Group__0__Impl : ( 'Point' ) ;
     public final void rule__PopulatedCell__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:756:1: ( ( 'Point' ) )
-            // InternalLsjatl.g:757:1: ( 'Point' )
+            // InternalLsjatl.g:781:1: ( ( 'Point' ) )
+            // InternalLsjatl.g:782:1: ( 'Point' )
             {
-            // InternalLsjatl.g:757:1: ( 'Point' )
-            // InternalLsjatl.g:758:2: 'Point'
+            // InternalLsjatl.g:782:1: ( 'Point' )
+            // InternalLsjatl.g:783:2: 'Point'
             {
              before(grammarAccess.getPopulatedCellAccess().getPointKeyword_0()); 
             match(input,25,FOLLOW_2); 
@@ -2281,14 +2358,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PopulatedCell__Group__1"
-    // InternalLsjatl.g:767:1: rule__PopulatedCell__Group__1 : rule__PopulatedCell__Group__1__Impl ;
+    // InternalLsjatl.g:792:1: rule__PopulatedCell__Group__1 : rule__PopulatedCell__Group__1__Impl ;
     public final void rule__PopulatedCell__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:771:1: ( rule__PopulatedCell__Group__1__Impl )
-            // InternalLsjatl.g:772:2: rule__PopulatedCell__Group__1__Impl
+            // InternalLsjatl.g:796:1: ( rule__PopulatedCell__Group__1__Impl )
+            // InternalLsjatl.g:797:2: rule__PopulatedCell__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PopulatedCell__Group__1__Impl();
@@ -2314,21 +2391,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PopulatedCell__Group__1__Impl"
-    // InternalLsjatl.g:778:1: rule__PopulatedCell__Group__1__Impl : ( ( rule__PopulatedCell__PoiAssignment_1 ) ) ;
+    // InternalLsjatl.g:803:1: rule__PopulatedCell__Group__1__Impl : ( ( rule__PopulatedCell__PoiAssignment_1 ) ) ;
     public final void rule__PopulatedCell__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:782:1: ( ( ( rule__PopulatedCell__PoiAssignment_1 ) ) )
-            // InternalLsjatl.g:783:1: ( ( rule__PopulatedCell__PoiAssignment_1 ) )
+            // InternalLsjatl.g:807:1: ( ( ( rule__PopulatedCell__PoiAssignment_1 ) ) )
+            // InternalLsjatl.g:808:1: ( ( rule__PopulatedCell__PoiAssignment_1 ) )
             {
-            // InternalLsjatl.g:783:1: ( ( rule__PopulatedCell__PoiAssignment_1 ) )
-            // InternalLsjatl.g:784:2: ( rule__PopulatedCell__PoiAssignment_1 )
+            // InternalLsjatl.g:808:1: ( ( rule__PopulatedCell__PoiAssignment_1 ) )
+            // InternalLsjatl.g:809:2: ( rule__PopulatedCell__PoiAssignment_1 )
             {
              before(grammarAccess.getPopulatedCellAccess().getPoiAssignment_1()); 
-            // InternalLsjatl.g:785:2: ( rule__PopulatedCell__PoiAssignment_1 )
-            // InternalLsjatl.g:785:3: rule__PopulatedCell__PoiAssignment_1
+            // InternalLsjatl.g:810:2: ( rule__PopulatedCell__PoiAssignment_1 )
+            // InternalLsjatl.g:810:3: rule__PopulatedCell__PoiAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__PopulatedCell__PoiAssignment_1();
@@ -2361,14 +2438,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__0"
-    // InternalLsjatl.g:794:1: rule__Point__Group__0 : rule__Point__Group__0__Impl rule__Point__Group__1 ;
+    // InternalLsjatl.g:819:1: rule__Point__Group__0 : rule__Point__Group__0__Impl rule__Point__Group__1 ;
     public final void rule__Point__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:798:1: ( rule__Point__Group__0__Impl rule__Point__Group__1 )
-            // InternalLsjatl.g:799:2: rule__Point__Group__0__Impl rule__Point__Group__1
+            // InternalLsjatl.g:823:1: ( rule__Point__Group__0__Impl rule__Point__Group__1 )
+            // InternalLsjatl.g:824:2: rule__Point__Group__0__Impl rule__Point__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__Point__Group__0__Impl();
@@ -2399,17 +2476,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__0__Impl"
-    // InternalLsjatl.g:806:1: rule__Point__Group__0__Impl : ( '(' ) ;
+    // InternalLsjatl.g:831:1: rule__Point__Group__0__Impl : ( '(' ) ;
     public final void rule__Point__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:810:1: ( ( '(' ) )
-            // InternalLsjatl.g:811:1: ( '(' )
+            // InternalLsjatl.g:835:1: ( ( '(' ) )
+            // InternalLsjatl.g:836:1: ( '(' )
             {
-            // InternalLsjatl.g:811:1: ( '(' )
-            // InternalLsjatl.g:812:2: '('
+            // InternalLsjatl.g:836:1: ( '(' )
+            // InternalLsjatl.g:837:2: '('
             {
              before(grammarAccess.getPointAccess().getLeftParenthesisKeyword_0()); 
             match(input,26,FOLLOW_2); 
@@ -2436,14 +2513,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__1"
-    // InternalLsjatl.g:821:1: rule__Point__Group__1 : rule__Point__Group__1__Impl rule__Point__Group__2 ;
+    // InternalLsjatl.g:846:1: rule__Point__Group__1 : rule__Point__Group__1__Impl rule__Point__Group__2 ;
     public final void rule__Point__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:825:1: ( rule__Point__Group__1__Impl rule__Point__Group__2 )
-            // InternalLsjatl.g:826:2: rule__Point__Group__1__Impl rule__Point__Group__2
+            // InternalLsjatl.g:850:1: ( rule__Point__Group__1__Impl rule__Point__Group__2 )
+            // InternalLsjatl.g:851:2: rule__Point__Group__1__Impl rule__Point__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__Point__Group__1__Impl();
@@ -2474,21 +2551,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__1__Impl"
-    // InternalLsjatl.g:833:1: rule__Point__Group__1__Impl : ( ( rule__Point__XAssignment_1 ) ) ;
+    // InternalLsjatl.g:858:1: rule__Point__Group__1__Impl : ( ( rule__Point__XAssignment_1 ) ) ;
     public final void rule__Point__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:837:1: ( ( ( rule__Point__XAssignment_1 ) ) )
-            // InternalLsjatl.g:838:1: ( ( rule__Point__XAssignment_1 ) )
+            // InternalLsjatl.g:862:1: ( ( ( rule__Point__XAssignment_1 ) ) )
+            // InternalLsjatl.g:863:1: ( ( rule__Point__XAssignment_1 ) )
             {
-            // InternalLsjatl.g:838:1: ( ( rule__Point__XAssignment_1 ) )
-            // InternalLsjatl.g:839:2: ( rule__Point__XAssignment_1 )
+            // InternalLsjatl.g:863:1: ( ( rule__Point__XAssignment_1 ) )
+            // InternalLsjatl.g:864:2: ( rule__Point__XAssignment_1 )
             {
              before(grammarAccess.getPointAccess().getXAssignment_1()); 
-            // InternalLsjatl.g:840:2: ( rule__Point__XAssignment_1 )
-            // InternalLsjatl.g:840:3: rule__Point__XAssignment_1
+            // InternalLsjatl.g:865:2: ( rule__Point__XAssignment_1 )
+            // InternalLsjatl.g:865:3: rule__Point__XAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Point__XAssignment_1();
@@ -2521,14 +2598,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__2"
-    // InternalLsjatl.g:848:1: rule__Point__Group__2 : rule__Point__Group__2__Impl rule__Point__Group__3 ;
+    // InternalLsjatl.g:873:1: rule__Point__Group__2 : rule__Point__Group__2__Impl rule__Point__Group__3 ;
     public final void rule__Point__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:852:1: ( rule__Point__Group__2__Impl rule__Point__Group__3 )
-            // InternalLsjatl.g:853:2: rule__Point__Group__2__Impl rule__Point__Group__3
+            // InternalLsjatl.g:877:1: ( rule__Point__Group__2__Impl rule__Point__Group__3 )
+            // InternalLsjatl.g:878:2: rule__Point__Group__2__Impl rule__Point__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__Point__Group__2__Impl();
@@ -2559,17 +2636,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__2__Impl"
-    // InternalLsjatl.g:860:1: rule__Point__Group__2__Impl : ( ',' ) ;
+    // InternalLsjatl.g:885:1: rule__Point__Group__2__Impl : ( ',' ) ;
     public final void rule__Point__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:864:1: ( ( ',' ) )
-            // InternalLsjatl.g:865:1: ( ',' )
+            // InternalLsjatl.g:889:1: ( ( ',' ) )
+            // InternalLsjatl.g:890:1: ( ',' )
             {
-            // InternalLsjatl.g:865:1: ( ',' )
-            // InternalLsjatl.g:866:2: ','
+            // InternalLsjatl.g:890:1: ( ',' )
+            // InternalLsjatl.g:891:2: ','
             {
              before(grammarAccess.getPointAccess().getCommaKeyword_2()); 
             match(input,27,FOLLOW_2); 
@@ -2596,14 +2673,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__3"
-    // InternalLsjatl.g:875:1: rule__Point__Group__3 : rule__Point__Group__3__Impl rule__Point__Group__4 ;
+    // InternalLsjatl.g:900:1: rule__Point__Group__3 : rule__Point__Group__3__Impl rule__Point__Group__4 ;
     public final void rule__Point__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:879:1: ( rule__Point__Group__3__Impl rule__Point__Group__4 )
-            // InternalLsjatl.g:880:2: rule__Point__Group__3__Impl rule__Point__Group__4
+            // InternalLsjatl.g:904:1: ( rule__Point__Group__3__Impl rule__Point__Group__4 )
+            // InternalLsjatl.g:905:2: rule__Point__Group__3__Impl rule__Point__Group__4
             {
             pushFollow(FOLLOW_13);
             rule__Point__Group__3__Impl();
@@ -2634,21 +2711,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__3__Impl"
-    // InternalLsjatl.g:887:1: rule__Point__Group__3__Impl : ( ( rule__Point__YAssignment_3 ) ) ;
+    // InternalLsjatl.g:912:1: rule__Point__Group__3__Impl : ( ( rule__Point__YAssignment_3 ) ) ;
     public final void rule__Point__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:891:1: ( ( ( rule__Point__YAssignment_3 ) ) )
-            // InternalLsjatl.g:892:1: ( ( rule__Point__YAssignment_3 ) )
+            // InternalLsjatl.g:916:1: ( ( ( rule__Point__YAssignment_3 ) ) )
+            // InternalLsjatl.g:917:1: ( ( rule__Point__YAssignment_3 ) )
             {
-            // InternalLsjatl.g:892:1: ( ( rule__Point__YAssignment_3 ) )
-            // InternalLsjatl.g:893:2: ( rule__Point__YAssignment_3 )
+            // InternalLsjatl.g:917:1: ( ( rule__Point__YAssignment_3 ) )
+            // InternalLsjatl.g:918:2: ( rule__Point__YAssignment_3 )
             {
              before(grammarAccess.getPointAccess().getYAssignment_3()); 
-            // InternalLsjatl.g:894:2: ( rule__Point__YAssignment_3 )
-            // InternalLsjatl.g:894:3: rule__Point__YAssignment_3
+            // InternalLsjatl.g:919:2: ( rule__Point__YAssignment_3 )
+            // InternalLsjatl.g:919:3: rule__Point__YAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Point__YAssignment_3();
@@ -2681,14 +2758,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__4"
-    // InternalLsjatl.g:902:1: rule__Point__Group__4 : rule__Point__Group__4__Impl ;
+    // InternalLsjatl.g:927:1: rule__Point__Group__4 : rule__Point__Group__4__Impl ;
     public final void rule__Point__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:906:1: ( rule__Point__Group__4__Impl )
-            // InternalLsjatl.g:907:2: rule__Point__Group__4__Impl
+            // InternalLsjatl.g:931:1: ( rule__Point__Group__4__Impl )
+            // InternalLsjatl.g:932:2: rule__Point__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Point__Group__4__Impl();
@@ -2714,17 +2791,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__4__Impl"
-    // InternalLsjatl.g:913:1: rule__Point__Group__4__Impl : ( ')' ) ;
+    // InternalLsjatl.g:938:1: rule__Point__Group__4__Impl : ( ')' ) ;
     public final void rule__Point__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:917:1: ( ( ')' ) )
-            // InternalLsjatl.g:918:1: ( ')' )
+            // InternalLsjatl.g:942:1: ( ( ')' ) )
+            // InternalLsjatl.g:943:1: ( ')' )
             {
-            // InternalLsjatl.g:918:1: ( ')' )
-            // InternalLsjatl.g:919:2: ')'
+            // InternalLsjatl.g:943:1: ( ')' )
+            // InternalLsjatl.g:944:2: ')'
             {
              before(grammarAccess.getPointAccess().getRightParenthesisKeyword_4()); 
             match(input,28,FOLLOW_2); 
@@ -2751,14 +2828,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rules__Group__0"
-    // InternalLsjatl.g:929:1: rule__Rules__Group__0 : rule__Rules__Group__0__Impl rule__Rules__Group__1 ;
+    // InternalLsjatl.g:954:1: rule__Rules__Group__0 : rule__Rules__Group__0__Impl rule__Rules__Group__1 ;
     public final void rule__Rules__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:933:1: ( rule__Rules__Group__0__Impl rule__Rules__Group__1 )
-            // InternalLsjatl.g:934:2: rule__Rules__Group__0__Impl rule__Rules__Group__1
+            // InternalLsjatl.g:958:1: ( rule__Rules__Group__0__Impl rule__Rules__Group__1 )
+            // InternalLsjatl.g:959:2: rule__Rules__Group__0__Impl rule__Rules__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Rules__Group__0__Impl();
@@ -2789,21 +2866,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rules__Group__0__Impl"
-    // InternalLsjatl.g:941:1: rule__Rules__Group__0__Impl : ( () ) ;
+    // InternalLsjatl.g:966:1: rule__Rules__Group__0__Impl : ( () ) ;
     public final void rule__Rules__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:945:1: ( ( () ) )
-            // InternalLsjatl.g:946:1: ( () )
+            // InternalLsjatl.g:970:1: ( ( () ) )
+            // InternalLsjatl.g:971:1: ( () )
             {
-            // InternalLsjatl.g:946:1: ( () )
-            // InternalLsjatl.g:947:2: ()
+            // InternalLsjatl.g:971:1: ( () )
+            // InternalLsjatl.g:972:2: ()
             {
              before(grammarAccess.getRulesAccess().getRulesAction_0()); 
-            // InternalLsjatl.g:948:2: ()
-            // InternalLsjatl.g:948:3: 
+            // InternalLsjatl.g:973:2: ()
+            // InternalLsjatl.g:973:3: 
             {
             }
 
@@ -2826,14 +2903,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rules__Group__1"
-    // InternalLsjatl.g:956:1: rule__Rules__Group__1 : rule__Rules__Group__1__Impl rule__Rules__Group__2 ;
+    // InternalLsjatl.g:981:1: rule__Rules__Group__1 : rule__Rules__Group__1__Impl rule__Rules__Group__2 ;
     public final void rule__Rules__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:960:1: ( rule__Rules__Group__1__Impl rule__Rules__Group__2 )
-            // InternalLsjatl.g:961:2: rule__Rules__Group__1__Impl rule__Rules__Group__2
+            // InternalLsjatl.g:985:1: ( rule__Rules__Group__1__Impl rule__Rules__Group__2 )
+            // InternalLsjatl.g:986:2: rule__Rules__Group__1__Impl rule__Rules__Group__2
             {
             pushFollow(FOLLOW_14);
             rule__Rules__Group__1__Impl();
@@ -2864,17 +2941,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rules__Group__1__Impl"
-    // InternalLsjatl.g:968:1: rule__Rules__Group__1__Impl : ( 'Rules' ) ;
+    // InternalLsjatl.g:993:1: rule__Rules__Group__1__Impl : ( 'Rules' ) ;
     public final void rule__Rules__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:972:1: ( ( 'Rules' ) )
-            // InternalLsjatl.g:973:1: ( 'Rules' )
+            // InternalLsjatl.g:997:1: ( ( 'Rules' ) )
+            // InternalLsjatl.g:998:1: ( 'Rules' )
             {
-            // InternalLsjatl.g:973:1: ( 'Rules' )
-            // InternalLsjatl.g:974:2: 'Rules'
+            // InternalLsjatl.g:998:1: ( 'Rules' )
+            // InternalLsjatl.g:999:2: 'Rules'
             {
              before(grammarAccess.getRulesAccess().getRulesKeyword_1()); 
             match(input,29,FOLLOW_2); 
@@ -2901,14 +2978,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rules__Group__2"
-    // InternalLsjatl.g:983:1: rule__Rules__Group__2 : rule__Rules__Group__2__Impl ;
+    // InternalLsjatl.g:1008:1: rule__Rules__Group__2 : rule__Rules__Group__2__Impl ;
     public final void rule__Rules__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:987:1: ( rule__Rules__Group__2__Impl )
-            // InternalLsjatl.g:988:2: rule__Rules__Group__2__Impl
+            // InternalLsjatl.g:1012:1: ( rule__Rules__Group__2__Impl )
+            // InternalLsjatl.g:1013:2: rule__Rules__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Rules__Group__2__Impl();
@@ -2934,20 +3011,20 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rules__Group__2__Impl"
-    // InternalLsjatl.g:994:1: rule__Rules__Group__2__Impl : ( ( rule__Rules__RulesAssignment_2 )* ) ;
+    // InternalLsjatl.g:1019:1: rule__Rules__Group__2__Impl : ( ( rule__Rules__RulesAssignment_2 )* ) ;
     public final void rule__Rules__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:998:1: ( ( ( rule__Rules__RulesAssignment_2 )* ) )
-            // InternalLsjatl.g:999:1: ( ( rule__Rules__RulesAssignment_2 )* )
+            // InternalLsjatl.g:1023:1: ( ( ( rule__Rules__RulesAssignment_2 )* ) )
+            // InternalLsjatl.g:1024:1: ( ( rule__Rules__RulesAssignment_2 )* )
             {
-            // InternalLsjatl.g:999:1: ( ( rule__Rules__RulesAssignment_2 )* )
-            // InternalLsjatl.g:1000:2: ( rule__Rules__RulesAssignment_2 )*
+            // InternalLsjatl.g:1024:1: ( ( rule__Rules__RulesAssignment_2 )* )
+            // InternalLsjatl.g:1025:2: ( rule__Rules__RulesAssignment_2 )*
             {
              before(grammarAccess.getRulesAccess().getRulesAssignment_2()); 
-            // InternalLsjatl.g:1001:2: ( rule__Rules__RulesAssignment_2 )*
+            // InternalLsjatl.g:1026:2: ( rule__Rules__RulesAssignment_2 )*
             loop5:
             do {
                 int alt5=2;
@@ -2960,7 +3037,7 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalLsjatl.g:1001:3: rule__Rules__RulesAssignment_2
+            	    // InternalLsjatl.g:1026:3: rule__Rules__RulesAssignment_2
             	    {
             	    pushFollow(FOLLOW_15);
             	    rule__Rules__RulesAssignment_2();
@@ -2998,15 +3075,174 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Rules__Group__2__Impl"
 
 
+    // $ANTLR start "rule__Condition__Group__0"
+    // InternalLsjatl.g:1035:1: rule__Condition__Group__0 : rule__Condition__Group__0__Impl rule__Condition__Group__1 ;
+    public final void rule__Condition__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLsjatl.g:1039:1: ( rule__Condition__Group__0__Impl rule__Condition__Group__1 )
+            // InternalLsjatl.g:1040:2: rule__Condition__Group__0__Impl rule__Condition__Group__1
+            {
+            pushFollow(FOLLOW_9);
+            rule__Condition__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Condition__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condition__Group__0"
+
+
+    // $ANTLR start "rule__Condition__Group__0__Impl"
+    // InternalLsjatl.g:1047:1: rule__Condition__Group__0__Impl : ( ruleBoolOp ) ;
+    public final void rule__Condition__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLsjatl.g:1051:1: ( ( ruleBoolOp ) )
+            // InternalLsjatl.g:1052:1: ( ruleBoolOp )
+            {
+            // InternalLsjatl.g:1052:1: ( ruleBoolOp )
+            // InternalLsjatl.g:1053:2: ruleBoolOp
+            {
+             before(grammarAccess.getConditionAccess().getBoolOpParserRuleCall_0()); 
+            pushFollow(FOLLOW_2);
+            ruleBoolOp();
+
+            state._fsp--;
+
+             after(grammarAccess.getConditionAccess().getBoolOpParserRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condition__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Condition__Group__1"
+    // InternalLsjatl.g:1062:1: rule__Condition__Group__1 : rule__Condition__Group__1__Impl ;
+    public final void rule__Condition__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLsjatl.g:1066:1: ( rule__Condition__Group__1__Impl )
+            // InternalLsjatl.g:1067:2: rule__Condition__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Condition__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condition__Group__1"
+
+
+    // $ANTLR start "rule__Condition__Group__1__Impl"
+    // InternalLsjatl.g:1073:1: rule__Condition__Group__1__Impl : ( ( rule__Condition__NCountAssignment_1 ) ) ;
+    public final void rule__Condition__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLsjatl.g:1077:1: ( ( ( rule__Condition__NCountAssignment_1 ) ) )
+            // InternalLsjatl.g:1078:1: ( ( rule__Condition__NCountAssignment_1 ) )
+            {
+            // InternalLsjatl.g:1078:1: ( ( rule__Condition__NCountAssignment_1 ) )
+            // InternalLsjatl.g:1079:2: ( rule__Condition__NCountAssignment_1 )
+            {
+             before(grammarAccess.getConditionAccess().getNCountAssignment_1()); 
+            // InternalLsjatl.g:1080:2: ( rule__Condition__NCountAssignment_1 )
+            // InternalLsjatl.g:1080:3: rule__Condition__NCountAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Condition__NCountAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getConditionAccess().getNCountAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condition__Group__1__Impl"
+
+
     // $ANTLR start "rule__Rule__Group__0"
-    // InternalLsjatl.g:1010:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
+    // InternalLsjatl.g:1089:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
     public final void rule__Rule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1014:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
-            // InternalLsjatl.g:1015:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
+            // InternalLsjatl.g:1093:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
+            // InternalLsjatl.g:1094:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
             {
             pushFollow(FOLLOW_16);
             rule__Rule__Group__0__Impl();
@@ -3037,17 +3273,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__0__Impl"
-    // InternalLsjatl.g:1022:1: rule__Rule__Group__0__Impl : ( 'Each' ) ;
+    // InternalLsjatl.g:1101:1: rule__Rule__Group__0__Impl : ( 'Each' ) ;
     public final void rule__Rule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1026:1: ( ( 'Each' ) )
-            // InternalLsjatl.g:1027:1: ( 'Each' )
+            // InternalLsjatl.g:1105:1: ( ( 'Each' ) )
+            // InternalLsjatl.g:1106:1: ( 'Each' )
             {
-            // InternalLsjatl.g:1027:1: ( 'Each' )
-            // InternalLsjatl.g:1028:2: 'Each'
+            // InternalLsjatl.g:1106:1: ( 'Each' )
+            // InternalLsjatl.g:1107:2: 'Each'
             {
              before(grammarAccess.getRuleAccess().getEachKeyword_0()); 
             match(input,30,FOLLOW_2); 
@@ -3074,14 +3310,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1"
-    // InternalLsjatl.g:1037:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
+    // InternalLsjatl.g:1116:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
     public final void rule__Rule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1041:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
-            // InternalLsjatl.g:1042:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
+            // InternalLsjatl.g:1120:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
+            // InternalLsjatl.g:1121:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
             {
             pushFollow(FOLLOW_17);
             rule__Rule__Group__1__Impl();
@@ -3112,21 +3348,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1__Impl"
-    // InternalLsjatl.g:1049:1: rule__Rule__Group__1__Impl : ( ( rule__Rule__StateAssignment_1 ) ) ;
+    // InternalLsjatl.g:1128:1: rule__Rule__Group__1__Impl : ( ( rule__Rule__StateAssignment_1 ) ) ;
     public final void rule__Rule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1053:1: ( ( ( rule__Rule__StateAssignment_1 ) ) )
-            // InternalLsjatl.g:1054:1: ( ( rule__Rule__StateAssignment_1 ) )
+            // InternalLsjatl.g:1132:1: ( ( ( rule__Rule__StateAssignment_1 ) ) )
+            // InternalLsjatl.g:1133:1: ( ( rule__Rule__StateAssignment_1 ) )
             {
-            // InternalLsjatl.g:1054:1: ( ( rule__Rule__StateAssignment_1 ) )
-            // InternalLsjatl.g:1055:2: ( rule__Rule__StateAssignment_1 )
+            // InternalLsjatl.g:1133:1: ( ( rule__Rule__StateAssignment_1 ) )
+            // InternalLsjatl.g:1134:2: ( rule__Rule__StateAssignment_1 )
             {
              before(grammarAccess.getRuleAccess().getStateAssignment_1()); 
-            // InternalLsjatl.g:1056:2: ( rule__Rule__StateAssignment_1 )
-            // InternalLsjatl.g:1056:3: rule__Rule__StateAssignment_1
+            // InternalLsjatl.g:1135:2: ( rule__Rule__StateAssignment_1 )
+            // InternalLsjatl.g:1135:3: rule__Rule__StateAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Rule__StateAssignment_1();
@@ -3159,14 +3395,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__2"
-    // InternalLsjatl.g:1064:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
+    // InternalLsjatl.g:1143:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
     public final void rule__Rule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1068:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
-            // InternalLsjatl.g:1069:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
+            // InternalLsjatl.g:1147:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
+            // InternalLsjatl.g:1148:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
             {
             pushFollow(FOLLOW_18);
             rule__Rule__Group__2__Impl();
@@ -3197,17 +3433,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__2__Impl"
-    // InternalLsjatl.g:1076:1: rule__Rule__Group__2__Impl : ( 'cell' ) ;
+    // InternalLsjatl.g:1155:1: rule__Rule__Group__2__Impl : ( 'cell' ) ;
     public final void rule__Rule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1080:1: ( ( 'cell' ) )
-            // InternalLsjatl.g:1081:1: ( 'cell' )
+            // InternalLsjatl.g:1159:1: ( ( 'cell' ) )
+            // InternalLsjatl.g:1160:1: ( 'cell' )
             {
-            // InternalLsjatl.g:1081:1: ( 'cell' )
-            // InternalLsjatl.g:1082:2: 'cell'
+            // InternalLsjatl.g:1160:1: ( 'cell' )
+            // InternalLsjatl.g:1161:2: 'cell'
             {
              before(grammarAccess.getRuleAccess().getCellKeyword_2()); 
             match(input,31,FOLLOW_2); 
@@ -3234,14 +3470,14 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__3"
-    // InternalLsjatl.g:1091:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
+    // InternalLsjatl.g:1170:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
     public final void rule__Rule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1095:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
-            // InternalLsjatl.g:1096:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
+            // InternalLsjatl.g:1174:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
+            // InternalLsjatl.g:1175:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
             {
             pushFollow(FOLLOW_19);
             rule__Rule__Group__3__Impl();
@@ -3272,17 +3508,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__3__Impl"
-    // InternalLsjatl.g:1103:1: rule__Rule__Group__3__Impl : ( 'with' ) ;
+    // InternalLsjatl.g:1182:1: rule__Rule__Group__3__Impl : ( 'with' ) ;
     public final void rule__Rule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1107:1: ( ( 'with' ) )
-            // InternalLsjatl.g:1108:1: ( 'with' )
+            // InternalLsjatl.g:1186:1: ( ( 'with' ) )
+            // InternalLsjatl.g:1187:1: ( 'with' )
             {
-            // InternalLsjatl.g:1108:1: ( 'with' )
-            // InternalLsjatl.g:1109:2: 'with'
+            // InternalLsjatl.g:1187:1: ( 'with' )
+            // InternalLsjatl.g:1188:2: 'with'
             {
              before(grammarAccess.getRuleAccess().getWithKeyword_3()); 
             match(input,32,FOLLOW_2); 
@@ -3309,16 +3545,16 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__4"
-    // InternalLsjatl.g:1118:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl rule__Rule__Group__5 ;
+    // InternalLsjatl.g:1197:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl rule__Rule__Group__5 ;
     public final void rule__Rule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1122:1: ( rule__Rule__Group__4__Impl rule__Rule__Group__5 )
-            // InternalLsjatl.g:1123:2: rule__Rule__Group__4__Impl rule__Rule__Group__5
+            // InternalLsjatl.g:1201:1: ( rule__Rule__Group__4__Impl rule__Rule__Group__5 )
+            // InternalLsjatl.g:1202:2: rule__Rule__Group__4__Impl rule__Rule__Group__5
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_20);
             rule__Rule__Group__4__Impl();
 
             state._fsp--;
@@ -3347,31 +3583,74 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__4__Impl"
-    // InternalLsjatl.g:1130:1: rule__Rule__Group__4__Impl : ( ( rule__Rule__OpAssignment_4 ) ) ;
+    // InternalLsjatl.g:1209:1: rule__Rule__Group__4__Impl : ( ( ( rule__Rule__ConditionsAssignment_4 ) ) ( ( rule__Rule__ConditionsAssignment_4 )* ) ) ;
     public final void rule__Rule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1134:1: ( ( ( rule__Rule__OpAssignment_4 ) ) )
-            // InternalLsjatl.g:1135:1: ( ( rule__Rule__OpAssignment_4 ) )
+            // InternalLsjatl.g:1213:1: ( ( ( ( rule__Rule__ConditionsAssignment_4 ) ) ( ( rule__Rule__ConditionsAssignment_4 )* ) ) )
+            // InternalLsjatl.g:1214:1: ( ( ( rule__Rule__ConditionsAssignment_4 ) ) ( ( rule__Rule__ConditionsAssignment_4 )* ) )
             {
-            // InternalLsjatl.g:1135:1: ( ( rule__Rule__OpAssignment_4 ) )
-            // InternalLsjatl.g:1136:2: ( rule__Rule__OpAssignment_4 )
+            // InternalLsjatl.g:1214:1: ( ( ( rule__Rule__ConditionsAssignment_4 ) ) ( ( rule__Rule__ConditionsAssignment_4 )* ) )
+            // InternalLsjatl.g:1215:2: ( ( rule__Rule__ConditionsAssignment_4 ) ) ( ( rule__Rule__ConditionsAssignment_4 )* )
             {
-             before(grammarAccess.getRuleAccess().getOpAssignment_4()); 
-            // InternalLsjatl.g:1137:2: ( rule__Rule__OpAssignment_4 )
-            // InternalLsjatl.g:1137:3: rule__Rule__OpAssignment_4
+            // InternalLsjatl.g:1215:2: ( ( rule__Rule__ConditionsAssignment_4 ) )
+            // InternalLsjatl.g:1216:3: ( rule__Rule__ConditionsAssignment_4 )
             {
-            pushFollow(FOLLOW_2);
-            rule__Rule__OpAssignment_4();
+             before(grammarAccess.getRuleAccess().getConditionsAssignment_4()); 
+            // InternalLsjatl.g:1217:3: ( rule__Rule__ConditionsAssignment_4 )
+            // InternalLsjatl.g:1217:4: rule__Rule__ConditionsAssignment_4
+            {
+            pushFollow(FOLLOW_21);
+            rule__Rule__ConditionsAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRuleAccess().getOpAssignment_4()); 
+             after(grammarAccess.getRuleAccess().getConditionsAssignment_4()); 
+
+            }
+
+            // InternalLsjatl.g:1220:2: ( ( rule__Rule__ConditionsAssignment_4 )* )
+            // InternalLsjatl.g:1221:3: ( rule__Rule__ConditionsAssignment_4 )*
+            {
+             before(grammarAccess.getRuleAccess().getConditionsAssignment_4()); 
+            // InternalLsjatl.g:1222:3: ( rule__Rule__ConditionsAssignment_4 )*
+            loop6:
+            do {
+                int alt6=2;
+                int LA6_0 = input.LA(1);
+
+                if ( ((LA6_0>=13 && LA6_0<=17)) ) {
+                    alt6=1;
+                }
+
+
+                switch (alt6) {
+            	case 1 :
+            	    // InternalLsjatl.g:1222:4: rule__Rule__ConditionsAssignment_4
+            	    {
+            	    pushFollow(FOLLOW_21);
+            	    rule__Rule__ConditionsAssignment_4();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop6;
+                }
+            } while (true);
+
+             after(grammarAccess.getRuleAccess().getConditionsAssignment_4()); 
+
+            }
+
 
             }
 
@@ -3394,16 +3673,16 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__5"
-    // InternalLsjatl.g:1145:1: rule__Rule__Group__5 : rule__Rule__Group__5__Impl rule__Rule__Group__6 ;
+    // InternalLsjatl.g:1231:1: rule__Rule__Group__5 : rule__Rule__Group__5__Impl rule__Rule__Group__6 ;
     public final void rule__Rule__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1149:1: ( rule__Rule__Group__5__Impl rule__Rule__Group__6 )
-            // InternalLsjatl.g:1150:2: rule__Rule__Group__5__Impl rule__Rule__Group__6
+            // InternalLsjatl.g:1235:1: ( rule__Rule__Group__5__Impl rule__Rule__Group__6 )
+            // InternalLsjatl.g:1236:2: rule__Rule__Group__5__Impl rule__Rule__Group__6
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_22);
             rule__Rule__Group__5__Impl();
 
             state._fsp--;
@@ -3432,31 +3711,21 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__5__Impl"
-    // InternalLsjatl.g:1157:1: rule__Rule__Group__5__Impl : ( ( rule__Rule__NCountAssignment_5 ) ) ;
+    // InternalLsjatl.g:1243:1: rule__Rule__Group__5__Impl : ( 'neighbors' ) ;
     public final void rule__Rule__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1161:1: ( ( ( rule__Rule__NCountAssignment_5 ) ) )
-            // InternalLsjatl.g:1162:1: ( ( rule__Rule__NCountAssignment_5 ) )
+            // InternalLsjatl.g:1247:1: ( ( 'neighbors' ) )
+            // InternalLsjatl.g:1248:1: ( 'neighbors' )
             {
-            // InternalLsjatl.g:1162:1: ( ( rule__Rule__NCountAssignment_5 ) )
-            // InternalLsjatl.g:1163:2: ( rule__Rule__NCountAssignment_5 )
+            // InternalLsjatl.g:1248:1: ( 'neighbors' )
+            // InternalLsjatl.g:1249:2: 'neighbors'
             {
-             before(grammarAccess.getRuleAccess().getNCountAssignment_5()); 
-            // InternalLsjatl.g:1164:2: ( rule__Rule__NCountAssignment_5 )
-            // InternalLsjatl.g:1164:3: rule__Rule__NCountAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rule__NCountAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRuleAccess().getNCountAssignment_5()); 
+             before(grammarAccess.getRuleAccess().getNeighborsKeyword_5()); 
+            match(input,33,FOLLOW_2); 
+             after(grammarAccess.getRuleAccess().getNeighborsKeyword_5()); 
 
             }
 
@@ -3479,22 +3748,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__6"
-    // InternalLsjatl.g:1172:1: rule__Rule__Group__6 : rule__Rule__Group__6__Impl rule__Rule__Group__7 ;
+    // InternalLsjatl.g:1258:1: rule__Rule__Group__6 : rule__Rule__Group__6__Impl ;
     public final void rule__Rule__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1176:1: ( rule__Rule__Group__6__Impl rule__Rule__Group__7 )
-            // InternalLsjatl.g:1177:2: rule__Rule__Group__6__Impl rule__Rule__Group__7
+            // InternalLsjatl.g:1262:1: ( rule__Rule__Group__6__Impl )
+            // InternalLsjatl.g:1263:2: rule__Rule__Group__6__Impl
             {
-            pushFollow(FOLLOW_21);
-            rule__Rule__Group__6__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Rule__Group__7();
+            rule__Rule__Group__6__Impl();
 
             state._fsp--;
 
@@ -3517,21 +3781,31 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__6__Impl"
-    // InternalLsjatl.g:1184:1: rule__Rule__Group__6__Impl : ( 'neighbors' ) ;
+    // InternalLsjatl.g:1269:1: rule__Rule__Group__6__Impl : ( ( rule__Rule__ResultAssignment_6 ) ) ;
     public final void rule__Rule__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1188:1: ( ( 'neighbors' ) )
-            // InternalLsjatl.g:1189:1: ( 'neighbors' )
+            // InternalLsjatl.g:1273:1: ( ( ( rule__Rule__ResultAssignment_6 ) ) )
+            // InternalLsjatl.g:1274:1: ( ( rule__Rule__ResultAssignment_6 ) )
             {
-            // InternalLsjatl.g:1189:1: ( 'neighbors' )
-            // InternalLsjatl.g:1190:2: 'neighbors'
+            // InternalLsjatl.g:1274:1: ( ( rule__Rule__ResultAssignment_6 ) )
+            // InternalLsjatl.g:1275:2: ( rule__Rule__ResultAssignment_6 )
             {
-             before(grammarAccess.getRuleAccess().getNeighborsKeyword_6()); 
-            match(input,33,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getNeighborsKeyword_6()); 
+             before(grammarAccess.getRuleAccess().getResultAssignment_6()); 
+            // InternalLsjatl.g:1276:2: ( rule__Rule__ResultAssignment_6 )
+            // InternalLsjatl.g:1276:3: rule__Rule__ResultAssignment_6
+            {
+            pushFollow(FOLLOW_2);
+            rule__Rule__ResultAssignment_6();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRuleAccess().getResultAssignment_6()); 
 
             }
 
@@ -3553,98 +3827,18 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Rule__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Rule__Group__7"
-    // InternalLsjatl.g:1199:1: rule__Rule__Group__7 : rule__Rule__Group__7__Impl ;
-    public final void rule__Rule__Group__7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLsjatl.g:1203:1: ( rule__Rule__Group__7__Impl )
-            // InternalLsjatl.g:1204:2: rule__Rule__Group__7__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rule__Group__7__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rule__Group__7"
-
-
-    // $ANTLR start "rule__Rule__Group__7__Impl"
-    // InternalLsjatl.g:1210:1: rule__Rule__Group__7__Impl : ( ( rule__Rule__ResultAssignment_7 ) ) ;
-    public final void rule__Rule__Group__7__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLsjatl.g:1214:1: ( ( ( rule__Rule__ResultAssignment_7 ) ) )
-            // InternalLsjatl.g:1215:1: ( ( rule__Rule__ResultAssignment_7 ) )
-            {
-            // InternalLsjatl.g:1215:1: ( ( rule__Rule__ResultAssignment_7 ) )
-            // InternalLsjatl.g:1216:2: ( rule__Rule__ResultAssignment_7 )
-            {
-             before(grammarAccess.getRuleAccess().getResultAssignment_7()); 
-            // InternalLsjatl.g:1217:2: ( rule__Rule__ResultAssignment_7 )
-            // InternalLsjatl.g:1217:3: rule__Rule__ResultAssignment_7
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rule__ResultAssignment_7();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRuleAccess().getResultAssignment_7()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rule__Group__7__Impl"
-
-
     // $ANTLR start "rule__Game__GridAssignment_0"
-    // InternalLsjatl.g:1226:1: rule__Game__GridAssignment_0 : ( ruleGrid ) ;
+    // InternalLsjatl.g:1285:1: rule__Game__GridAssignment_0 : ( ruleGrid ) ;
     public final void rule__Game__GridAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1230:1: ( ( ruleGrid ) )
-            // InternalLsjatl.g:1231:2: ( ruleGrid )
+            // InternalLsjatl.g:1289:1: ( ( ruleGrid ) )
+            // InternalLsjatl.g:1290:2: ( ruleGrid )
             {
-            // InternalLsjatl.g:1231:2: ( ruleGrid )
-            // InternalLsjatl.g:1232:3: ruleGrid
+            // InternalLsjatl.g:1290:2: ( ruleGrid )
+            // InternalLsjatl.g:1291:3: ruleGrid
             {
              before(grammarAccess.getGameAccess().getGridGridParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -3675,17 +3869,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Game__RulesAssignment_1"
-    // InternalLsjatl.g:1241:1: rule__Game__RulesAssignment_1 : ( ruleRules ) ;
+    // InternalLsjatl.g:1300:1: rule__Game__RulesAssignment_1 : ( ruleRules ) ;
     public final void rule__Game__RulesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1245:1: ( ( ruleRules ) )
-            // InternalLsjatl.g:1246:2: ( ruleRules )
+            // InternalLsjatl.g:1304:1: ( ( ruleRules ) )
+            // InternalLsjatl.g:1305:2: ( ruleRules )
             {
-            // InternalLsjatl.g:1246:2: ( ruleRules )
-            // InternalLsjatl.g:1247:3: ruleRules
+            // InternalLsjatl.g:1305:2: ( ruleRules )
+            // InternalLsjatl.g:1306:3: ruleRules
             {
              before(grammarAccess.getGameAccess().getRulesRulesParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -3716,17 +3910,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grid__SizeAssignment_2"
-    // InternalLsjatl.g:1256:1: rule__Grid__SizeAssignment_2 : ( ruleGridSize ) ;
+    // InternalLsjatl.g:1315:1: rule__Grid__SizeAssignment_2 : ( ruleGridSize ) ;
     public final void rule__Grid__SizeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1260:1: ( ( ruleGridSize ) )
-            // InternalLsjatl.g:1261:2: ( ruleGridSize )
+            // InternalLsjatl.g:1319:1: ( ( ruleGridSize ) )
+            // InternalLsjatl.g:1320:2: ( ruleGridSize )
             {
-            // InternalLsjatl.g:1261:2: ( ruleGridSize )
-            // InternalLsjatl.g:1262:3: ruleGridSize
+            // InternalLsjatl.g:1320:2: ( ruleGridSize )
+            // InternalLsjatl.g:1321:3: ruleGridSize
             {
              before(grammarAccess.getGridAccess().getSizeGridSizeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -3757,17 +3951,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grid__PopulatedCellsAssignment_3"
-    // InternalLsjatl.g:1271:1: rule__Grid__PopulatedCellsAssignment_3 : ( rulePopulatedCell ) ;
+    // InternalLsjatl.g:1330:1: rule__Grid__PopulatedCellsAssignment_3 : ( rulePopulatedCell ) ;
     public final void rule__Grid__PopulatedCellsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1275:1: ( ( rulePopulatedCell ) )
-            // InternalLsjatl.g:1276:2: ( rulePopulatedCell )
+            // InternalLsjatl.g:1334:1: ( ( rulePopulatedCell ) )
+            // InternalLsjatl.g:1335:2: ( rulePopulatedCell )
             {
-            // InternalLsjatl.g:1276:2: ( rulePopulatedCell )
-            // InternalLsjatl.g:1277:3: rulePopulatedCell
+            // InternalLsjatl.g:1335:2: ( rulePopulatedCell )
+            // InternalLsjatl.g:1336:3: rulePopulatedCell
             {
              before(grammarAccess.getGridAccess().getPopulatedCellsPopulatedCellParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -3798,17 +3992,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__HeightAssignment_2_1"
-    // InternalLsjatl.g:1286:1: rule__GridSize__HeightAssignment_2_1 : ( RULE_INT ) ;
+    // InternalLsjatl.g:1345:1: rule__GridSize__HeightAssignment_2_1 : ( RULE_INT ) ;
     public final void rule__GridSize__HeightAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1290:1: ( ( RULE_INT ) )
-            // InternalLsjatl.g:1291:2: ( RULE_INT )
+            // InternalLsjatl.g:1349:1: ( ( RULE_INT ) )
+            // InternalLsjatl.g:1350:2: ( RULE_INT )
             {
-            // InternalLsjatl.g:1291:2: ( RULE_INT )
-            // InternalLsjatl.g:1292:3: RULE_INT
+            // InternalLsjatl.g:1350:2: ( RULE_INT )
+            // InternalLsjatl.g:1351:3: RULE_INT
             {
              before(grammarAccess.getGridSizeAccess().getHeightINTTerminalRuleCall_2_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -3835,17 +4029,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GridSize__WidthAssignment_2_3"
-    // InternalLsjatl.g:1301:1: rule__GridSize__WidthAssignment_2_3 : ( RULE_INT ) ;
+    // InternalLsjatl.g:1360:1: rule__GridSize__WidthAssignment_2_3 : ( RULE_INT ) ;
     public final void rule__GridSize__WidthAssignment_2_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1305:1: ( ( RULE_INT ) )
-            // InternalLsjatl.g:1306:2: ( RULE_INT )
+            // InternalLsjatl.g:1364:1: ( ( RULE_INT ) )
+            // InternalLsjatl.g:1365:2: ( RULE_INT )
             {
-            // InternalLsjatl.g:1306:2: ( RULE_INT )
-            // InternalLsjatl.g:1307:3: RULE_INT
+            // InternalLsjatl.g:1365:2: ( RULE_INT )
+            // InternalLsjatl.g:1366:3: RULE_INT
             {
              before(grammarAccess.getGridSizeAccess().getWidthINTTerminalRuleCall_2_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -3872,17 +4066,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PopulatedCell__PoiAssignment_1"
-    // InternalLsjatl.g:1316:1: rule__PopulatedCell__PoiAssignment_1 : ( rulePoint ) ;
+    // InternalLsjatl.g:1375:1: rule__PopulatedCell__PoiAssignment_1 : ( rulePoint ) ;
     public final void rule__PopulatedCell__PoiAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1320:1: ( ( rulePoint ) )
-            // InternalLsjatl.g:1321:2: ( rulePoint )
+            // InternalLsjatl.g:1379:1: ( ( rulePoint ) )
+            // InternalLsjatl.g:1380:2: ( rulePoint )
             {
-            // InternalLsjatl.g:1321:2: ( rulePoint )
-            // InternalLsjatl.g:1322:3: rulePoint
+            // InternalLsjatl.g:1380:2: ( rulePoint )
+            // InternalLsjatl.g:1381:3: rulePoint
             {
              before(grammarAccess.getPopulatedCellAccess().getPoiPointParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -3913,17 +4107,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__XAssignment_1"
-    // InternalLsjatl.g:1331:1: rule__Point__XAssignment_1 : ( RULE_INT ) ;
+    // InternalLsjatl.g:1390:1: rule__Point__XAssignment_1 : ( RULE_INT ) ;
     public final void rule__Point__XAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1335:1: ( ( RULE_INT ) )
-            // InternalLsjatl.g:1336:2: ( RULE_INT )
+            // InternalLsjatl.g:1394:1: ( ( RULE_INT ) )
+            // InternalLsjatl.g:1395:2: ( RULE_INT )
             {
-            // InternalLsjatl.g:1336:2: ( RULE_INT )
-            // InternalLsjatl.g:1337:3: RULE_INT
+            // InternalLsjatl.g:1395:2: ( RULE_INT )
+            // InternalLsjatl.g:1396:3: RULE_INT
             {
              before(grammarAccess.getPointAccess().getXINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -3950,17 +4144,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__YAssignment_3"
-    // InternalLsjatl.g:1346:1: rule__Point__YAssignment_3 : ( RULE_INT ) ;
+    // InternalLsjatl.g:1405:1: rule__Point__YAssignment_3 : ( RULE_INT ) ;
     public final void rule__Point__YAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1350:1: ( ( RULE_INT ) )
-            // InternalLsjatl.g:1351:2: ( RULE_INT )
+            // InternalLsjatl.g:1409:1: ( ( RULE_INT ) )
+            // InternalLsjatl.g:1410:2: ( RULE_INT )
             {
-            // InternalLsjatl.g:1351:2: ( RULE_INT )
-            // InternalLsjatl.g:1352:3: RULE_INT
+            // InternalLsjatl.g:1410:2: ( RULE_INT )
+            // InternalLsjatl.g:1411:3: RULE_INT
             {
              before(grammarAccess.getPointAccess().getYINTTerminalRuleCall_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -3987,17 +4181,17 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rules__RulesAssignment_2"
-    // InternalLsjatl.g:1361:1: rule__Rules__RulesAssignment_2 : ( ruleRule ) ;
+    // InternalLsjatl.g:1420:1: rule__Rules__RulesAssignment_2 : ( ruleRule ) ;
     public final void rule__Rules__RulesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1365:1: ( ( ruleRule ) )
-            // InternalLsjatl.g:1366:2: ( ruleRule )
+            // InternalLsjatl.g:1424:1: ( ( ruleRule ) )
+            // InternalLsjatl.g:1425:2: ( ruleRule )
             {
-            // InternalLsjatl.g:1366:2: ( ruleRule )
-            // InternalLsjatl.g:1367:3: ruleRule
+            // InternalLsjatl.g:1425:2: ( ruleRule )
+            // InternalLsjatl.g:1426:3: ruleRule
             {
              before(grammarAccess.getRulesAccess().getRulesRuleParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4027,18 +4221,55 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Rules__RulesAssignment_2"
 
 
+    // $ANTLR start "rule__Condition__NCountAssignment_1"
+    // InternalLsjatl.g:1435:1: rule__Condition__NCountAssignment_1 : ( RULE_INT ) ;
+    public final void rule__Condition__NCountAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLsjatl.g:1439:1: ( ( RULE_INT ) )
+            // InternalLsjatl.g:1440:2: ( RULE_INT )
+            {
+            // InternalLsjatl.g:1440:2: ( RULE_INT )
+            // InternalLsjatl.g:1441:3: RULE_INT
+            {
+             before(grammarAccess.getConditionAccess().getNCountINTTerminalRuleCall_1_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getConditionAccess().getNCountINTTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condition__NCountAssignment_1"
+
+
     // $ANTLR start "rule__Rule__StateAssignment_1"
-    // InternalLsjatl.g:1376:1: rule__Rule__StateAssignment_1 : ( ruleState ) ;
+    // InternalLsjatl.g:1450:1: rule__Rule__StateAssignment_1 : ( ruleState ) ;
     public final void rule__Rule__StateAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1380:1: ( ( ruleState ) )
-            // InternalLsjatl.g:1381:2: ( ruleState )
+            // InternalLsjatl.g:1454:1: ( ( ruleState ) )
+            // InternalLsjatl.g:1455:2: ( ruleState )
             {
-            // InternalLsjatl.g:1381:2: ( ruleState )
-            // InternalLsjatl.g:1382:3: ruleState
+            // InternalLsjatl.g:1455:2: ( ruleState )
+            // InternalLsjatl.g:1456:3: ruleState
             {
              before(grammarAccess.getRuleAccess().getStateStateParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4068,26 +4299,26 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Rule__StateAssignment_1"
 
 
-    // $ANTLR start "rule__Rule__OpAssignment_4"
-    // InternalLsjatl.g:1391:1: rule__Rule__OpAssignment_4 : ( ruleBoolOp ) ;
-    public final void rule__Rule__OpAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Rule__ConditionsAssignment_4"
+    // InternalLsjatl.g:1465:1: rule__Rule__ConditionsAssignment_4 : ( ruleCondition ) ;
+    public final void rule__Rule__ConditionsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1395:1: ( ( ruleBoolOp ) )
-            // InternalLsjatl.g:1396:2: ( ruleBoolOp )
+            // InternalLsjatl.g:1469:1: ( ( ruleCondition ) )
+            // InternalLsjatl.g:1470:2: ( ruleCondition )
             {
-            // InternalLsjatl.g:1396:2: ( ruleBoolOp )
-            // InternalLsjatl.g:1397:3: ruleBoolOp
+            // InternalLsjatl.g:1470:2: ( ruleCondition )
+            // InternalLsjatl.g:1471:3: ruleCondition
             {
-             before(grammarAccess.getRuleAccess().getOpBoolOpParserRuleCall_4_0()); 
+             before(grammarAccess.getRuleAccess().getConditionsConditionParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
-            ruleBoolOp();
+            ruleCondition();
 
             state._fsp--;
 
-             after(grammarAccess.getRuleAccess().getOpBoolOpParserRuleCall_4_0()); 
+             after(grammarAccess.getRuleAccess().getConditionsConditionParserRuleCall_4_0()); 
 
             }
 
@@ -4106,66 +4337,29 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__OpAssignment_4"
+    // $ANTLR end "rule__Rule__ConditionsAssignment_4"
 
 
-    // $ANTLR start "rule__Rule__NCountAssignment_5"
-    // InternalLsjatl.g:1406:1: rule__Rule__NCountAssignment_5 : ( RULE_INT ) ;
-    public final void rule__Rule__NCountAssignment_5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLsjatl.g:1410:1: ( ( RULE_INT ) )
-            // InternalLsjatl.g:1411:2: ( RULE_INT )
-            {
-            // InternalLsjatl.g:1411:2: ( RULE_INT )
-            // InternalLsjatl.g:1412:3: RULE_INT
-            {
-             before(grammarAccess.getRuleAccess().getNCountINTTerminalRuleCall_5_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getNCountINTTerminalRuleCall_5_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rule__NCountAssignment_5"
-
-
-    // $ANTLR start "rule__Rule__ResultAssignment_7"
-    // InternalLsjatl.g:1421:1: rule__Rule__ResultAssignment_7 : ( ruleOutcome ) ;
-    public final void rule__Rule__ResultAssignment_7() throws RecognitionException {
+    // $ANTLR start "rule__Rule__ResultAssignment_6"
+    // InternalLsjatl.g:1480:1: rule__Rule__ResultAssignment_6 : ( ruleOutcome ) ;
+    public final void rule__Rule__ResultAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLsjatl.g:1425:1: ( ( ruleOutcome ) )
-            // InternalLsjatl.g:1426:2: ( ruleOutcome )
+            // InternalLsjatl.g:1484:1: ( ( ruleOutcome ) )
+            // InternalLsjatl.g:1485:2: ( ruleOutcome )
             {
-            // InternalLsjatl.g:1426:2: ( ruleOutcome )
-            // InternalLsjatl.g:1427:3: ruleOutcome
+            // InternalLsjatl.g:1485:2: ( ruleOutcome )
+            // InternalLsjatl.g:1486:3: ruleOutcome
             {
-             before(grammarAccess.getRuleAccess().getResultOutcomeParserRuleCall_7_0()); 
+             before(grammarAccess.getRuleAccess().getResultOutcomeParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
             ruleOutcome();
 
             state._fsp--;
 
-             after(grammarAccess.getRuleAccess().getResultOutcomeParserRuleCall_7_0()); 
+             after(grammarAccess.getRuleAccess().getResultOutcomeParserRuleCall_6_0()); 
 
             }
 
@@ -4184,7 +4378,7 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__ResultAssignment_7"
+    // $ANTLR end "rule__Rule__ResultAssignment_6"
 
     // Delegated rules
 
@@ -4211,6 +4405,7 @@ public class InternalLsjatlParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x000000000003E000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x00000000001C0000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x000000000003E002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000000001C0000L});
 
 }

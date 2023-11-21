@@ -262,6 +262,34 @@ public interface LsjatlPackage extends EPackage
   int RULES_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.ConditionImpl <em>Condition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cps.gameoflife.lsjatl.impl.ConditionImpl
+   * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getCondition()
+   * @generated
+   */
+  int CONDITION = 6;
+
+  /**
+   * The feature id for the '<em><b>NCount</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION__NCOUNT = 0;
+
+  /**
+   * The number of structural features of the '<em>Condition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.RuleImpl <em>Rule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -269,7 +297,7 @@ public interface LsjatlPackage extends EPackage
    * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getRule()
    * @generated
    */
-  int RULE = 6;
+  int RULE = 7;
 
   /**
    * The feature id for the '<em><b>State</b></em>' attribute.
@@ -281,22 +309,13 @@ public interface LsjatlPackage extends EPackage
   int RULE__STATE = 0;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RULE__OP = 1;
-
-  /**
-   * The feature id for the '<em><b>NCount</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RULE__NCOUNT = 2;
+  int RULE__CONDITIONS = 1;
 
   /**
    * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -305,7 +324,7 @@ public interface LsjatlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RULE__RESULT = 3;
+  int RULE__RESULT = 2;
 
   /**
    * The number of structural features of the '<em>Rule</em>' class.
@@ -314,7 +333,7 @@ public interface LsjatlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RULE_FEATURE_COUNT = 4;
+  int RULE_FEATURE_COUNT = 3;
 
 
   /**
@@ -488,6 +507,27 @@ public interface LsjatlPackage extends EPackage
   EReference getRules_Rules();
 
   /**
+   * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Condition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Condition</em>'.
+   * @see cps.gameoflife.lsjatl.Condition
+   * @generated
+   */
+  EClass getCondition();
+
+  /**
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Condition#getNCount <em>NCount</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>NCount</em>'.
+   * @see cps.gameoflife.lsjatl.Condition#getNCount()
+   * @see #getCondition()
+   * @generated
+   */
+  EAttribute getCondition_NCount();
+
+  /**
    * Returns the meta object for class '{@link cps.gameoflife.lsjatl.Rule <em>Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -509,26 +549,15 @@ public interface LsjatlPackage extends EPackage
   EAttribute getRule_State();
 
   /**
-   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Rule#getOp <em>Op</em>}'.
+   * Returns the meta object for the containment reference list '{@link cps.gameoflife.lsjatl.Rule#getConditions <em>Conditions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see cps.gameoflife.lsjatl.Rule#getOp()
+   * @return the meta object for the containment reference list '<em>Conditions</em>'.
+   * @see cps.gameoflife.lsjatl.Rule#getConditions()
    * @see #getRule()
    * @generated
    */
-  EAttribute getRule_Op();
-
-  /**
-   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Rule#getNCount <em>NCount</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>NCount</em>'.
-   * @see cps.gameoflife.lsjatl.Rule#getNCount()
-   * @see #getRule()
-   * @generated
-   */
-  EAttribute getRule_NCount();
+  EReference getRule_Conditions();
 
   /**
    * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Rule#getResult <em>Result</em>}'.
@@ -705,6 +734,24 @@ public interface LsjatlPackage extends EPackage
     EReference RULES__RULES = eINSTANCE.getRules_Rules();
 
     /**
+     * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.ConditionImpl <em>Condition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see cps.gameoflife.lsjatl.impl.ConditionImpl
+     * @see cps.gameoflife.lsjatl.impl.LsjatlPackageImpl#getCondition()
+     * @generated
+     */
+    EClass CONDITION = eINSTANCE.getCondition();
+
+    /**
+     * The meta object literal for the '<em><b>NCount</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONDITION__NCOUNT = eINSTANCE.getCondition_NCount();
+
+    /**
      * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.RuleImpl <em>Rule</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -723,20 +770,12 @@ public interface LsjatlPackage extends EPackage
     EAttribute RULE__STATE = eINSTANCE.getRule_State();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RULE__OP = eINSTANCE.getRule_Op();
-
-    /**
-     * The meta object literal for the '<em><b>NCount</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RULE__NCOUNT = eINSTANCE.getRule_NCount();
+    EReference RULE__CONDITIONS = eINSTANCE.getRule_Conditions();
 
     /**
      * The meta object literal for the '<em><b>Result</b></em>' attribute feature.

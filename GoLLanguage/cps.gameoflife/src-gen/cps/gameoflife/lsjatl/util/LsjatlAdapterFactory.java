@@ -106,6 +106,11 @@ public class LsjatlAdapterFactory extends AdapterFactoryImpl
         return createRulesAdapter();
       }
       @Override
+      public Adapter caseCondition(Condition object)
+      {
+        return createConditionAdapter();
+      }
+      @Override
       public Adapter caseRule(Rule object)
       {
         return createRuleAdapter();
@@ -218,6 +223,21 @@ public class LsjatlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRulesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link cps.gameoflife.lsjatl.Condition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see cps.gameoflife.lsjatl.Condition
+   * @generated
+   */
+  public Adapter createConditionAdapter()
   {
     return null;
   }

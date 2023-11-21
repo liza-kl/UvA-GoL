@@ -419,6 +419,50 @@ ruleRules returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleCondition
+entryRuleCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConditionRule()); }
+	iv_ruleCondition=ruleCondition
+	{ $current=$iv_ruleCondition.current; }
+	EOF;
+
+// Rule Condition
+ruleCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getBoolOpParserRuleCall_0());
+		}
+		ruleBoolOp
+		{
+			afterParserOrEnumRuleCall();
+		}
+		(
+			(
+				lv_nCount_1_0=RULE_INT
+				{
+					newLeafNode(lv_nCount_1_0, grammarAccess.getConditionAccess().getNCountINTTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getConditionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"nCount",
+						lv_nCount_1_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleRule
 entryRuleRule returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getRuleRule()); }
@@ -469,50 +513,32 @@ ruleRule returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRuleAccess().getOpBoolOpParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getRuleAccess().getConditionsConditionParserRuleCall_4_0());
 				}
-				lv_op_4_0=ruleBoolOp
+				lv_conditions_4_0=ruleCondition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRuleRule());
 					}
-					set(
+					add(
 						$current,
-						"op",
-						lv_op_4_0,
-						"cps.gameoflife.Lsjatl.BoolOp");
+						"conditions",
+						lv_conditions_4_0,
+						"cps.gameoflife.Lsjatl.Condition");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
-		(
-			(
-				lv_nCount_5_0=RULE_INT
-				{
-					newLeafNode(lv_nCount_5_0, grammarAccess.getRuleAccess().getNCountINTTerminalRuleCall_5_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRuleRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"nCount",
-						lv_nCount_5_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_6='neighbors'
+		)+
+		otherlv_5='neighbors'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getRuleAccess().getNeighborsKeyword_6());
+			newLeafNode(otherlv_5, grammarAccess.getRuleAccess().getNeighborsKeyword_5());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRuleAccess().getResultOutcomeParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getRuleAccess().getResultOutcomeParserRuleCall_6_0());
 				}
-				lv_result_7_0=ruleOutcome
+				lv_result_6_0=ruleOutcome
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRuleRule());
@@ -520,7 +546,7 @@ ruleRule returns [EObject current=null]
 					set(
 						$current,
 						"result",
-						lv_result_7_0,
+						lv_result_6_0,
 						"cps.gameoflife.Lsjatl.Outcome");
 					afterParserOrEnumRuleCall();
 				}
