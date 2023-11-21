@@ -3,6 +3,7 @@
  */
 package cps.gameoflife.generator;
 
+import cps.gameoflife.lsjatl.Condition;
 import cps.gameoflife.lsjatl.Game;
 import cps.gameoflife.lsjatl.Rule;
 import java.util.List;
@@ -84,13 +85,7 @@ public class LsjatlGenerator extends AbstractGenerator {
     StringConcatenation _builder_1 = new StringConcatenation();
     {
       List<Rule> _rules = Auxiliary.getRules(root);
-      boolean _hasElements = false;
       for(final Rule rule : _rules) {
-        if (!_hasElements) {
-          _hasElements = true;
-        } else {
-          _builder_1.appendImmediate(" , ", "");
-        }
         CharSequence _rule2Text = LsjatlGenerator.rule2Text(rule);
         _builder_1.append(_rule2Text);
         _builder_1.newLineIfNotEmpty();
@@ -102,7 +97,35 @@ public class LsjatlGenerator extends AbstractGenerator {
 
   protected static CharSequence _rule2Text(final Rule rule) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t\t");
+    _builder.append("if ((");
+    {
+      String _state = rule.getState();
+      boolean _tripleEquals = (_state == "dead");
+      if (_tripleEquals) {
+        _builder.append("!");
+      }
+    }
+    _builder.append("gameBoard[i][j])");
+    _builder.newLineIfNotEmpty();
+    {
+      List<Condition> _conditions = Auxiliary.getConditions(rule);
+      for(final Condition condition : _conditions) {
+        _builder.append("&& (surrounding ");
+        String _boolOp = condition.getBoolOp();
+        _builder.append(_boolOp);
+        _builder.append(" ");
+        int _nCount = condition.getNCount();
+        _builder.append(_nCount);
+        _builder.append(")");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("){");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
     _builder.newLine();
     return _builder;
   }

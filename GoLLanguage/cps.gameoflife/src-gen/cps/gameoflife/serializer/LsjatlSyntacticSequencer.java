@@ -26,19 +26,9 @@ public class LsjatlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getBoolOpRule())
-			return getBoolOpToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * BoolOp: '>' | '<' | '>='| '<=' | '==';
-	 */
-	protected String getBoolOpToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return ">";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

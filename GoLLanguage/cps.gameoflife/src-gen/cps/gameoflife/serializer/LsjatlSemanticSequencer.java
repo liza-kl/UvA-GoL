@@ -74,15 +74,18 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Condition returns Condition
 	 *
 	 * Constraint:
-	 *     nCount=INT
+	 *     (boolOp=BoolOp NCount=INT)
 	 * </pre>
 	 */
 	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.CONDITION__BOOL_OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.CONDITION__BOOL_OP));
 			if (transientValues.isValueTransient(semanticObject, LsjatlPackage.Literals.CONDITION__NCOUNT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LsjatlPackage.Literals.CONDITION__NCOUNT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConditionAccess().getBoolOpBoolOpParserRuleCall_0_0(), semanticObject.getBoolOp());
 		feeder.accept(grammarAccess.getConditionAccess().getNCountINTTerminalRuleCall_1_0(), semanticObject.getNCount());
 		feeder.finish();
 	}

@@ -272,13 +272,22 @@ public interface LsjatlPackage extends EPackage
   int CONDITION = 6;
 
   /**
+   * The feature id for the '<em><b>Bool Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION__BOOL_OP = 0;
+
+  /**
    * The feature id for the '<em><b>NCount</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONDITION__NCOUNT = 0;
+  int CONDITION__NCOUNT = 1;
 
   /**
    * The number of structural features of the '<em>Condition</em>' class.
@@ -287,7 +296,7 @@ public interface LsjatlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION_FEATURE_COUNT = 1;
+  int CONDITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.RuleImpl <em>Rule</em>}' class.
@@ -517,6 +526,17 @@ public interface LsjatlPackage extends EPackage
   EClass getCondition();
 
   /**
+   * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Condition#getBoolOp <em>Bool Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Bool Op</em>'.
+   * @see cps.gameoflife.lsjatl.Condition#getBoolOp()
+   * @see #getCondition()
+   * @generated
+   */
+  EAttribute getCondition_BoolOp();
+
+  /**
    * Returns the meta object for the attribute '{@link cps.gameoflife.lsjatl.Condition#getNCount <em>NCount</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -742,6 +762,14 @@ public interface LsjatlPackage extends EPackage
      * @generated
      */
     EClass CONDITION = eINSTANCE.getCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Bool Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONDITION__BOOL_OP = eINSTANCE.getCondition_BoolOp();
 
     /**
      * The meta object literal for the '<em><b>NCount</b></em>' attribute feature.

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link cps.gameoflife.lsjatl.Condition#getBoolOp <em>Bool Op</em>}</li>
  *   <li>{@link cps.gameoflife.lsjatl.Condition#getNCount <em>NCount</em>}</li>
  * </ul>
  *
@@ -23,6 +24,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Condition extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Bool Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bool Op</em>' attribute.
+   * @see #setBoolOp(String)
+   * @see cps.gameoflife.lsjatl.LsjatlPackage#getCondition_BoolOp()
+   * @model
+   * @generated
+   */
+  String getBoolOp();
+
+  /**
+   * Sets the value of the '{@link cps.gameoflife.lsjatl.Condition#getBoolOp <em>Bool Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Bool Op</em>' attribute.
+   * @see #getBoolOp()
+   * @generated
+   */
+  void setBoolOp(String value);
+
   /**
    * Returns the value of the '<em><b>NCount</b></em>' attribute.
    * <!-- begin-user-doc -->

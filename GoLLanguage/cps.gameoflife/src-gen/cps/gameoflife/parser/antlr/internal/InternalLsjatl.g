@@ -435,18 +435,30 @@ ruleCondition returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getConditionAccess().getBoolOpParserRuleCall_0());
-		}
-		ruleBoolOp
-		{
-			afterParserOrEnumRuleCall();
-		}
 		(
 			(
-				lv_nCount_1_0=RULE_INT
 				{
-					newLeafNode(lv_nCount_1_0, grammarAccess.getConditionAccess().getNCountINTTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getConditionAccess().getBoolOpBoolOpParserRuleCall_0_0());
+				}
+				lv_boolOp_0_0=ruleBoolOp
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConditionRule());
+					}
+					set(
+						$current,
+						"boolOp",
+						lv_boolOp_0_0,
+						"cps.gameoflife.Lsjatl.BoolOp");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_NCount_1_0=RULE_INT
+				{
+					newLeafNode(lv_NCount_1_0, grammarAccess.getConditionAccess().getNCountINTTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -454,8 +466,8 @@ ruleCondition returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"nCount",
-						lv_nCount_1_0,
+						"NCount",
+						lv_NCount_1_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)

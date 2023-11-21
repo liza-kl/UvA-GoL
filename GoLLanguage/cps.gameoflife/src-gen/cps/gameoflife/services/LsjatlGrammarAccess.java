@@ -228,21 +228,25 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	public class ConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cps.gameoflife.Lsjatl.Condition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cBoolOpParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cBoolOpAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cBoolOpBoolOpParserRuleCall_0_0 = (RuleCall)cBoolOpAssignment_0.eContents().get(0);
 		private final Assignment cNCountAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNCountINTTerminalRuleCall_1_0 = (RuleCall)cNCountAssignment_1.eContents().get(0);
 		
 		// // A list of rules, none or whatever size
-		//Condition: BoolOp nCount=INT;
+		//Condition: boolOp=BoolOp NCount=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//BoolOp nCount=INT
+		//boolOp=BoolOp NCount=INT
 		public Group getGroup() { return cGroup; }
 		
-		//BoolOp
-		public RuleCall getBoolOpParserRuleCall_0() { return cBoolOpParserRuleCall_0; }
+		//boolOp=BoolOp
+		public Assignment getBoolOpAssignment_0() { return cBoolOpAssignment_0; }
 		
-		//nCount=INT
+		//BoolOp
+		public RuleCall getBoolOpBoolOpParserRuleCall_0_0() { return cBoolOpBoolOpParserRuleCall_0_0; }
+		
+		//NCount=INT
 		public Assignment getNCountAssignment_1() { return cNCountAssignment_1; }
 		
 		//INT
@@ -490,7 +494,7 @@ public class LsjatlGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	// // A list of rules, none or whatever size
-	//Condition: BoolOp nCount=INT;
+	//Condition: boolOp=BoolOp NCount=INT;
 	public ConditionElements getConditionAccess() {
 		return pCondition;
 	}

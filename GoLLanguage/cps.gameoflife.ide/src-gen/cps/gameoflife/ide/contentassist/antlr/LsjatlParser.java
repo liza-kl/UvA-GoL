@@ -53,6 +53,7 @@ public class LsjatlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPointAccess().getXAssignment_1(), "rule__Point__XAssignment_1");
 			builder.put(grammarAccess.getPointAccess().getYAssignment_3(), "rule__Point__YAssignment_3");
 			builder.put(grammarAccess.getRulesAccess().getRulesAssignment_2(), "rule__Rules__RulesAssignment_2");
+			builder.put(grammarAccess.getConditionAccess().getBoolOpAssignment_0(), "rule__Condition__BoolOpAssignment_0");
 			builder.put(grammarAccess.getConditionAccess().getNCountAssignment_1(), "rule__Condition__NCountAssignment_1");
 			builder.put(grammarAccess.getRuleAccess().getStateAssignment_1(), "rule__Rule__StateAssignment_1");
 			builder.put(grammarAccess.getRuleAccess().getConditionsAssignment_4(), "rule__Rule__ConditionsAssignment_4");

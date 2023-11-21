@@ -340,9 +340,20 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   @Override
-  public EAttribute getCondition_NCount()
+  public EAttribute getCondition_BoolOp()
   {
     return (EAttribute)conditionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCondition_NCount()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -443,6 +454,7 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     createEReference(rulesEClass, RULES__RULES);
 
     conditionEClass = createEClass(CONDITION);
+    createEAttribute(conditionEClass, CONDITION__BOOL_OP);
     createEAttribute(conditionEClass, CONDITION__NCOUNT);
 
     ruleEClass = createEClass(RULE);
@@ -505,7 +517,8 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     initEReference(getRules_Rules(), this.getRule(), null, "rules", null, 0, -1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCondition_NCount(), ecorePackage.getEInt(), "nCount", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_BoolOp(), ecorePackage.getEString(), "boolOp", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_NCount(), ecorePackage.getEInt(), "NCount", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRule_State(), ecorePackage.getEString(), "state", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

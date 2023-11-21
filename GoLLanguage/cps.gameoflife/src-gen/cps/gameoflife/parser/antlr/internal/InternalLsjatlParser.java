@@ -1001,42 +1001,64 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCondition"
-    // InternalLsjatl.g:430:1: ruleCondition returns [EObject current=null] : ( ruleBoolOp ( (lv_nCount_1_0= RULE_INT ) ) ) ;
+    // InternalLsjatl.g:430:1: ruleCondition returns [EObject current=null] : ( ( (lv_boolOp_0_0= ruleBoolOp ) ) ( (lv_NCount_1_0= RULE_INT ) ) ) ;
     public final EObject ruleCondition() throws RecognitionException {
         EObject current = null;
 
-        Token lv_nCount_1_0=null;
+        Token lv_NCount_1_0=null;
+        AntlrDatatypeRuleToken lv_boolOp_0_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalLsjatl.g:436:2: ( ( ruleBoolOp ( (lv_nCount_1_0= RULE_INT ) ) ) )
-            // InternalLsjatl.g:437:2: ( ruleBoolOp ( (lv_nCount_1_0= RULE_INT ) ) )
+            // InternalLsjatl.g:436:2: ( ( ( (lv_boolOp_0_0= ruleBoolOp ) ) ( (lv_NCount_1_0= RULE_INT ) ) ) )
+            // InternalLsjatl.g:437:2: ( ( (lv_boolOp_0_0= ruleBoolOp ) ) ( (lv_NCount_1_0= RULE_INT ) ) )
             {
-            // InternalLsjatl.g:437:2: ( ruleBoolOp ( (lv_nCount_1_0= RULE_INT ) ) )
-            // InternalLsjatl.g:438:3: ruleBoolOp ( (lv_nCount_1_0= RULE_INT ) )
+            // InternalLsjatl.g:437:2: ( ( (lv_boolOp_0_0= ruleBoolOp ) ) ( (lv_NCount_1_0= RULE_INT ) ) )
+            // InternalLsjatl.g:438:3: ( (lv_boolOp_0_0= ruleBoolOp ) ) ( (lv_NCount_1_0= RULE_INT ) )
+            {
+            // InternalLsjatl.g:438:3: ( (lv_boolOp_0_0= ruleBoolOp ) )
+            // InternalLsjatl.g:439:4: (lv_boolOp_0_0= ruleBoolOp )
+            {
+            // InternalLsjatl.g:439:4: (lv_boolOp_0_0= ruleBoolOp )
+            // InternalLsjatl.g:440:5: lv_boolOp_0_0= ruleBoolOp
             {
 
-            			newCompositeNode(grammarAccess.getConditionAccess().getBoolOpParserRuleCall_0());
-            		
+            					newCompositeNode(grammarAccess.getConditionAccess().getBoolOpBoolOpParserRuleCall_0_0());
+            				
             pushFollow(FOLLOW_7);
-            ruleBoolOp();
+            lv_boolOp_0_0=ruleBoolOp();
 
             state._fsp--;
 
 
-            			afterParserOrEnumRuleCall();
-            		
-            // InternalLsjatl.g:445:3: ( (lv_nCount_1_0= RULE_INT ) )
-            // InternalLsjatl.g:446:4: (lv_nCount_1_0= RULE_INT )
-            {
-            // InternalLsjatl.g:446:4: (lv_nCount_1_0= RULE_INT )
-            // InternalLsjatl.g:447:5: lv_nCount_1_0= RULE_INT
-            {
-            lv_nCount_1_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getConditionRule());
+            					}
+            					set(
+            						current,
+            						"boolOp",
+            						lv_boolOp_0_0,
+            						"cps.gameoflife.Lsjatl.BoolOp");
+            					afterParserOrEnumRuleCall();
+            				
 
-            					newLeafNode(lv_nCount_1_0, grammarAccess.getConditionAccess().getNCountINTTerminalRuleCall_1_0());
+            }
+
+
+            }
+
+            // InternalLsjatl.g:457:3: ( (lv_NCount_1_0= RULE_INT ) )
+            // InternalLsjatl.g:458:4: (lv_NCount_1_0= RULE_INT )
+            {
+            // InternalLsjatl.g:458:4: (lv_NCount_1_0= RULE_INT )
+            // InternalLsjatl.g:459:5: lv_NCount_1_0= RULE_INT
+            {
+            lv_NCount_1_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            					newLeafNode(lv_NCount_1_0, grammarAccess.getConditionAccess().getNCountINTTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -1044,8 +1066,8 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
             					}
             					setWithLastConsumed(
             						current,
-            						"nCount",
-            						lv_nCount_1_0,
+            						"NCount",
+            						lv_NCount_1_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -1077,7 +1099,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRule"
-    // InternalLsjatl.g:467:1: entryRuleRule returns [EObject current=null] : iv_ruleRule= ruleRule EOF ;
+    // InternalLsjatl.g:479:1: entryRuleRule returns [EObject current=null] : iv_ruleRule= ruleRule EOF ;
     public final EObject entryRuleRule() throws RecognitionException {
         EObject current = null;
 
@@ -1085,8 +1107,8 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLsjatl.g:467:45: (iv_ruleRule= ruleRule EOF )
-            // InternalLsjatl.g:468:2: iv_ruleRule= ruleRule EOF
+            // InternalLsjatl.g:479:45: (iv_ruleRule= ruleRule EOF )
+            // InternalLsjatl.g:480:2: iv_ruleRule= ruleRule EOF
             {
              newCompositeNode(grammarAccess.getRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -1113,7 +1135,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRule"
-    // InternalLsjatl.g:474:1: ruleRule returns [EObject current=null] : (otherlv_0= 'Each' ( (lv_state_1_0= ruleState ) ) otherlv_2= 'cell' otherlv_3= 'with' ( (lv_conditions_4_0= ruleCondition ) )+ otherlv_5= 'neighbors' ( (lv_result_6_0= ruleOutcome ) ) ) ;
+    // InternalLsjatl.g:486:1: ruleRule returns [EObject current=null] : (otherlv_0= 'Each' ( (lv_state_1_0= ruleState ) ) otherlv_2= 'cell' otherlv_3= 'with' ( (lv_conditions_4_0= ruleCondition ) )+ otherlv_5= 'neighbors' ( (lv_result_6_0= ruleOutcome ) ) ) ;
     public final EObject ruleRule() throws RecognitionException {
         EObject current = null;
 
@@ -1132,21 +1154,21 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLsjatl.g:480:2: ( (otherlv_0= 'Each' ( (lv_state_1_0= ruleState ) ) otherlv_2= 'cell' otherlv_3= 'with' ( (lv_conditions_4_0= ruleCondition ) )+ otherlv_5= 'neighbors' ( (lv_result_6_0= ruleOutcome ) ) ) )
-            // InternalLsjatl.g:481:2: (otherlv_0= 'Each' ( (lv_state_1_0= ruleState ) ) otherlv_2= 'cell' otherlv_3= 'with' ( (lv_conditions_4_0= ruleCondition ) )+ otherlv_5= 'neighbors' ( (lv_result_6_0= ruleOutcome ) ) )
+            // InternalLsjatl.g:492:2: ( (otherlv_0= 'Each' ( (lv_state_1_0= ruleState ) ) otherlv_2= 'cell' otherlv_3= 'with' ( (lv_conditions_4_0= ruleCondition ) )+ otherlv_5= 'neighbors' ( (lv_result_6_0= ruleOutcome ) ) ) )
+            // InternalLsjatl.g:493:2: (otherlv_0= 'Each' ( (lv_state_1_0= ruleState ) ) otherlv_2= 'cell' otherlv_3= 'with' ( (lv_conditions_4_0= ruleCondition ) )+ otherlv_5= 'neighbors' ( (lv_result_6_0= ruleOutcome ) ) )
             {
-            // InternalLsjatl.g:481:2: (otherlv_0= 'Each' ( (lv_state_1_0= ruleState ) ) otherlv_2= 'cell' otherlv_3= 'with' ( (lv_conditions_4_0= ruleCondition ) )+ otherlv_5= 'neighbors' ( (lv_result_6_0= ruleOutcome ) ) )
-            // InternalLsjatl.g:482:3: otherlv_0= 'Each' ( (lv_state_1_0= ruleState ) ) otherlv_2= 'cell' otherlv_3= 'with' ( (lv_conditions_4_0= ruleCondition ) )+ otherlv_5= 'neighbors' ( (lv_result_6_0= ruleOutcome ) )
+            // InternalLsjatl.g:493:2: (otherlv_0= 'Each' ( (lv_state_1_0= ruleState ) ) otherlv_2= 'cell' otherlv_3= 'with' ( (lv_conditions_4_0= ruleCondition ) )+ otherlv_5= 'neighbors' ( (lv_result_6_0= ruleOutcome ) ) )
+            // InternalLsjatl.g:494:3: otherlv_0= 'Each' ( (lv_state_1_0= ruleState ) ) otherlv_2= 'cell' otherlv_3= 'with' ( (lv_conditions_4_0= ruleCondition ) )+ otherlv_5= 'neighbors' ( (lv_result_6_0= ruleOutcome ) )
             {
             otherlv_0=(Token)match(input,20,FOLLOW_13); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRuleAccess().getEachKeyword_0());
             		
-            // InternalLsjatl.g:486:3: ( (lv_state_1_0= ruleState ) )
-            // InternalLsjatl.g:487:4: (lv_state_1_0= ruleState )
+            // InternalLsjatl.g:498:3: ( (lv_state_1_0= ruleState ) )
+            // InternalLsjatl.g:499:4: (lv_state_1_0= ruleState )
             {
-            // InternalLsjatl.g:487:4: (lv_state_1_0= ruleState )
-            // InternalLsjatl.g:488:5: lv_state_1_0= ruleState
+            // InternalLsjatl.g:499:4: (lv_state_1_0= ruleState )
+            // InternalLsjatl.g:500:5: lv_state_1_0= ruleState
             {
 
             					newCompositeNode(grammarAccess.getRuleAccess().getStateStateParserRuleCall_1_0());
@@ -1181,7 +1203,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getRuleAccess().getWithKeyword_3());
             		
-            // InternalLsjatl.g:513:3: ( (lv_conditions_4_0= ruleCondition ) )+
+            // InternalLsjatl.g:525:3: ( (lv_conditions_4_0= ruleCondition ) )+
             int cnt3=0;
             loop3:
             do {
@@ -1195,10 +1217,10 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalLsjatl.g:514:4: (lv_conditions_4_0= ruleCondition )
+            	    // InternalLsjatl.g:526:4: (lv_conditions_4_0= ruleCondition )
             	    {
-            	    // InternalLsjatl.g:514:4: (lv_conditions_4_0= ruleCondition )
-            	    // InternalLsjatl.g:515:5: lv_conditions_4_0= ruleCondition
+            	    // InternalLsjatl.g:526:4: (lv_conditions_4_0= ruleCondition )
+            	    // InternalLsjatl.g:527:5: lv_conditions_4_0= ruleCondition
             	    {
 
             	    					newCompositeNode(grammarAccess.getRuleAccess().getConditionsConditionParserRuleCall_4_0());
@@ -1239,11 +1261,11 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getRuleAccess().getNeighborsKeyword_5());
             		
-            // InternalLsjatl.g:536:3: ( (lv_result_6_0= ruleOutcome ) )
-            // InternalLsjatl.g:537:4: (lv_result_6_0= ruleOutcome )
+            // InternalLsjatl.g:548:3: ( (lv_result_6_0= ruleOutcome ) )
+            // InternalLsjatl.g:549:4: (lv_result_6_0= ruleOutcome )
             {
-            // InternalLsjatl.g:537:4: (lv_result_6_0= ruleOutcome )
-            // InternalLsjatl.g:538:5: lv_result_6_0= ruleOutcome
+            // InternalLsjatl.g:549:4: (lv_result_6_0= ruleOutcome )
+            // InternalLsjatl.g:550:5: lv_result_6_0= ruleOutcome
             {
 
             					newCompositeNode(grammarAccess.getRuleAccess().getResultOutcomeParserRuleCall_6_0());
@@ -1293,7 +1315,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleState"
-    // InternalLsjatl.g:559:1: entryRuleState returns [String current=null] : iv_ruleState= ruleState EOF ;
+    // InternalLsjatl.g:571:1: entryRuleState returns [String current=null] : iv_ruleState= ruleState EOF ;
     public final String entryRuleState() throws RecognitionException {
         String current = null;
 
@@ -1301,8 +1323,8 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLsjatl.g:559:45: (iv_ruleState= ruleState EOF )
-            // InternalLsjatl.g:560:2: iv_ruleState= ruleState EOF
+            // InternalLsjatl.g:571:45: (iv_ruleState= ruleState EOF )
+            // InternalLsjatl.g:572:2: iv_ruleState= ruleState EOF
             {
              newCompositeNode(grammarAccess.getStateRule()); 
             pushFollow(FOLLOW_1);
@@ -1329,7 +1351,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleState"
-    // InternalLsjatl.g:566:1: ruleState returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'living' | kw= 'dead' ) ;
+    // InternalLsjatl.g:578:1: ruleState returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'living' | kw= 'dead' ) ;
     public final AntlrDatatypeRuleToken ruleState() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1339,10 +1361,10 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLsjatl.g:572:2: ( (kw= 'living' | kw= 'dead' ) )
-            // InternalLsjatl.g:573:2: (kw= 'living' | kw= 'dead' )
+            // InternalLsjatl.g:584:2: ( (kw= 'living' | kw= 'dead' ) )
+            // InternalLsjatl.g:585:2: (kw= 'living' | kw= 'dead' )
             {
-            // InternalLsjatl.g:573:2: (kw= 'living' | kw= 'dead' )
+            // InternalLsjatl.g:585:2: (kw= 'living' | kw= 'dead' )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1360,7 +1382,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalLsjatl.g:574:3: kw= 'living'
+                    // InternalLsjatl.g:586:3: kw= 'living'
                     {
                     kw=(Token)match(input,24,FOLLOW_2); 
 
@@ -1371,7 +1393,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLsjatl.g:580:3: kw= 'dead'
+                    // InternalLsjatl.g:592:3: kw= 'dead'
                     {
                     kw=(Token)match(input,25,FOLLOW_2); 
 
@@ -1404,7 +1426,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoolOp"
-    // InternalLsjatl.g:589:1: entryRuleBoolOp returns [String current=null] : iv_ruleBoolOp= ruleBoolOp EOF ;
+    // InternalLsjatl.g:601:1: entryRuleBoolOp returns [String current=null] : iv_ruleBoolOp= ruleBoolOp EOF ;
     public final String entryRuleBoolOp() throws RecognitionException {
         String current = null;
 
@@ -1412,8 +1434,8 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLsjatl.g:589:46: (iv_ruleBoolOp= ruleBoolOp EOF )
-            // InternalLsjatl.g:590:2: iv_ruleBoolOp= ruleBoolOp EOF
+            // InternalLsjatl.g:601:46: (iv_ruleBoolOp= ruleBoolOp EOF )
+            // InternalLsjatl.g:602:2: iv_ruleBoolOp= ruleBoolOp EOF
             {
              newCompositeNode(grammarAccess.getBoolOpRule()); 
             pushFollow(FOLLOW_1);
@@ -1440,7 +1462,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoolOp"
-    // InternalLsjatl.g:596:1: ruleBoolOp returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '>' | kw= '<' | kw= '>=' | kw= '<=' | kw= '==' ) ;
+    // InternalLsjatl.g:608:1: ruleBoolOp returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '>' | kw= '<' | kw= '>=' | kw= '<=' | kw= '==' ) ;
     public final AntlrDatatypeRuleToken ruleBoolOp() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1450,10 +1472,10 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLsjatl.g:602:2: ( (kw= '>' | kw= '<' | kw= '>=' | kw= '<=' | kw= '==' ) )
-            // InternalLsjatl.g:603:2: (kw= '>' | kw= '<' | kw= '>=' | kw= '<=' | kw= '==' )
+            // InternalLsjatl.g:614:2: ( (kw= '>' | kw= '<' | kw= '>=' | kw= '<=' | kw= '==' ) )
+            // InternalLsjatl.g:615:2: (kw= '>' | kw= '<' | kw= '>=' | kw= '<=' | kw= '==' )
             {
-            // InternalLsjatl.g:603:2: (kw= '>' | kw= '<' | kw= '>=' | kw= '<=' | kw= '==' )
+            // InternalLsjatl.g:615:2: (kw= '>' | kw= '<' | kw= '>=' | kw= '<=' | kw= '==' )
             int alt5=5;
             switch ( input.LA(1) ) {
             case 26:
@@ -1490,7 +1512,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
             switch (alt5) {
                 case 1 :
-                    // InternalLsjatl.g:604:3: kw= '>'
+                    // InternalLsjatl.g:616:3: kw= '>'
                     {
                     kw=(Token)match(input,26,FOLLOW_2); 
 
@@ -1501,7 +1523,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLsjatl.g:610:3: kw= '<'
+                    // InternalLsjatl.g:622:3: kw= '<'
                     {
                     kw=(Token)match(input,27,FOLLOW_2); 
 
@@ -1512,7 +1534,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLsjatl.g:616:3: kw= '>='
+                    // InternalLsjatl.g:628:3: kw= '>='
                     {
                     kw=(Token)match(input,28,FOLLOW_2); 
 
@@ -1523,7 +1545,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalLsjatl.g:622:3: kw= '<='
+                    // InternalLsjatl.g:634:3: kw= '<='
                     {
                     kw=(Token)match(input,29,FOLLOW_2); 
 
@@ -1534,7 +1556,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalLsjatl.g:628:3: kw= '=='
+                    // InternalLsjatl.g:640:3: kw= '=='
                     {
                     kw=(Token)match(input,30,FOLLOW_2); 
 
@@ -1567,7 +1589,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOutcome"
-    // InternalLsjatl.g:637:1: entryRuleOutcome returns [String current=null] : iv_ruleOutcome= ruleOutcome EOF ;
+    // InternalLsjatl.g:649:1: entryRuleOutcome returns [String current=null] : iv_ruleOutcome= ruleOutcome EOF ;
     public final String entryRuleOutcome() throws RecognitionException {
         String current = null;
 
@@ -1575,8 +1597,8 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLsjatl.g:637:47: (iv_ruleOutcome= ruleOutcome EOF )
-            // InternalLsjatl.g:638:2: iv_ruleOutcome= ruleOutcome EOF
+            // InternalLsjatl.g:649:47: (iv_ruleOutcome= ruleOutcome EOF )
+            // InternalLsjatl.g:650:2: iv_ruleOutcome= ruleOutcome EOF
             {
              newCompositeNode(grammarAccess.getOutcomeRule()); 
             pushFollow(FOLLOW_1);
@@ -1603,7 +1625,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOutcome"
-    // InternalLsjatl.g:644:1: ruleOutcome returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'survives' | kw= 'dies' | kw= 'populates' ) ;
+    // InternalLsjatl.g:656:1: ruleOutcome returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'survives' | kw= 'dies' | kw= 'populates' ) ;
     public final AntlrDatatypeRuleToken ruleOutcome() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1613,10 +1635,10 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLsjatl.g:650:2: ( (kw= 'survives' | kw= 'dies' | kw= 'populates' ) )
-            // InternalLsjatl.g:651:2: (kw= 'survives' | kw= 'dies' | kw= 'populates' )
+            // InternalLsjatl.g:662:2: ( (kw= 'survives' | kw= 'dies' | kw= 'populates' ) )
+            // InternalLsjatl.g:663:2: (kw= 'survives' | kw= 'dies' | kw= 'populates' )
             {
-            // InternalLsjatl.g:651:2: (kw= 'survives' | kw= 'dies' | kw= 'populates' )
+            // InternalLsjatl.g:663:2: (kw= 'survives' | kw= 'dies' | kw= 'populates' )
             int alt6=3;
             switch ( input.LA(1) ) {
             case 31:
@@ -1643,7 +1665,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
 
             switch (alt6) {
                 case 1 :
-                    // InternalLsjatl.g:652:3: kw= 'survives'
+                    // InternalLsjatl.g:664:3: kw= 'survives'
                     {
                     kw=(Token)match(input,31,FOLLOW_2); 
 
@@ -1654,7 +1676,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLsjatl.g:658:3: kw= 'dies'
+                    // InternalLsjatl.g:670:3: kw= 'dies'
                     {
                     kw=(Token)match(input,32,FOLLOW_2); 
 
@@ -1665,7 +1687,7 @@ public class InternalLsjatlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLsjatl.g:664:3: kw= 'populates'
+                    // InternalLsjatl.g:676:3: kw= 'populates'
                     {
                     kw=(Token)match(input,33,FOLLOW_2); 
 

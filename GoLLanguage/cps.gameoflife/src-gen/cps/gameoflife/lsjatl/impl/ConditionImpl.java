@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link cps.gameoflife.lsjatl.impl.ConditionImpl#getBoolOp <em>Bool Op</em>}</li>
  *   <li>{@link cps.gameoflife.lsjatl.impl.ConditionImpl#getNCount <em>NCount</em>}</li>
  * </ul>
  *
@@ -28,6 +29,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ConditionImpl extends MinimalEObjectImpl.Container implements Condition
 {
+  /**
+   * The default value of the '{@link #getBoolOp() <em>Bool Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBoolOp()
+   * @generated
+   * @ordered
+   */
+  protected static final String BOOL_OP_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getBoolOp() <em>Bool Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBoolOp()
+   * @generated
+   * @ordered
+   */
+  protected String boolOp = BOOL_OP_EDEFAULT;
+
   /**
    * The default value of the '{@link #getNCount() <em>NCount</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -75,6 +96,31 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    */
   @Override
+  public String getBoolOp()
+  {
+    return boolOp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setBoolOp(String newBoolOp)
+  {
+    String oldBoolOp = boolOp;
+    boolOp = newBoolOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LsjatlPackage.CONDITION__BOOL_OP, oldBoolOp, boolOp));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public int getNCount()
   {
     return nCount;
@@ -104,6 +150,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case LsjatlPackage.CONDITION__BOOL_OP:
+        return getBoolOp();
       case LsjatlPackage.CONDITION__NCOUNT:
         return getNCount();
     }
@@ -120,6 +168,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case LsjatlPackage.CONDITION__BOOL_OP:
+        setBoolOp((String)newValue);
+        return;
       case LsjatlPackage.CONDITION__NCOUNT:
         setNCount((Integer)newValue);
         return;
@@ -137,6 +188,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case LsjatlPackage.CONDITION__BOOL_OP:
+        setBoolOp(BOOL_OP_EDEFAULT);
+        return;
       case LsjatlPackage.CONDITION__NCOUNT:
         setNCount(NCOUNT_EDEFAULT);
         return;
@@ -154,6 +208,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case LsjatlPackage.CONDITION__BOOL_OP:
+        return BOOL_OP_EDEFAULT == null ? boolOp != null : !BOOL_OP_EDEFAULT.equals(boolOp);
       case LsjatlPackage.CONDITION__NCOUNT:
         return nCount != NCOUNT_EDEFAULT;
     }
@@ -171,7 +227,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (nCount: ");
+    result.append(" (boolOp: ");
+    result.append(boolOp);
+    result.append(", NCount: ");
     result.append(nCount);
     result.append(')');
     return result.toString();

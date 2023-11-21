@@ -10,6 +10,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import cps.gameoflife.lsjatl.Game
 import cps.gameoflife.lsjatl.Rule
+import cps.gameoflife.lsjatl.Condition
 
 /**
  * Generates code from your model files on save.
@@ -42,13 +43,19 @@ class LsjatlGenerator extends AbstractGenerator {
 			                if (gameBoard[i+1][j+1]) { surrounding++; }
 			''' +
 			'''
-			«FOR rule: Auxiliary.getRules(root) SEPARATOR " , " »
+			«FOR rule: Auxiliary.getRules(root)»
 				«rule2Text(rule)»
 			«ENDFOR»
 			'''
 		);
 	}
 	def static dispatch rule2Text(Rule rule)'''
+		if ((«IF rule.state === 'dead'»!«ENDIF»gameBoard[i][j])
+		«FOR condition: Auxiliary.getConditions(rule)»
+		&& (surrounding «condition.boolOp» «condition.NCount»)
+		«ENDFOR»){
+			
+		}
 		
-	''' 
+		''' 
 }
