@@ -19,9 +19,9 @@ class Auxiliary {
 	
 	def static List<Condition> getConditions(Rule rule) {
 		var List<Condition> conditionList = new ArrayList<Condition>()
-		for (Condition c: rule.condition){
-			ruleList.add(r)
+		for (Condition c: rule.conditions){
+			conditionList.add(c)
 		}
-		return ruleList;
+		return conditionList;
 	}
 }

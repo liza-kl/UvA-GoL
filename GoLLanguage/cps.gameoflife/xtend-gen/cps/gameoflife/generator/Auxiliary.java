@@ -19,11 +19,11 @@ public class Auxiliary {
   }
 
   public static List<Condition> getConditions(final Rule rule) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field condition is undefined for the type Rule"
-      + "\nThe method or field ruleList is undefined"
-      + "\nThe method or field r is undefined"
-      + "\nThe method or field ruleList is undefined"
-      + "\nadd cannot be resolved");
+    List<Condition> conditionList = new ArrayList<Condition>();
+    EList<Condition> _conditions = rule.getConditions();
+    for (final Condition c : _conditions) {
+      conditionList.add(c);
+    }
+    return conditionList;
   }
 }
