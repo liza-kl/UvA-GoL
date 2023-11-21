@@ -17,3 +17,4 @@ and "Launch Runtime Eclipse"
   but according to the assignment it's not)
 - Neighbors: Do we only consider the "normal" neighborhood
 - Exclude edge cases for Rules in Grammar or in validation? 
+- Why is there the issue with the point / Populated Cells list, if you directly put it as a point?
