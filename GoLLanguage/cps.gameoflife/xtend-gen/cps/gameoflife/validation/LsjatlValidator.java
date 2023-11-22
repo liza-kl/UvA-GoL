@@ -79,7 +79,7 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
   @Check
   public void checkDeadSurviving(final Rule rule) {
     if ((Objects.equal(rule.getState(), "dead") && Objects.equal(rule.getResult(), "survives"))) {
-      this.warning("Game has no rules, so everyone and everything will die", 
+      this.warning("A dead cell cannot be survive. Only living cells can survive.", 
         LsjatlPackage.Literals.RULE__STATE);
     }
   }

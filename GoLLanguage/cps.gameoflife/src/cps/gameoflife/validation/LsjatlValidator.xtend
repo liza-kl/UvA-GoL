@@ -85,7 +85,7 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 	def checkDeadSurviving(Rule rule) {
 
 			if (rule.state == 'dead' && rule.result == 'survives'){
-				warning("Game has no rules, so everyone and everything will die",
+				warning("A dead cell cannot be survive. Only living cells can survive.",
 					Literals.RULE__STATE
 				)
 			}
