@@ -53,6 +53,13 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 	}
 	
 	@Check
+	def checkIfGridIsBigEnough(Grid grid) {
+		if (grid.size.height < 10 || grid.size.width < 10) {
+			error("The world is too small! It should have at least width and height of 10.", Literals.GRID__SIZE);
+		}
+	}
+	
+	@Check
 	def doIdenticalCoordinatedExist(Grid grid)
 	{
 		var populatedCells = grid.populatedCells

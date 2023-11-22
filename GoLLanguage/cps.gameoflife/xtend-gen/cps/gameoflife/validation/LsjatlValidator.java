@@ -56,6 +56,13 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
   }
 
   @Check
+  public void checkIfGridIsBigEnough(final Grid grid) {
+    if (((grid.getSize().getHeight() < 10) || (grid.getSize().getWidth() < 10))) {
+      this.error("The world is too small! It should have at least width and height of 10.", LsjatlPackage.Literals.GRID__SIZE);
+    }
+  }
+
+  @Check
   public void doIdenticalCoordinatedExist(final Grid grid) {
     EList<PopulatedCell> populatedCells = grid.getPopulatedCells();
     for (int i = 0; (i < populatedCells.size()); i++) {
