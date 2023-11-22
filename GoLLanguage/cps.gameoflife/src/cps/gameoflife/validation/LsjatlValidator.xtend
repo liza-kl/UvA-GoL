@@ -13,6 +13,8 @@ import cps.gameoflife.lsjatl.Condition
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.HashSet
+import cps.gameoflife.lsjatl.LsjatlPackage.Literals
 
 /**
  * This class contains custom validation rules. 
@@ -24,6 +26,7 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 	protected static val ISSUE_CODE_PREFIX = "cps.gameoflife.lsjatl.";
 	public static val INVALID_RULE_OUTCOME = ISSUE_CODE_PREFIX + "InvalidRuleOutcome";
 	public static val INVALID_SIGN = ISSUE_CODE_PREFIX + "InvalidSign";
+	public static val String INVALID_DUPLICATION = "InvalidDuplication";
 	
 
 	@Check
@@ -94,6 +97,17 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 	
 	
 
-// Other ideas
-// Check for Duplicated rules and give a warning. 
+	@Check
+	def checkIdenticalRules(Rules rules) {
+		var rulesList = rules.rules.toList();
+		var ruleSet = new HashSet();
+
+		for (rule : rulesList) {
+			if (ruleSet.contains(rule)) {
+				warning("There cannot be duplicate rules", Literals.RULES__RULES, INVALID_DUPLICATION);
+			} else {
+				ruleSet.add(rule);
+			}
+		}
+	}
 }

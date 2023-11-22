@@ -6,13 +6,16 @@ package cps.gameoflife.validation;
 import cps.gameoflife.lsjatl.Condition;
 import cps.gameoflife.lsjatl.Game;
 import cps.gameoflife.lsjatl.Grid;
+import cps.gameoflife.lsjatl.LsjatlPackage;
 import cps.gameoflife.lsjatl.PopulatedCell;
 import cps.gameoflife.lsjatl.Rule;
 import cps.gameoflife.lsjatl.Rules;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 /**
  * This class contains custom validation rules.
@@ -26,6 +29,8 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
   public static final String INVALID_RULE_OUTCOME = (LsjatlValidator.ISSUE_CODE_PREFIX + "InvalidRuleOutcome");
 
   public static final String INVALID_SIGN = (LsjatlValidator.ISSUE_CODE_PREFIX + "InvalidSign");
+
+  public static final String INVALID_DUPLICATION = "InvalidDuplication";
 
   @Check
   public void checkIfValidNumberOfNeighbors(final Condition condition) {
@@ -97,6 +102,20 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
     boolean _equals = (_size == 0);
     if (_equals) {
       this.warning("Game has no rules, so everyone and everything will die", null);
+    }
+  }
+
+  @Check
+  public void checkIdenticalRules(final Rules rules) {
+    List<Rule> rulesList = IterableExtensions.<Rule>toList(rules.getRules());
+    HashSet<Rule> ruleSet = new HashSet<Rule>();
+    for (final Rule rule : rulesList) {
+      boolean _contains = ruleSet.contains(rule);
+      if (_contains) {
+        this.warning("There cannot be duplicate rules", LsjatlPackage.Literals.RULES__RULES, LsjatlValidator.INVALID_DUPLICATION);
+      } else {
+        ruleSet.add(rule);
+      }
     }
   }
 }
