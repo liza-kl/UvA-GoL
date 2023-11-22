@@ -8,6 +8,7 @@ import cps.gameoflife.lsjatl.Condition;
 import cps.gameoflife.lsjatl.Game;
 import cps.gameoflife.lsjatl.PopulatedCell;
 import cps.gameoflife.lsjatl.Rule;
+import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -39,6 +40,8 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("import java.util.Arrays;");
     _builder.newLine();
+    _builder.append("import java.util.HashSet;");
+    _builder.newLine();
     _builder.append("\t\t\t");
     _builder.newLine();
     _builder.append("public class RulesOfLife {");
@@ -56,9 +59,50 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.append(";");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t\t\t");
-    _builder.append("public static ArrayList<Point> populatedCells = new ArrayList<Point>(");
+    _builder.append("public static HashSet<Point> Glider = new HashSet<Point>(");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t\t\t\t\t");
+    _builder.append("Arrays.asList(");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t\t\t\t\t\t");
+    _builder.append("new Point(4,3), new Point(5,4), new Point(5,5), new Point(4,5), new Point(3,5)");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t\t\t\t\t");
+    _builder.append(")");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append(");");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("public static HashSet<Point> Blinker = new HashSet<Point>(");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t");
+    _builder.append("Arrays.asList(");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t");
+    _builder.append("new Point(3,3), new Point(3,4), new Point(21,20), new Point(3,5)");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t");
+    _builder.append(")");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t\t\t\t");
+    _builder.append(");");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("public static ArrayList<Point> populatedCells;");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("public static HashSet<Point> initialCells;");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("static {");
     _builder.newLine();
     _builder.append("\t\t\t\t\t\t");
+    _builder.append("initialCells = new HashSet<Point>(");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t\t\t\t\t\t");
     _builder.append("Arrays.asList(");
     _builder.newLine();
     {
@@ -68,24 +112,42 @@ public class LsjatlGenerator extends AbstractGenerator {
         if (!_hasElements) {
           _hasElements = true;
         } else {
-          _builder.appendImmediate(", ", "\t\t\t\t\t\t\t");
+          _builder.appendImmediate(", ", "\t\t\t\t\t\t\t\t\t\t\t\t\t");
         }
-        _builder.append("\t\t\t\t\t\t\t");
+        _builder.append("\t\t\t\t\t\t\t\t\t\t\t\t\t");
         _builder.append("new Point(");
         int _x = populatedCell.getX();
-        _builder.append(_x, "\t\t\t\t\t\t\t");
+        _builder.append(_x, "\t\t\t\t\t\t\t\t\t\t\t\t\t");
         _builder.append(",");
         int _y = populatedCell.getY();
-        _builder.append(_y, "\t\t\t\t\t\t\t");
+        _builder.append(_y, "\t\t\t\t\t\t\t\t\t\t\t\t\t");
         _builder.append(")");
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("\t\t\t\t\t\t");
+    _builder.append("\t\t\t\t\t\t\t\t\t\t\t\t");
     _builder.append(")");
     _builder.newLine();
-    _builder.append("\t\t\t\t\t");
+    _builder.append("\t\t\t\t\t\t\t\t\t\t\t");
     _builder.append(");");
+    _builder.newLine();
+    {
+      ArrayList<String> _pesets = Auxiliary.getPesets(root.getGrid());
+      for(final String preset : _pesets) {
+        _builder.append("\t\t\t\t\t\t");
+        _builder.append("initialCells.addAll(");
+        _builder.append(preset, "\t\t\t\t\t\t");
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t\t\t\t\t\t");
+    _builder.append("populatedCells = new ArrayList<>(initialCells);");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t ");
     _builder.newLine();
     _builder.append("\t\t\t\t\t");
     _builder.append("public static void computeSurvivors(boolean[][] gameBoard, ArrayList<Point> survivingCells) {");

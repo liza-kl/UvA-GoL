@@ -123,13 +123,22 @@ public interface LsjatlPackage extends EPackage
   int GRID__POPULATED_CELLS = 1;
 
   /**
+   * The feature id for the '<em><b>Predefined Patterns</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID__PREDEFINED_PATTERNS = 2;
+
+  /**
    * The number of structural features of the '<em>Grid</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GRID_FEATURE_COUNT = 2;
+  int GRID_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link cps.gameoflife.lsjatl.impl.GridSizeImpl <em>Grid Size</em>}' class.
@@ -391,6 +400,17 @@ public interface LsjatlPackage extends EPackage
   EReference getGrid_PopulatedCells();
 
   /**
+   * Returns the meta object for the attribute list '{@link cps.gameoflife.lsjatl.Grid#getPredefinedPatterns <em>Predefined Patterns</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Predefined Patterns</em>'.
+   * @see cps.gameoflife.lsjatl.Grid#getPredefinedPatterns()
+   * @see #getGrid()
+   * @generated
+   */
+  EAttribute getGrid_PredefinedPatterns();
+
+  /**
    * Returns the meta object for class '{@link cps.gameoflife.lsjatl.GridSize <em>Grid Size</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -635,6 +655,14 @@ public interface LsjatlPackage extends EPackage
      * @generated
      */
     EReference GRID__POPULATED_CELLS = eINSTANCE.getGrid_PopulatedCells();
+
+    /**
+     * The meta object literal for the '<em><b>Predefined Patterns</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GRID__PREDEFINED_PATTERNS = eINSTANCE.getGrid_PredefinedPatterns();
 
     /**
      * The meta object literal for the '{@link cps.gameoflife.lsjatl.impl.GridSizeImpl <em>Grid Size</em>}' class.

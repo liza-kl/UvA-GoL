@@ -27,17 +27,38 @@ class LsjatlGenerator extends AbstractGenerator {
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 			
 public class RulesOfLife {
 					public static int gridWidth = «root.grid.size.width»;
 					public static int gridHeight = «root.grid.size.height»;
-					public static ArrayList<Point> populatedCells = new ArrayList<Point>(
-						Arrays.asList(
-							«FOR populatedCell: Auxiliary.getStartingPoints(root.grid) SEPARATOR ', '»
-								new Point(«populatedCell.x»,«populatedCell.y»)
-							«ENDFOR»
-						)
+					public static HashSet<Point> Glider = new HashSet<Point>(
+											Arrays.asList(
+												new Point(4,3), new Point(5,4), new Point(5,5), new Point(4,5), new Point(3,5)
+											)
 					);
+					public static HashSet<Point> Blinker = new HashSet<Point>(
+																Arrays.asList(
+																	new Point(3,3), new Point(3,4), new Point(21,20), new Point(3,5)
+																)
+										);
+					public static ArrayList<Point> populatedCells;
+					public static HashSet<Point> initialCells;
+					
+					static {
+						initialCells = new HashSet<Point>(
+												Arrays.asList(
+													«FOR populatedCell: Auxiliary.getStartingPoints(root.grid) SEPARATOR ', '»
+														new Point(«populatedCell.x»,«populatedCell.y»)
+													«ENDFOR»
+												)
+											);
+						«FOR preset: Auxiliary.getPesets(root.grid)»
+							initialCells.addAll(«preset»);
+						«ENDFOR»
+						populatedCells = new ArrayList<>(initialCells);
+					}
+					 
 					public static void computeSurvivors(boolean[][] gameBoard, ArrayList<Point> survivingCells) {
 			        	// Iterate through the array, follow game of life rules
 			       	 for (int i=1; i<gameBoard.length-1; i++) {

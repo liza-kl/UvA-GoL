@@ -6,25 +6,23 @@ Game: grid = Grid // A game consists of a
 	  rules = Rules;
 
 Grid:{Grid} 'Grid' size= GridSize // Point optional 
-	 'PopulatedCells:' populatedCells += PopulatedCell*; 
+	 'PopulatedCells:' populatedCells += PopulatedCell*
+	 ('PredefinedPatterns:' predefinedPatterns += PredefinedPattern+)?;
 	  
 GridSize:{GridSize} 'GridSize:' 
 '('('height:' height = INT ',''width:' width = INT)')';
 
+PredefinedPattern: 'Glider' | 'Blinker';
 
 PopulatedCell: '(' x=INT',' y=INT')';
 
 Rules: {Rules} 'Rules'
-	   rules += Rule*; // A list of rules, none or whatever size 
+	   rules += Rule*; 
 	   
 Condition: boolOp=BoolOp NCount=INT separator=Separator?;
 
 Rule: 'Each' state=State 'cell' 'with' conditions += Condition+ 'neighbors' result=Outcome;
-/* We cant hage a rule in which a cell is in state living and it populates
- * , populates can only be done for dead cells. I think best way to handle it is to exclude:
- * dead cell surviving and
- * living cell populating in the validation
- * */
+
 
 Separator: '&&' | '||';
 

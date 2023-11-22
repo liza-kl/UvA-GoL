@@ -211,6 +211,17 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
    * @generated
    */
   @Override
+  public EAttribute getGrid_PredefinedPatterns()
+  {
+    return (EAttribute)gridEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getGridSize()
   {
     return gridSizeEClass;
@@ -419,6 +430,7 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     gridEClass = createEClass(GRID);
     createEReference(gridEClass, GRID__SIZE);
     createEReference(gridEClass, GRID__POPULATED_CELLS);
+    createEAttribute(gridEClass, GRID__PREDEFINED_PATTERNS);
 
     gridSizeEClass = createEClass(GRID_SIZE);
     createEAttribute(gridSizeEClass, GRID_SIZE__HEIGHT);
@@ -480,6 +492,7 @@ public class LsjatlPackageImpl extends EPackageImpl implements LsjatlPackage
     initEClass(gridEClass, Grid.class, "Grid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getGrid_Size(), this.getGridSize(), null, "size", null, 0, 1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGrid_PopulatedCells(), this.getPopulatedCell(), null, "populatedCells", null, 0, -1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGrid_PredefinedPatterns(), ecorePackage.getEString(), "predefinedPatterns", null, 0, -1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(gridSizeEClass, GridSize.class, "GridSize", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGridSize_Height(), ecorePackage.getEInt(), "height", null, 0, 1, GridSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

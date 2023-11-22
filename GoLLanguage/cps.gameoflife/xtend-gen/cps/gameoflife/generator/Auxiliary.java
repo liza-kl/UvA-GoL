@@ -37,4 +37,13 @@ public class Auxiliary {
     }
     return pointList;
   }
+
+  public static ArrayList<String> getPesets(final Grid grid) {
+    ArrayList<String> patternList = new ArrayList<String>();
+    EList<String> _predefinedPatterns = grid.getPredefinedPatterns();
+    for (final String p : _predefinedPatterns) {
+      patternList.add(p);
+    }
+    return patternList;
+  }
 }

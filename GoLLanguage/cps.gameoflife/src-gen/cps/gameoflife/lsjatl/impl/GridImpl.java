@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link cps.gameoflife.lsjatl.impl.GridImpl#getSize <em>Size</em>}</li>
  *   <li>{@link cps.gameoflife.lsjatl.impl.GridImpl#getPopulatedCells <em>Populated Cells</em>}</li>
+ *   <li>{@link cps.gameoflife.lsjatl.impl.GridImpl#getPredefinedPatterns <em>Predefined Patterns</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,6 +61,16 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid
    * @ordered
    */
   protected EList<PopulatedCell> populatedCells;
+
+  /**
+   * The cached value of the '{@link #getPredefinedPatterns() <em>Predefined Patterns</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPredefinedPatterns()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> predefinedPatterns;
 
   /**
    * <!-- begin-user-doc -->
@@ -152,6 +164,21 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid
    * @generated
    */
   @Override
+  public EList<String> getPredefinedPatterns()
+  {
+    if (predefinedPatterns == null)
+    {
+      predefinedPatterns = new EDataTypeEList<String>(String.class, this, LsjatlPackage.GRID__PREDEFINED_PATTERNS);
+    }
+    return predefinedPatterns;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -178,6 +205,8 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid
         return getSize();
       case LsjatlPackage.GRID__POPULATED_CELLS:
         return getPopulatedCells();
+      case LsjatlPackage.GRID__PREDEFINED_PATTERNS:
+        return getPredefinedPatterns();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -200,6 +229,10 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid
         getPopulatedCells().clear();
         getPopulatedCells().addAll((Collection<? extends PopulatedCell>)newValue);
         return;
+      case LsjatlPackage.GRID__PREDEFINED_PATTERNS:
+        getPredefinedPatterns().clear();
+        getPredefinedPatterns().addAll((Collection<? extends String>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -220,6 +253,9 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid
       case LsjatlPackage.GRID__POPULATED_CELLS:
         getPopulatedCells().clear();
         return;
+      case LsjatlPackage.GRID__PREDEFINED_PATTERNS:
+        getPredefinedPatterns().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -238,8 +274,27 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid
         return size != null;
       case LsjatlPackage.GRID__POPULATED_CELLS:
         return populatedCells != null && !populatedCells.isEmpty();
+      case LsjatlPackage.GRID__PREDEFINED_PATTERNS:
+        return predefinedPatterns != null && !predefinedPatterns.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (predefinedPatterns: ");
+    result.append(predefinedPatterns);
+    result.append(')');
+    return result.toString();
   }
 
 } //GridImpl

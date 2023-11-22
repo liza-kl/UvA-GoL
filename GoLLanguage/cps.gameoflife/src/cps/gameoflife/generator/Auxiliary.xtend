@@ -6,6 +6,7 @@ import cps.gameoflife.lsjatl.Condition
 import cps.gameoflife.lsjatl.Grid
 import cps.gameoflife.lsjatl.PopulatedCell
 
+
 import java.util.List
 import java.util.ArrayList
 
@@ -33,5 +34,13 @@ class Auxiliary {
 			pointList.add(p)
 		}
 		return pointList;
+	}
+	
+	def static getPesets(Grid grid) {
+		var patternList = new ArrayList<String>()
+		for (p: grid.predefinedPatterns){
+			patternList.add(p)
+		}
+		return patternList;
 	}
 }

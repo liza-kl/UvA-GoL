@@ -31,12 +31,14 @@ public class LsjatlParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, LsjatlGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getPredefinedPatternAccess().getAlternatives(), "rule__PredefinedPattern__Alternatives");
 			builder.put(grammarAccess.getSeparatorAccess().getAlternatives(), "rule__Separator__Alternatives");
 			builder.put(grammarAccess.getStateAccess().getAlternatives(), "rule__State__Alternatives");
 			builder.put(grammarAccess.getBoolOpAccess().getAlternatives(), "rule__BoolOp__Alternatives");
 			builder.put(grammarAccess.getOutcomeAccess().getAlternatives(), "rule__Outcome__Alternatives");
 			builder.put(grammarAccess.getGameAccess().getGroup(), "rule__Game__Group__0");
 			builder.put(grammarAccess.getGridAccess().getGroup(), "rule__Grid__Group__0");
+			builder.put(grammarAccess.getGridAccess().getGroup_5(), "rule__Grid__Group_5__0");
 			builder.put(grammarAccess.getGridSizeAccess().getGroup(), "rule__GridSize__Group__0");
 			builder.put(grammarAccess.getGridSizeAccess().getGroup_3(), "rule__GridSize__Group_3__0");
 			builder.put(grammarAccess.getPopulatedCellAccess().getGroup(), "rule__PopulatedCell__Group__0");
@@ -47,6 +49,7 @@ public class LsjatlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGameAccess().getRulesAssignment_1(), "rule__Game__RulesAssignment_1");
 			builder.put(grammarAccess.getGridAccess().getSizeAssignment_2(), "rule__Grid__SizeAssignment_2");
 			builder.put(grammarAccess.getGridAccess().getPopulatedCellsAssignment_4(), "rule__Grid__PopulatedCellsAssignment_4");
+			builder.put(grammarAccess.getGridAccess().getPredefinedPatternsAssignment_5_1(), "rule__Grid__PredefinedPatternsAssignment_5_1");
 			builder.put(grammarAccess.getGridSizeAccess().getHeightAssignment_3_1(), "rule__GridSize__HeightAssignment_3_1");
 			builder.put(grammarAccess.getGridSizeAccess().getWidthAssignment_3_4(), "rule__GridSize__WidthAssignment_3_4");
 			builder.put(grammarAccess.getPopulatedCellAccess().getXAssignment_1(), "rule__PopulatedCell__XAssignment_1");

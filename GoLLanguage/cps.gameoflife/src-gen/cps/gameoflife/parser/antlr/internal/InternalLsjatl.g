@@ -186,6 +186,31 @@ ruleGrid returns [EObject current=null]
 				}
 			)
 		)*
+		(
+			otherlv_5='PredefinedPatterns:'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getGridAccess().getPredefinedPatternsKeyword_5_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getGridAccess().getPredefinedPatternsPredefinedPatternParserRuleCall_5_1_0());
+					}
+					lv_predefinedPatterns_6_0=rulePredefinedPattern
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGridRule());
+						}
+						add(
+							$current,
+							"predefinedPatterns",
+							lv_predefinedPatterns_6_0,
+							"cps.gameoflife.Lsjatl.PredefinedPattern");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)+
+		)?
 	)
 ;
 
@@ -273,6 +298,36 @@ ruleGridSize returns [EObject current=null]
 		otherlv_8=')'
 		{
 			newLeafNode(otherlv_8, grammarAccess.getGridSizeAccess().getRightParenthesisKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRulePredefinedPattern
+entryRulePredefinedPattern returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getPredefinedPatternRule()); }
+	iv_rulePredefinedPattern=rulePredefinedPattern
+	{ $current=$iv_rulePredefinedPattern.current.getText(); }
+	EOF;
+
+// Rule PredefinedPattern
+rulePredefinedPattern returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='Glider'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getPredefinedPatternAccess().getGliderKeyword_0());
+		}
+		    |
+		kw='Blinker'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getPredefinedPatternAccess().getBlinkerKeyword_1());
 		}
 	)
 ;

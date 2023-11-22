@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link cps.gameoflife.lsjatl.Grid#getSize <em>Size</em>}</li>
  *   <li>{@link cps.gameoflife.lsjatl.Grid#getPopulatedCells <em>Populated Cells</em>}</li>
+ *   <li>{@link cps.gameoflife.lsjatl.Grid#getPredefinedPatterns <em>Predefined Patterns</em>}</li>
  * </ul>
  *
  * @see cps.gameoflife.lsjatl.LsjatlPackage#getGrid()
@@ -59,5 +60,17 @@ public interface Grid extends EObject
    * @generated
    */
   EList<PopulatedCell> getPopulatedCells();
+
+  /**
+   * Returns the value of the '<em><b>Predefined Patterns</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Predefined Patterns</em>' attribute list.
+   * @see cps.gameoflife.lsjatl.LsjatlPackage#getGrid_PredefinedPatterns()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getPredefinedPatterns();
 
 } // Grid

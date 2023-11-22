@@ -124,6 +124,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRulePredefinedPattern
+entryRulePredefinedPattern
+:
+{ before(grammarAccess.getPredefinedPatternRule()); }
+	 rulePredefinedPattern
+{ after(grammarAccess.getPredefinedPatternRule()); } 
+	 EOF 
+;
+
+// Rule PredefinedPattern
+rulePredefinedPattern 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getPredefinedPatternAccess().getAlternatives()); }
+		(rule__PredefinedPattern__Alternatives)
+		{ after(grammarAccess.getPredefinedPatternAccess().getAlternatives()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRulePopulatedCell
 entryRulePopulatedCell
 :
@@ -318,6 +343,27 @@ ruleOutcome
 		{ before(grammarAccess.getOutcomeAccess().getAlternatives()); }
 		(rule__Outcome__Alternatives)
 		{ after(grammarAccess.getOutcomeAccess().getAlternatives()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PredefinedPattern__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getPredefinedPatternAccess().getGliderKeyword_0()); }
+		'Glider'
+		{ after(grammarAccess.getPredefinedPatternAccess().getGliderKeyword_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getPredefinedPatternAccess().getBlinkerKeyword_1()); }
+		'Blinker'
+		{ after(grammarAccess.getPredefinedPatternAccess().getBlinkerKeyword_1()); }
 	)
 ;
 finally {
@@ -600,6 +646,7 @@ rule__Grid__Group__4
 	}
 :
 	rule__Grid__Group__4__Impl
+	rule__Grid__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -614,6 +661,93 @@ rule__Grid__Group__4__Impl
 	{ before(grammarAccess.getGridAccess().getPopulatedCellsAssignment_4()); }
 	(rule__Grid__PopulatedCellsAssignment_4)*
 	{ after(grammarAccess.getGridAccess().getPopulatedCellsAssignment_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Grid__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Grid__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Grid__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGridAccess().getGroup_5()); }
+	(rule__Grid__Group_5__0)?
+	{ after(grammarAccess.getGridAccess().getGroup_5()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Grid__Group_5__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Grid__Group_5__0__Impl
+	rule__Grid__Group_5__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Grid__Group_5__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGridAccess().getPredefinedPatternsKeyword_5_0()); }
+	'PredefinedPatterns:'
+	{ after(grammarAccess.getGridAccess().getPredefinedPatternsKeyword_5_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Grid__Group_5__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Grid__Group_5__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Grid__Group_5__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	(
+		{ before(grammarAccess.getGridAccess().getPredefinedPatternsAssignment_5_1()); }
+		(rule__Grid__PredefinedPatternsAssignment_5_1)
+		{ after(grammarAccess.getGridAccess().getPredefinedPatternsAssignment_5_1()); }
+	)
+	(
+		{ before(grammarAccess.getGridAccess().getPredefinedPatternsAssignment_5_1()); }
+		(rule__Grid__PredefinedPatternsAssignment_5_1)*
+		{ after(grammarAccess.getGridAccess().getPredefinedPatternsAssignment_5_1()); }
+	)
 )
 ;
 finally {
@@ -1438,6 +1572,21 @@ rule__Grid__PopulatedCellsAssignment_4
 		{ before(grammarAccess.getGridAccess().getPopulatedCellsPopulatedCellParserRuleCall_4_0()); }
 		rulePopulatedCell
 		{ after(grammarAccess.getGridAccess().getPopulatedCellsPopulatedCellParserRuleCall_4_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Grid__PredefinedPatternsAssignment_5_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGridAccess().getPredefinedPatternsPredefinedPatternParserRuleCall_5_1_0()); }
+		rulePredefinedPattern
+		{ after(grammarAccess.getGridAccess().getPredefinedPatternsPredefinedPatternParserRuleCall_5_1_0()); }
 	)
 ;
 finally {

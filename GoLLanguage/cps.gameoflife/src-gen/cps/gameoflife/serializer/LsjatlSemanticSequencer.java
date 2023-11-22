@@ -130,7 +130,7 @@ public class LsjatlSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Grid returns Grid
 	 *
 	 * Constraint:
-	 *     (size=GridSize populatedCells+=PopulatedCell*)
+	 *     (size=GridSize populatedCells+=PopulatedCell* predefinedPatterns+=PredefinedPattern*)
 	 * </pre>
 	 */
 	protected void sequence_Grid(ISerializationContext context, Grid semanticObject) {
