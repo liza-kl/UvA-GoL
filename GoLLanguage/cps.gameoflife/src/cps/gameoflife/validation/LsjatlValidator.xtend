@@ -32,14 +32,13 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 	@Check
 	def checkIfValidNumberOfNeighbors(Condition condition) {
 		if (condition.NCount > 8) {
-			error("Neighbors can not be greater than 10", null)
+			error("Neighbors can not be greater than 8" ,Literals.CONDITION__NCOUNT)
 		}
 		if (condition.NCount < 0) {
-			error("The number of neighbors cannot be negative", null)
+			error("The number of neighbors cannot be negative", Literals.CONDITION__NCOUNT)
 
 		}
 	}
-
 	@Check
 	def checkForNegativeStartingCells(Game game)
 	{

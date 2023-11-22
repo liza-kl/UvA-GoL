@@ -38,12 +38,12 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
     int _nCount = condition.getNCount();
     boolean _greaterThan = (_nCount > 8);
     if (_greaterThan) {
-      this.error("Neighbors can not be greater than 10", null);
+      this.error("Neighbors can not be greater than 8", LsjatlPackage.Literals.CONDITION__NCOUNT);
     }
     int _nCount_1 = condition.getNCount();
     boolean _lessThan = (_nCount_1 < 0);
     if (_lessThan) {
-      this.error("The number of neighbors cannot be negative", null);
+      this.error("The number of neighbors cannot be negative", LsjatlPackage.Literals.CONDITION__NCOUNT);
     }
   }
 
