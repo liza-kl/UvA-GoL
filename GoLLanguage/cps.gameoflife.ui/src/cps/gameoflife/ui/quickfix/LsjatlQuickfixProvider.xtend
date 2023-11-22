@@ -19,12 +19,11 @@ import cps.gameoflife.lsjatl.Grid
  */
 class LsjatlQuickfixProvider extends DefaultQuickfixProvider {
 
-	@Fix(LsjatlValidator.INVALID_SIGN)
+	@Fix(LsjatlValidator.TOO_MANY_NEIGHBORS)
 	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
 		acceptor.accept(issue, 'Use a valid outcome', 'Use a valid outcome', 'upcase.png') [ context |
 			val xtextDocument = context.xtextDocument
-			val firstLetter = xtextDocument.get(issue.offset, 1)
-			xtextDocument.replace(issue.offset, 1, firstLetter.toUpperCase)
+			xtextDocument.replace(issue.offset, 1,"8")
 		]
 	}
 

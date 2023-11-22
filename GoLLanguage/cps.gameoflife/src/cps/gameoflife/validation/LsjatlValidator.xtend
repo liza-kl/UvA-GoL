@@ -24,7 +24,7 @@ import cps.gameoflife.lsjatl.LsjatlPackage.Literals
 class LsjatlValidator extends AbstractLsjatlValidator {
 
 	protected static val ISSUE_CODE_PREFIX = "cps.gameoflife.lsjatl.";
-	public static val INVALID_RULE_OUTCOME = ISSUE_CODE_PREFIX + "InvalidRuleOutcome";
+	public static val TOO_MANY_NEIGHBORS = ISSUE_CODE_PREFIX + "TooManyNeighbors";
 	public static val INVALID_SIGN = ISSUE_CODE_PREFIX + "InvalidSign";
 	public static val String INVALID_DUPLICATION = "InvalidDuplication";
 	
@@ -32,7 +32,7 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 	@Check
 	def checkIfValidNumberOfNeighbors(Condition condition) {
 		if (condition.NCount > 8) {
-			warning("The number of neighbors should not be greater than 8", null);
+			error("Neighbors can not be greater than 10", null)
 		}
 		if (condition.NCount < 0) {
 			error("The number of neighbors cannot be negative", null)
@@ -45,11 +45,14 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 	{
 		for(var i = 0; i < game.grid.populatedCells.size(); i++)
 		{
-			if(game.grid.populatedCells.get(i).x < 0 || game.grid.populatedCells.get(i).y < 0 ) 
+			if(game.grid.populatedCells.get(i).x < 0 ) 
 				{
-					error("Cells must have positive coordinates", null, i);
+					error("Cells must have positive coordinates", Literals.POPULATED_CELL__X, i);
 					
 				}
+			if( game.grid.populatedCells.get(i).y < 0) {
+					error("Cells must have positive coordinates", Literals.POPULATED_CELL__Y, i);
+			}
 			 
 		}
 	}
@@ -60,7 +63,8 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 		for (PopulatedCell cell : grid.populatedCells) {
 			if (cell.x > grid.size.width || cell.y > grid.size.height || cell.x > grid.size.height ||
 				cell.y > grid.size.height) {
-				error("Cell cannot be outside the grid", null)
+					// point to correct cell
+				error("Cell cannot be outside the grid", Literals.POPULATED_CELL__X)
 			}
 		}
 	}
