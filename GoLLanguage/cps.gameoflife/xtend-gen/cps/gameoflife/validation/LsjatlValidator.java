@@ -27,7 +27,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 public class LsjatlValidator extends AbstractLsjatlValidator {
   protected static final String ISSUE_CODE_PREFIX = "cps.gameoflife.lsjatl.";
 
-  public static final String INVALID_RULE_OUTCOME = (LsjatlValidator.ISSUE_CODE_PREFIX + "InvalidRuleOutcome");
+  public static final String TOO_MANY_NEIGHBORS = (LsjatlValidator.ISSUE_CODE_PREFIX + "TooManyNeighbors");
 
   public static final String INVALID_SIGN = (LsjatlValidator.ISSUE_CODE_PREFIX + "InvalidSign");
 
@@ -38,7 +38,7 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
     int _nCount = condition.getNCount();
     boolean _greaterThan = (_nCount > 8);
     if (_greaterThan) {
-      this.warning("The number of neighbors should not be greater than 8", null);
+      this.error("Neighbors can not be greater than 10", null);
     }
     int _nCount_1 = condition.getNCount();
     boolean _lessThan = (_nCount_1 < 0);
@@ -50,8 +50,17 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
   @Check
   public void checkForNegativeStartingCells(final Game game) {
     for (int i = 0; (i < game.getGrid().getPopulatedCells().size()); i++) {
-      if (((game.getGrid().getPopulatedCells().get(i).getX() < 0) || (game.getGrid().getPopulatedCells().get(i).getY() < 0))) {
-        this.error("Cells must have positive coordinates", null, i);
+      {
+        int _x = game.getGrid().getPopulatedCells().get(i).getX();
+        boolean _lessThan = (_x < 0);
+        if (_lessThan) {
+          this.error("Cells must have positive coordinates", LsjatlPackage.Literals.POPULATED_CELL__X, i);
+        }
+        int _y = game.getGrid().getPopulatedCells().get(i).getY();
+        boolean _lessThan_1 = (_y < 0);
+        if (_lessThan_1) {
+          this.error("Cells must have positive coordinates", LsjatlPackage.Literals.POPULATED_CELL__Y, i);
+        }
       }
     }
   }
@@ -62,7 +71,7 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
     for (final PopulatedCell cell : _populatedCells) {
       if (((((cell.getX() > grid.getSize().getWidth()) || (cell.getY() > grid.getSize().getHeight())) || (cell.getX() > grid.getSize().getHeight())) || 
         (cell.getY() > grid.getSize().getHeight()))) {
-        this.error("Cell cannot be outside the grid", null);
+        this.error("Cell cannot be outside the grid", LsjatlPackage.Literals.POPULATED_CELL__X);
       }
     }
   }
