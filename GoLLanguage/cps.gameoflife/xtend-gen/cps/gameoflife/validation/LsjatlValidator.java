@@ -51,7 +51,7 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
     for (final PopulatedCell cell : _populatedCells) {
       if (((((cell.getX() > grid.getSize().getWidth()) || (cell.getY() > grid.getSize().getHeight())) || (cell.getX() > grid.getSize().getHeight())) || 
         (cell.getY() > grid.getSize().getHeight()))) {
-        this.error("Cell cannot be outside the grid", LsjatlPackage.Literals.POPULATED_CELL__X);
+        this.error("Cell cannot be outside the grid", LsjatlPackage.Literals.GRID__POPULATED_CELLS);
       }
     }
   }
@@ -72,7 +72,7 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
     for (final Rule rule : rulesList) {
       boolean _contains = ruleSet.contains(rule);
       if (_contains) {
-        this.warning("There cannot be duplicate rules", LsjatlPackage.Literals.RULES__RULES, LsjatlValidator.INVALID_DUPLICATION);
+        this.warning("There cannot be duplicate rules", LsjatlPackage.Literals.RULES__RULES);
       } else {
         ruleSet.add(rule);
       }

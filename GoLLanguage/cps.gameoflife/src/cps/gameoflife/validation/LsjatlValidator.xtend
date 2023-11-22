@@ -42,16 +42,14 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 
 	@Check
 	def checkIfInitialCellsAreInGrid(Grid grid) {
-
 		for (PopulatedCell cell : grid.populatedCells) {
 			if (cell.x > grid.size.width || cell.y > grid.size.height || cell.x > grid.size.height ||
 				cell.y > grid.size.height) {
 					// point to correct cell
-				error("Cell cannot be outside the grid", Literals.POPULATED_CELL__X)
+				error("Cell cannot be outside the grid", Literals.GRID__POPULATED_CELLS);
 			}
 		}
 	}
-
 
 	@Check def doRulesExist(Rules rules) {
 		if (rules.rules.size() == 0) {
@@ -70,7 +68,7 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 
 		for (rule : rulesList) {
 			if (ruleSet.contains(rule)) {
-				warning("There cannot be duplicate rules", Literals.RULES__RULES, INVALID_DUPLICATION);
+				warning("There cannot be duplicate rules", Literals.RULES__RULES);
 			} else {
 				ruleSet.add(rule);
 			}
