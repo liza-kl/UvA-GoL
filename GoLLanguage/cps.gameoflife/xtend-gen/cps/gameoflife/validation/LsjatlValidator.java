@@ -125,7 +125,7 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
     List<Rule> rulesList = IterableExtensions.<Rule>toList(rules.getRules());
     for (final Rule rule : rulesList) {
       if ((Objects.equal(rule.getState(), "dead") && Objects.equal(rule.getResult(), "survives"))) {
-        this.warning("A rule exists for a survival of dead cell.", null);
+        this.warning("A dead cell cannot survive. Only living cells can.", null);
       }
     }
   }
@@ -135,7 +135,7 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
     List<Rule> rulesList = IterableExtensions.<Rule>toList(rules.getRules());
     for (final Rule rule : rulesList) {
       if ((Objects.equal(rule.getState(), "living") && Objects.equal(rule.getResult(), "populates"))) {
-        this.warning("A rule exists for populating a living cell. Only dead cells can be populated.", null);
+        this.warning("A living cell cannot be populated. Only dead cells can be populated.", null);
       }
     }
   }

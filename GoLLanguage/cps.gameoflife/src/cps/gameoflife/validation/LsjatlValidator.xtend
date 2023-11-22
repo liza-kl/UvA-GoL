@@ -119,7 +119,7 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 
 		for (rule : rulesList) {
 			if (rule.state == 'dead' && rule.result == 'survives'){
-				warning("A rule exists for a survival of dead cell.", null)
+				warning("A dead cell cannot survive. Only living cells can.", null)
 			}
 		}
 	}
@@ -132,7 +132,7 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 
 		for (rule : rulesList) {
 			if (rule.state == 'living' && rule.result == 'populates'){
-				warning("A rule exists for populating a living cell. Only dead cells can be populated.", null)
+				warning("A living cell cannot be populated. Only dead cells can be populated.", null)
 			}
 		}
 	}
