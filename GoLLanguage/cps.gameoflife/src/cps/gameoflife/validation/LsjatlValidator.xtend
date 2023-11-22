@@ -115,14 +115,13 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 		}
 	}
 	
-	
-	
-	
 	@Check
 	def checkDeadSurviving(Rule rule) {
 
 			if (rule.state == 'dead' && rule.result == 'survives'){
-				warning("Game has no rules, so everyone and everything will die", null)
+				warning("Game has no rules, so everyone and everything will die",
+					Literals.RULE__STATE
+				)
 			}
 	
 	}
@@ -135,6 +134,15 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 					Literals.RULE__STATE);
 			
 			
+		}
+	}
+	
+	@Check
+	def checkDeadDying(Rule rule) {
+		if (rule.state == 'dead' && rule.result == 'dies'){
+			warning("A dead cell cannot die. How do you kill that which has no life?",
+				Literals.RULE__STATE
+			)
 		}
 	}
 }
