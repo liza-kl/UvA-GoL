@@ -57,6 +57,18 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
   }
 
   @Check
+  public void doIdenticalCoordinatedExist(final Grid grid) {
+    EList<PopulatedCell> populatedCells = grid.getPopulatedCells();
+    for (int i = 0; (i < populatedCells.size()); i++) {
+      for (int j = (i + 1); (j < populatedCells.size()); j++) {
+        if ((Integer.valueOf(populatedCells.get(i).getX()).equals(Integer.valueOf(populatedCells.get(j).getX())) && Integer.valueOf(populatedCells.get(i).getY()).equals(Integer.valueOf(populatedCells.get(j).getY())))) {
+          this.error("Identical coordinates are not allowed", LsjatlPackage.Literals.GRID__POPULATED_CELLS, j);
+        }
+      }
+    }
+  }
+
+  @Check
   public void doRulesExist(final Rules rules) {
     int _size = rules.getRules().size();
     boolean _equals = (_size == 0);

@@ -50,6 +50,23 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 			}
 		}
 	}
+	
+	@Check
+	def doIdenticalCoordinatedExist(Grid grid)
+	{
+		var populatedCells = grid.populatedCells
+		for(var i=0; i < populatedCells.size; i++){
+			for(var j=i+1; j < populatedCells.size; j++){
+				
+				if(populatedCells.get(i).x.equals(populatedCells.get(j).x)
+					&& populatedCells.get(i).y.equals(populatedCells.get(j).y)
+				)
+				
+				error("Identical coordinates are not allowed", Literals.GRID__POPULATED_CELLS, j);
+				
+			}
+		}
+	}
 
 	@Check def doRulesExist(Rules rules) {
 		if (rules.rules.size() == 0) {
@@ -60,6 +77,7 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 	}
 	
 	
+
 
 	@Check
 	def checkIdenticalRules(Rules rules) {
