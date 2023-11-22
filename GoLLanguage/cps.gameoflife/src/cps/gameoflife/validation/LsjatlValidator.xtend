@@ -27,6 +27,7 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 	public static val TOO_MANY_NEIGHBORS = ISSUE_CODE_PREFIX + "TooManyNeighbors";
 	public static val INVALID_SIGN = ISSUE_CODE_PREFIX + "InvalidSign";
 	public static val String INVALID_DUPLICATION = "InvalidDuplication";
+	public static val String IDENTICAL_COORDINATES = "IdenticalCoordinates";
 	
 
 	@Check
@@ -67,6 +68,8 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 			}
 		}
 	}
+	
+
 
 	@Check def doRulesExist(Rules rules) {
 		if (rules.rules.size() == 0) {
@@ -78,21 +81,6 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 	
 	
 
-
-	@Check
-	def checkIdenticalRules(Rules rules) {
-		var rulesList = rules.rules.toList();
-		var ruleSet = new HashSet();
-
-		for (rule : rulesList) {
-			if (ruleSet.contains(rule)) {
-				warning("There cannot be duplicate rules", Literals.RULES__RULES);
-			} else {
-				ruleSet.add(rule);
-			}
-		}
-	}
-	
 	@Check
 	def checkDeadSurviving(Rule rule) {
 
