@@ -39,23 +39,7 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 
 		}
 	}
-	@Check
-	def checkForNegativeStartingCells(Game game)
-	{
-		for(var i = 0; i < game.grid.populatedCells.size(); i++)
-		{
-			if(game.grid.populatedCells.get(i).x < 0 ) 
-				{
-					error("Cells must have positive coordinates", Literals.POPULATED_CELL__X, i);
-					
-				}
-			if( game.grid.populatedCells.get(i).y < 0) {
-					error("Cells must have positive coordinates", Literals.POPULATED_CELL__Y, i);
-			}
-			 
-		}
-	}
-	
+
 	@Check
 	def checkIfInitialCellsAreInGrid(Grid grid) {
 
@@ -68,27 +52,6 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 		}
 	}
 
-	@Check
-	def hasValidCellStates(Rules rules) {
-
-		for (Rule rule : rules.rules) {
-			val list = Arrays.asList('survives', 'dies', 'populates');
-			if (!list.contains(rule.result)) {
-				error("Cell needs to have a valid outcome", null)
-			}
-		}
-	}
-
-	@Check
-	def hasValidOutcomeRules(Rules rules) {
-
-		for (Rule rule : rules.rules) {
-			val list = Arrays.asList('living', 'dead');
-			if (!list.contains(rule.state)) {
-				error("Cell needs to have a valid state e.g. living or dead", null)
-			}
-		}
-	}
 
 	@Check def doRulesExist(Rules rules) {
 		if (rules.rules.size() == 0) {

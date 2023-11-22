@@ -5,13 +5,11 @@ package cps.gameoflife.validation;
 
 import com.google.common.base.Objects;
 import cps.gameoflife.lsjatl.Condition;
-import cps.gameoflife.lsjatl.Game;
 import cps.gameoflife.lsjatl.Grid;
 import cps.gameoflife.lsjatl.LsjatlPackage;
 import cps.gameoflife.lsjatl.PopulatedCell;
 import cps.gameoflife.lsjatl.Rule;
 import cps.gameoflife.lsjatl.Rules;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -48,60 +46,12 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
   }
 
   @Check
-  public void checkForNegativeStartingCells(final Game game) {
-    for (int i = 0; (i < game.getGrid().getPopulatedCells().size()); i++) {
-      {
-        int _x = game.getGrid().getPopulatedCells().get(i).getX();
-        boolean _lessThan = (_x < 0);
-        if (_lessThan) {
-          this.error("Cells must have positive coordinates", LsjatlPackage.Literals.POPULATED_CELL__X, i);
-        }
-        int _y = game.getGrid().getPopulatedCells().get(i).getY();
-        boolean _lessThan_1 = (_y < 0);
-        if (_lessThan_1) {
-          this.error("Cells must have positive coordinates", LsjatlPackage.Literals.POPULATED_CELL__Y, i);
-        }
-      }
-    }
-  }
-
-  @Check
   public void checkIfInitialCellsAreInGrid(final Grid grid) {
     EList<PopulatedCell> _populatedCells = grid.getPopulatedCells();
     for (final PopulatedCell cell : _populatedCells) {
       if (((((cell.getX() > grid.getSize().getWidth()) || (cell.getY() > grid.getSize().getHeight())) || (cell.getX() > grid.getSize().getHeight())) || 
         (cell.getY() > grid.getSize().getHeight()))) {
         this.error("Cell cannot be outside the grid", LsjatlPackage.Literals.POPULATED_CELL__X);
-      }
-    }
-  }
-
-  @Check
-  public void hasValidCellStates(final Rules rules) {
-    EList<Rule> _rules = rules.getRules();
-    for (final Rule rule : _rules) {
-      {
-        final List<String> list = Arrays.<String>asList("survives", "dies", "populates");
-        boolean _contains = list.contains(rule.getResult());
-        boolean _not = (!_contains);
-        if (_not) {
-          this.error("Cell needs to have a valid outcome", null);
-        }
-      }
-    }
-  }
-
-  @Check
-  public void hasValidOutcomeRules(final Rules rules) {
-    EList<Rule> _rules = rules.getRules();
-    for (final Rule rule : _rules) {
-      {
-        final List<String> list = Arrays.<String>asList("living", "dead");
-        boolean _contains = list.contains(rule.getState());
-        boolean _not = (!_contains);
-        if (_not) {
-          this.error("Cell needs to have a valid state e.g. living or dead", null);
-        }
       }
     }
   }
