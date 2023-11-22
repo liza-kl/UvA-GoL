@@ -110,4 +110,30 @@ class LsjatlValidator extends AbstractLsjatlValidator {
 			}
 		}
 	}
+	
+	
+	
+	@Check
+	def checkDeadSurviving(Rules rules) {
+		var rulesList = rules.rules.toList();
+
+		for (rule : rulesList) {
+			if (rule.state == 'dead' && rule.result == 'survives'){
+				warning("A rule exists for a survival of dead cell.", null)
+			}
+		}
+	}
+	
+	
+	
+	@Check
+	def checkLivingPopulating(Rules rules) {
+		var rulesList = rules.rules.toList();
+
+		for (rule : rulesList) {
+			if (rule.state == 'living' && rule.result == 'populates'){
+				warning("A rule exists for populating a living cell. Only dead cells can be populated.", null)
+			}
+		}
+	}
 }

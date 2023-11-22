@@ -44,6 +44,18 @@ public class LsjatlGenerator extends AbstractGenerator {
     _builder.append("public class RulesOfLife {");
     _builder.newLine();
     _builder.append("\t\t\t\t\t");
+    _builder.append("public static int gridWidth = ");
+    int _width = root.getGrid().getSize().getWidth();
+    _builder.append(_width, "\t\t\t\t\t");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("public static int gridHeight = ");
+    int _height = root.getGrid().getSize().getHeight();
+    _builder.append(_height, "\t\t\t\t\t");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t\t");
     _builder.append("public static ArrayList<Point> populatedCells = new ArrayList<Point>(");
     _builder.newLine();
     _builder.append("\t\t\t\t\t\t");

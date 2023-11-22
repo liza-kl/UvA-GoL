@@ -3,6 +3,7 @@
  */
 package cps.gameoflife.validation;
 
+import com.google.common.base.Objects;
 import cps.gameoflife.lsjatl.Condition;
 import cps.gameoflife.lsjatl.Game;
 import cps.gameoflife.lsjatl.Grid;
@@ -115,6 +116,26 @@ public class LsjatlValidator extends AbstractLsjatlValidator {
         this.warning("There cannot be duplicate rules", LsjatlPackage.Literals.RULES__RULES, LsjatlValidator.INVALID_DUPLICATION);
       } else {
         ruleSet.add(rule);
+      }
+    }
+  }
+
+  @Check
+  public void checkDeadSurviving(final Rules rules) {
+    List<Rule> rulesList = IterableExtensions.<Rule>toList(rules.getRules());
+    for (final Rule rule : rulesList) {
+      if ((Objects.equal(rule.getState(), "dead") && Objects.equal(rule.getResult(), "survives"))) {
+        this.warning("A rule exists for a survival of dead cell.", null);
+      }
+    }
+  }
+
+  @Check
+  public void checkLivingPopulating(final Rules rules) {
+    List<Rule> rulesList = IterableExtensions.<Rule>toList(rules.getRules());
+    for (final Rule rule : rulesList) {
+      if ((Objects.equal(rule.getState(), "living") && Objects.equal(rule.getResult(), "populates"))) {
+        this.warning("A rule exists for populating a living cell. Only dead cells can be populated.", null);
       }
     }
   }

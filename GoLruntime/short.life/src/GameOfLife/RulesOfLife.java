@@ -9,7 +9,7 @@ public class RulesOfLife {
 					public static int gridHeight = 50;
 					public static ArrayList<Point> populatedCells = new ArrayList<Point>(
 						Arrays.asList(
-							new Point(1,2), 
+							new Point(1,49), 
 							new Point(3,4)
 						)
 					);
@@ -36,6 +36,12 @@ if ((!gameBoard[i][j]) &&
 (surrounding == 3) 
 ){
 	survivingCells.add(new Point(i-1,j-1));
+}
+if ((gameBoard[i][j]) && 
+(surrounding == 4) 
+){
+	Point pointToRemove = new Point(i, j);
+	                		survivingCells.removeIf(point -> point.equals(pointToRemove));
 }
 if ((gameBoard[i][j]) && 
 (surrounding == 4) 

@@ -29,6 +29,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 			
 public class RulesOfLife {
+					public static int gridWidth = «root.grid.size.width»;
+					public static int gridHeight = «root.grid.size.height»;
 					public static ArrayList<Point> populatedCells = new ArrayList<Point>(
 						Arrays.asList(
 							«FOR populatedCell: Auxiliary.getStartingPoints(root.grid) SEPARATOR ', '»
