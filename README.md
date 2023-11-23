@@ -20,7 +20,7 @@ git clone --recurse-submodules https://github.com/liza-kl/UvA-GoL
 
   
 > [!IMPORTANT]  
-> [GameOfLife.java](https://github.com/liza-kl/UvA-GoL/blob/main/GoLruntime/short.life/src/GameOfLife/GameOfLife.java) was modified during the assignment. The original one will not work.
+> [GameOfLife.java](https://github.com/liza-kl/UvA-GoL/blob/main/GoLruntime/short.life/src/GameOfLife/GameOfLife.java) was modified during the assignment. d_gameBoardSize in both componentResized and GameBoard Class takes dimensions from RulesOfLife. We want set size of frame as we wont be able to change the size of the field with resizing the window. ArrayList point now takes points from RulesOfLife as this is where we generate array points defined in our language.
 >
 
 
