@@ -23,13 +23,6 @@ import cps.gameoflife.lsjatl.LsjatlPackage.Literals
  */
 class LsjatlValidator extends AbstractLsjatlValidator {
 
-	protected static val ISSUE_CODE_PREFIX = "cps.gameoflife.lsjatl.";
-	public static val TOO_MANY_NEIGHBORS = ISSUE_CODE_PREFIX + "TooManyNeighbors";
-	public static val INVALID_SIGN = ISSUE_CODE_PREFIX + "InvalidSign";
-	public static val String INVALID_DUPLICATION = "InvalidDuplication";
-	public static val String IDENTICAL_COORDINATES = "IdenticalCoordinates";
-	
-
 	@Check
 	def checkIfValidNumberOfNeighbors(Condition condition) {
 		if (condition.NCount > 8) {
