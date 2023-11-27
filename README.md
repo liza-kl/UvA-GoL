@@ -33,4 +33,4 @@ git clone --recurse-submodules https://github.com/liza-kl/UvA-GoL
 - Duplicated Conditions are not giving a warning
 - Duplicated Rules don't give a warning
 - Patterns can only be set on a particular spot
-- ... 
+- Further enhancement could be to use the rule string notation proposed by the GoL community https://conwaylife.com/wiki/Rulestring
